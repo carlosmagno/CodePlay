@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Play</title>
+
+    <style>
+* {
+    margin:0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(255, 255, 255);
+}
+
+.grid1 {
+    margin: 0 auto;
+    align-items: center;
+    justify-items: center;
+    display:grid; 
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "x x"
+    "a b"
+    "y y"
+    "d d";
+    gap :0;
+}
+#areacode {
+    grid-area: d;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+#titulo {
+    grid-area: x;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: rgb(139, 73, 201);
+}
+#view {
+    grid-area: c;
+    text-align: center;
+    width: 99%;
+    color: rgb(139, 73, 201);
+    border-bottom: rgb(139, 73, 201) solid 4px;
+}
+
+textarea {
+    justify-self: center;
+    align-self: center;
+    border: solid rgb(139, 73, 201) 4px;
+    border-radius:10px;
+    padding: 10px;
+    font-size: large;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+#areaHTML {
+    grid-area: a;
+    width: 95%;
+    min-width: auto;
+    height: 30vh;
+}
+
+#descr{
+    font-size: 15pt;
+}
+#areaCSS {
+    grid-area: b;
+    width: 95%;
+    min-width: auto;
+    height: 30vh;
+}
+
+#areaJS {
+    grid-area: c;
+    width: 100vh;
+    height: 30vh;
+}
+
+div {
+    border-style:hidden;
+}
+
+#rtzbuton {
+    grid-area: y;
+    background-color: rgb(139, 73, 201);
+    color: white;
+    margin: 10px;
+    
+    padding: 5px;
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14pt;
+    width: 100%;
+    
+}
+    </style>
+    <style id="estilo">
+
+    </style>
+</head>
+<body id="corpo">
+    
+    <div class="grid1">
+        <button id ="rtzbuton" onclick="interpretarcodigo()">ATUALIZAR VISUALIZAÇÃO</button>
+        <header id="titulo">
+            <h1>CodePlay - Pratique HTML e CSS</h1>   
+        </header>
+        <textarea type="text"name="" id="areaHTML" cols="" rows="" placeholder="Escreva aqui seu HTML"></textarea>
+        
+        <textarea type="text"name="" id="areaCSS" cols="" rows="" placeholder="Escreva aqui seu CSS"></textarea>
+        
+        <!--<textarea type="text"name="" id="areaJS" cols="" rows="" placeholder="Escreva aqui seu JavaSript"></textarea> -->
+        
+        <br>
+ 
+        
+
+        <div id="areacode">
+
+        </div>
+
+    </div>
+
+<script>
+function interpretarcodigo() {
+
+    var areaHTML = document.getElementById('areaHTML');
+    var codexist = document.getElementById('areacode').innerHTML;
+    document.getElementById('areacode').innerHTML =  areaHTML.value;
+
+    var areaCSS = document.getElementById('areaCSS');
+    var CSSexist = document.getElementById('estilo').innerHTML;
+    document.getElementById('estilo').innerHTML= areaCSS.value;
+
+   /*
+    var areaJS = document.getElementById('areaJS');
+    var JSexist = document.getElementById('code');
+    document.getElementById('code').innerText = areaJS.value;
+    */
+}
+</script>
+
+    
+<script id="code">
+
+
+
+</script>
+
+
+</body>
+</html>
