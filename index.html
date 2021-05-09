@@ -13,11 +13,11 @@
 }
 
 body {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(5, 5, 5);
 }
 
 .grid1 {
-    margin: 0 auto;
+    margin: auto;
     align-items: center;
     justify-items: center;
     display:grid; 
@@ -29,11 +29,15 @@ body {
     "d d";
     gap :0;
 }
-#areacode {
+#AreaView {
     grid-area: d;
-    width: 100%;
-    height: 100%;
+    width: 94%;
+    min-height: 48vh;
+    height: auto;
     background-color: rgb(255, 255, 255);
+    border-radius:10px;
+    border: solid rgb(139, 73, 201) 4px;
+    padding-left: 20px;
 }
 
 #titulo {
@@ -46,13 +50,6 @@ body {
     font-weight: bold;
     color: rgb(139, 73, 201);
 }
-#view {
-    grid-area: c;
-    text-align: center;
-    width: 99%;
-    color: rgb(139, 73, 201);
-    border-bottom: rgb(139, 73, 201) solid 4px;
-}
 
 textarea {
     justify-self: center;
@@ -60,6 +57,7 @@ textarea {
     border: solid rgb(139, 73, 201) 4px;
     border-radius:10px;
     padding: 10px;
+    
     font-size: large;
     font-family: 'Courier New', Courier, monospace;
 
@@ -67,9 +65,11 @@ textarea {
 
 #areaHTML {
     grid-area: a;
-    width: 95%;
+    width: 90%;
     min-width: auto;
     height: 30vh;
+    margin-right: -10px;
+    
 }
 
 #descr{
@@ -77,9 +77,10 @@ textarea {
 }
 #areaCSS {
     grid-area: b;
-    width: 95%;
+    width: 90%;
     min-width: auto;
     height: 30vh;
+    margin-left: -10px;
 }
 
 #areaJS {
@@ -89,7 +90,7 @@ textarea {
 }
 
 div {
-    border-style:hidden;
+    border-style:none;
 }
 
 #rtzbuton {
@@ -99,10 +100,12 @@ div {
     margin: 10px;
     
     padding: 5px;
-    border-radius: 5px;
+    border-radius: 10px;
+    border: solid rgb(139, 73, 201) 4px;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 14pt;
-    width: 100%;
+    font-weight:bold;
+    font-size: large;
+    width: 96%;
     
 }
     </style>
@@ -113,7 +116,7 @@ div {
 <body id="corpo">
     
     <div class="grid1">
-        <button id ="rtzbuton" onclick="interpretarcodigo()">ATUALIZAR VISUALIZAÇÃO</button>
+        <button id ="rtzbuton" onclick="interpretarcodigo()">ATUALIZAR VISUALIZAÇÃO div#areacode</button>
         <header id="titulo">
             <h1>CodePlay - Pratique HTML e CSS</h1>   
         </header>
@@ -127,7 +130,7 @@ div {
  
         
 
-        <div id="areacode">
+        <div id="AreaView">
 
         </div>
 
@@ -137,8 +140,8 @@ div {
 function interpretarcodigo() {
 
     var areaHTML = document.getElementById('areaHTML');
-    var codexist = document.getElementById('areacode').innerHTML;
-    document.getElementById('areacode').innerHTML =  areaHTML.value;
+    var codexist = document.getElementById('AreaView').innerHTML;
+    document.getElementById('AreaView').innerHTML =  areaHTML.value;
 
     var areaCSS = document.getElementById('areaCSS');
     var CSSexist = document.getElementById('estilo').innerHTML;
