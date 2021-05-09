@@ -1,2 +1,4 @@
 # CodePlay
- Projeto de uma site pra praticar ao vivo desenvolvimento Web básico
+## Projeto de uma site para praticar ao vivo desenvolvimento web básico (HTML e CSS).
+ 
+### Acesse em https://carlosmagno.github.io/codeplay/
