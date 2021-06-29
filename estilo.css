@@ -12,23 +12,25 @@ body {
     align-items: center;
     justify-items: center;
     display:grid; 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas:
     "x x x x"
     "a a b b"
     "y y y y"
     "d d d d";
-    gap :0;
+    row-gap :1vh;
 }
 #AreaView {
     grid-area: d;
     width: 94%;
-    min-height: 48vh;
+    min-height:48vh;
+    min-width: auto;
     height: auto;
     background-color: rgb(255, 255, 255);
     border-radius:10px;
     border: solid rgb(139, 73, 201) 4px;
-    padding-left: 20px;
+    padding: 20px;
+
 }
 
 #titulo {
@@ -39,7 +41,7 @@ body {
     height: 100%;
     font-family:'Courier New', Courier, monospace;
     font-weight: bold;
-    color: rgb(139, 73, 201);
+    color: rgb(220, 198, 240);
 }
 
 textarea {
@@ -59,7 +61,8 @@ textarea {
     width: 90%;
     min-width: auto;
     height: 30vh;
-    margin-right: -10px;
+  
+  
     
 }
 
@@ -71,7 +74,7 @@ textarea {
     width: 90%;
     min-width: auto;
     height: 30vh;
-    margin-left: -10px;
+    
 }
 
 #areaJS {
