@@ -7,10 +7,10 @@ function interpretarcodigo() {
     var areaCSS = document.getElementById('areaCSS');
     var CSSexist = document.getElementById('estilo2');
     CSSexist.innerHTML= areaCSS.value;
-
-   /*
-    var areaJS = document.getElementById('areaJS');
-    var JSexist = document.getElementById('code');
-    document.getElementById('code').innerText = areaJS.value;
-    */
 }
+
+var areaHTML = document.getElementById('areaHTML');
+areaHTML.addEventListener("input",interpretarcodigo);
+
+var areaCSS = document.getElementById('areaCSS');
+areaCSS.addEventListener("input",interpretarcodigo);

@@ -14,10 +14,10 @@ body {
     display:grid; 
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
-    "x x"
-    "a b"
-    "y y"
-    "d d";
+    "x x x x"
+    "a a b b"
+    "y y y y"
+    "d d d d";
     gap :0;
 }
 #AreaView {
@@ -48,7 +48,7 @@ textarea {
     border: solid rgb(139, 73, 201) 4px;
     border-radius:10px;
     padding: 10px;
-    
+    resize: none;
     font-size: large;
     font-family: 'Courier New', Courier, monospace;
 
