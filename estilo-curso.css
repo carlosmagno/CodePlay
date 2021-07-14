@@ -1,0 +1,34 @@
+body{
+    margin:0 auto;
+    padding: 0;
+    width: 50%;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif, 'Times New Roman', Times, serif, Helvetica, sans-serif;
+}
+.tags {
+    color:rgb(6, 86, 151);
+    background-color:rgb(240, 236, 236);
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+
+}
+
+h2 {
+    text-align: left;
+}
+p, li {
+    text-align: justify;
+    line-height: 1.6;
+}
+
+textarea {
+    text-align: justify;
+    padding: 2vw;
+    font-size: 1.3vw;
+    font-family: 'Courier New', Courier, monospace;
+    word-wrap: initial;
+    border: solid 0.2vw;
+    resize: none;
+    scroll-behavior: inherit;
+    
+}
