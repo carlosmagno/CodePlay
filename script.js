@@ -21,7 +21,7 @@ function interpretarcodigo() {
 function recarregarPagina(){
     location.reload()
 }
-if(window.location.href.endsWith("index.html")){
+if(!window.location.href.endsWith("page.html")){
     var areaHTML = document.getElementById('areaHTMLqwerty831809');
     areaHTML.addEventListener("input",interpretarcodigo);
     areaHTML.innerHTML = localStorage.getItem("codeHTML")
