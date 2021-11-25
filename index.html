@@ -4,16 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code Play</title>
+    <meta name="description" content="&lt;CodePlay/&gt; - Pratique HTML e CSS">
+    <title> &lt;CodePlay/&gt;</title>
     <!-- <link rel="stylesheet" href="estilo.css" type="text/css"> -->
     <style id="estilo2qwerty831809">
-        h1{
-            color:blue;
-        }
 
-        header{
-            background-color: brown;
-        }
+        
     </style>
     <link rel="stylesheet" href="estilo.css" type="text/css">
 </head>
@@ -24,20 +20,36 @@
         <!-- <button id ="rtzbuton" onclick="recarregarPagina()">ATUALIZAR VISUALIZAÇÃO div#AreaView</button> -->
        
         <header id="cabecalhoqwerty831809" >
-            <h1  id="tituloqwerty831809">CodePlay - Pratique HTML e CSS</h1>   
+            <h1  id="tituloqwerty831809">&lt;CodePlay/&gt;</h1>
+            <h1 id="NomeProjeto"></h1>
         </header>
         <textarea spellcheck="false" type="text"name="" id="areaHTMLqwerty831809" class="AreaCodeqwerty831809" cols="" rows="" placeholder="Escreva aqui seu código HTML"></textarea>
         <textarea spellcheck="false" type="text"name="" id="areaCSSqwerty831809" class="AreaCodeqwerty831809" cols="" rows="" placeholder="Escreva aqui seu código CSS"></textarea>
-   
-    
-        <!-- <div id="AreaViewqwerty831809">
-  
-        </div> -->
+        <span id="newPage"><a href="page-view" target="_blank" rel="noopener noreferrer">Nova Janela</a></span>
+        <span id="fechaCode" onclick="BtnProjetos()">Projetos</span>
+        <span id="fechaView" onclick="fechaView()">Prévia</span>
+
+        <div id="box">
+           <label for="ListaProjetos"> Projetos </label><br>
+                <select name="" id="ListaProjetos">
+                
+
+                </select>
+                <span id="btOKselectProject" class="bts" onclick="selecionarSite()">OK</span>
+                <br><br>
+           <label for="NovoProjeto"> Novo Projeto </label><br>
+           <input type="text" name="" id="NovoProjeto"><span id="btOKnewProject" onclick="gravarProjeto()" class="bts">OK</span>
+        </div>
+
+        
+
+        <!-- <span id="center"><a href="page.html" target="_blank" rel="noopener noreferrer">Visualizar em outra guia</a></span> -->
+        <iframe id="AreaViewqwerty831809" src="page-view" frameborder="0"></iframe>
+        <footer>&copy; CodePlay 2021</footer>
 
 
     </div>
-    <span>Preview-----<a href="page.html" target="_blank" rel="noopener noreferrer">Visualizar em outra guia</a></span>
-    <iframe id="AreaViewqwerty831809" src="page.html" frameborder="0"></iframe>
+   
 
     <script src="script.js"></script>
 

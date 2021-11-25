@@ -2,70 +2,214 @@
     margin:0;
     padding: 0;
 }
-
-span{
-    display: inline-block;
-    color: white;
-    background-color: black;
-    width: 100vw;
-    text-align: center;
-    padding-bottom: 10px;
-}
 a{
     color: white;
+    text-decoration: none;
 }
-body#corpo {
-    /* background-color: rgb(5, 5, 5); */
-    width: 100%;
-    margin:0;
-    padding: 0;
-}
-iframe{
-    margin:0;
-    padding: 0;
+
+div#box{
+    width: 200px;
+    height: 17vh;
+    display:none;
+    color:white;
+    background-color: rgb(2, 2, 2);
+    position: absolute;
+    top:7.5vh;
+    right: 3vh;
+    border: solid rgb(139, 73, 201) 0.5vh;
+    border-radius:5px;
+    padding: 1vw;
 }
 .grid1 {
-    background-color: rgb(5, 5, 5);
+    background-color: rgb(0, 0, 0);
     margin: auto;
     align-items: center;
     justify-items: center;
     display:grid; 
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* grid-template-rows: 5vh ; */
     grid-template-areas:
-    "x x x x"
+    "r r r r"
     "a a b b"
-    "y y y y"
-    "d d d d";
+    "e e e e"
+    "c c c c"
+    "f f f f";
     row-gap :1vh;
+
 }
-#AreaViewqwerty831809 {
-    grid-area: d;
+
+#ListaProjetos{
+    width: 80%;
+}
+
+#NovoProjeto{
+    width: 78%;
+    margin-right: 4px;
+}
+
+.bts{
+    display: inline-block;
+    color: white;
+    background-color: rgb(139, 73, 201) ;
+    padding: 4px;
+    border-radius: 3px;
+}
+
+span.bts:hover{
+    
+    transform: scale(1.1);
+    cursor: pointer;
+}
+#cabecalhoqwerty831809 {
+    grid-area: r;
+    margin: 0 auto;
+    text-align: center;
     width: 100%;
-    /* height: 48vh; */
-    min-height:48vh;
+    line-height: 5vh;
+    height: 5vh;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+
+    background-color: black;
+    color: rgb(139, 73, 201);
+}
+
+#tituloqwerty831809{
+position: absolute;
+top:0.6vh;
+left: 3vh;
+font-size: 1.5em;
+}
+
+#NomeProjeto{
+    font-size: 1.5em;
+    color: white;
+    /* background-color: chocolate; */
+    vertical-align: text-bottom;
+    line-height: 6vh;
+    height: 5vh;
+}
+
+span#fechaCode{
+    display: block;
+    text-align: center;
+    width: auto;
+    height: 25px;
+    line-height: 25px;
+    color: rgb(255, 255, 255);
+    background-color:rgb(139, 73, 201);
+    padding-left: 8px;
+    padding-right: 8px;
+    /* opacity: 80%; */
+    position: absolute;
+    top:1vh;
+    right: 2vh;
+    border-radius:2px;
+
+}
+
+span#fechaView{
+    display: block;
+    text-align: center;
+    width: auto;
+    height: 25px;
+    line-height: 25px;
+    color: rgb(255, 255, 255);
+    background-color:rgb(139, 73, 201);
+    padding-left: 8px;
+    padding-right: 8px;
+    /* opacity: 80%; */
+    position: absolute;
+    top:1vh;
+    right: 14vh;
+    border-radius:2px;
+}
+span#newPage{
+    display: block;
+    text-align: center;
+    width: auto;
+    height: 25px;
+    line-height: 25px;
+    color: rgb(255, 255, 255);
+    background-color:rgb(139, 73, 201);
+    padding-left: 8px;
+    padding-right: 8px;
+    /* opacity: 80%; */
+    position: absolute;
+    top:1vh;
+    right: 24vh;
+    border-radius:2px;
+}
+span#fechaCode:hover, span#fechaView:hover, span#newPage:hover{
+    /* color: rgb(255, 255, 255);
+    background-color: rgb(236, 6, 6); */
+    /* font-size: 1.4em; */
+    transform: scale(1.1);
+    cursor: pointer;
+
+}
+
+#areaHTMLqwerty831809 {
+    grid-area: a;
+    width: 45.5vw;
     /* min-width: auto; */
-    height: 100%;
+    height: 30vh;
+    margin-right: 0px; 
+}
+
+#areaCSSqwerty831809 {
+    grid-area: b;
+    width: 45.5vw;
+    /* min-width: auto; */
+    height: 30vh;  
+    margin-left: 0px;   
+}
+.AreaCodeqwerty831809 {
+    justify-self: center;
+    align-self: center;
+    border: solid rgb(139, 73, 201) 0.5vh;
+    border-radius:5px;
+    padding: 1vw;
+    resize: none;
+    font-size: large;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+span#center{
+    grid-area:e;
+    display: inline-block;
+    color: white;
+    background-color: rgb(0, 0, 0);
+    width: 90%;
+    line-height: 4vh;
+    height: 4vh;
+    text-align: center;
+    /* padding-bottom: 10px; */
+}
+iframe#AreaViewqwerty831809 {
+    grid-area: c;
+    /* position: absolute; */
+    /* bottom: 5vh; */
+    margin:0;
+    padding: 0;
+    overflow:scroll;
+    width: 97vw;
+    /* min-height:20vh; */
+    /* min-width: auto; */
+    height:51vh;
+    
     background-color: rgb(255, 255, 255);
+    border: solid rgb(139, 73, 201) 0.5vh;
+    border-radius:5px;
     /* border-radius:10px; */
     /* border: solid rgb(139, 73, 201) 4px; */
     /* padding: 20px; */
 
 }
 
-#cabecalhoqwerty831809 {
-    grid-area: x;
-    margin: 0 auto;
-    text-align: center;
-    width: 100%;
-    height: 100%;
-    font-family:'Courier New', Courier, monospace;
-    font-weight: bold;
-    background-color: black;
-    border:none;
-    color: rgb(139, 73, 201);
-}
 
-#tituloqwerty831809{
+
+/* #tituloqwerty831809{
     color:rgb(157, 105, 202);
     margin: 0 auto;
     text-align: center;
@@ -75,51 +219,23 @@ iframe{
     font-weight: bold;
     background-color: black;
     border:none;
-}
+} */
 
-.AreaCodeqwerty831809 {
-    justify-self: center;
-    align-self: center;
-    border: solid rgb(139, 73, 201) 4px;
-    border-radius:10px;
-    padding: 10px;
-    resize: none;
-    font-size: large;
-    font-family: 'Courier New', Courier, monospace;
 
-}
 
-#areaHTMLqwerty831809 {
-    grid-area: a;
-    width: 90%;
-    min-width: auto;
-    height: 30vh;
-  
-  
-    
-}
-
-#descr{
+/* #descr{
     font-size: 15pt;
-}
-#areaCSSqwerty831809 {
-    grid-area: b;
-    width: 90%;
-    min-width: auto;
-    height: 30vh;
+} */
+/* #areaJS {
     
-}
-
-#areaJS {
-    grid-area: c;
     width: 100vh;
     height: 30vh;
-}
+} */
 
-div {
+/* div {
     border-style:none;
-}
-
+} */
+/* 
 #rtzbuton {
     grid-area: y;
     background-color: rgb(139, 73, 201);
@@ -138,5 +254,38 @@ div {
 #rtzbuton:hover {
     background-color: rgb(149, 113, 180);
     border: solid rgb(149, 113, 180) 4px;   
+} */
+
+footer{
+    grid-area: f;
+    background-color: rgb(0, 0, 0);
+    border:none;
+    color: rgb(139, 73, 201);
+    display: block;
+    /* position: absolute;
+    bottom: 0; */
+    height: 6vh;
+    line-height: 6vh;
+    width: 90%;
+    /* border-top:solid 1px black; */
+    text-align: center;
 }
 
+
+@media (max-width: 500px) {
+
+    #cabecalhoqwerty831809 {
+        text-align: left;
+        font-size: 0.55em;
+    }
+
+    iframe#AreaViewqwerty831809 {
+        height:52vh;
+    }
+
+    #NomeProjeto{
+        display: none;
+    }
+    
+  
+  }
