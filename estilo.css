@@ -7,6 +7,14 @@ a{
     text-decoration: none;
 }
 
+img#logo{
+    width: 30px;
+    height: auto;
+    position: absolute;
+    top:0.5vh;
+    left: 2vh;
+    /* font-size: 1.5em; */
+}
 div#box{
     width: 200px;
     height: 17vh;
@@ -29,15 +37,27 @@ div#box{
     grid-template-columns: 1fr 1fr 1fr 1fr;
     /* grid-template-rows: 5vh ; */
     grid-template-areas:
-    "r r r r"
-    "a a b b"
-    "e e e e"
-    "c c c c"
-    "f f f f";
+    "r r r r "
+    "a a b b "
+    "e e e e "
+    "d d c c "
+    "g g g g "
+    "f f f f ";
     row-gap :1vh;
 
 }
 
+section#principal{
+    grid-area: g;
+    margin-top: 4vh;
+    width: 98%;
+    background-color: white;
+    color:black;
+}
+
+main{
+    padding: 10px;
+}
 #ListaProjetos{
     width: 80%;
 }
@@ -77,8 +97,8 @@ span.bts:hover{
 #tituloqwerty831809{
 position: absolute;
 top:0.6vh;
-left: 3vh;
-font-size: 1.5em;
+left: 7vh;
+font-size: 1.4em;
 }
 
 #NomeProjeto{
@@ -124,6 +144,23 @@ span#fechaView{
     right: 14vh;
     border-radius:2px;
 }
+
+span#learn{
+    display: block;
+    text-align: center;
+    width: auto;
+    height: 25px;
+    line-height: 25px;
+    color: rgb(255, 255, 255);
+    background-color:rgb(139, 73, 201);
+    padding-left: 8px;
+    padding-right: 8px;
+    /* opacity: 80%; */
+    position: absolute;
+    top:1vh;
+    right: 38vh;
+    border-radius:2px;
+}
 span#newPage{
     display: block;
     text-align: center;
@@ -151,23 +188,35 @@ span#fechaCode:hover, span#fechaView:hover, span#newPage:hover{
 
 #areaHTMLqwerty831809 {
     grid-area: a;
-    width: 45.5vw;
+    width: 45vw;
     /* min-width: auto; */
     height: 30vh;
-    margin-right: 0px; 
+    /* margin-right: 0px;  */
 }
 
 #areaCSSqwerty831809 {
     grid-area: b;
-    width: 45.5vw;
+    width: 45vw;
     /* min-width: auto; */
     height: 30vh;  
-    margin-left: 0px;   
+    /* margin-left: 0px;    */
+}
+
+#areaJSqwerty831809 {
+    grid-area: d;
+    width: 45vw;
+    /* color: rgb(8, 250, 238); */
+    /* min-width: auto; */
+    /* height: 30vh; */
+    height:48vh;
+    /* margin-left: 0px;    */
 }
 .AreaCodeqwerty831809 {
     justify-self: center;
     align-self: center;
-    border: solid rgb(139, 73, 201) 0.5vh;
+    border: solid rgb(142, 122, 161) 0.5vh;
+    background-color: rgb(54, 54, 56);
+    color: rgb(253, 253, 253);
     border-radius:5px;
     padding: 1vw;
     resize: none;
@@ -193,7 +242,7 @@ iframe#AreaViewqwerty831809 {
     margin:0;
     padding: 0;
     overflow:scroll;
-    width: 97vw;
+    width: 48vw;
     /* min-height:20vh; */
     /* min-width: auto; */
     height:51vh;

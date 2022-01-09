@@ -3,6 +3,7 @@ const areaHTML = document.getElementById('areaHTMLqwerty831809');
 const codexist = document.getElementById('AreaViewqwerty831809');
 const areaCSS = document.getElementById('areaCSSqwerty831809');
 const CSSexist = document.getElementById('estilo2qwerty831809');
+const areaJS = document.getElementById('areaJSqwerty831809');
 
 const ListaProjetos = document.getElementById("ListaProjetos");
 const btOKselectProject = document.getElementById("btOKselectProject");
@@ -13,42 +14,34 @@ const NomeProjeto = document.getElementById("NomeProjeto");
 
 var site;
 var objetoProjetos = {};
-//objetoProjetos = localStorage //.getItem("Projetos");
 var nomeProjeto;
-//var arrayProjetos = [];
+
 
 function gravarProjeto(){
     nomeProjeto = NovoProjeto.value
-    //console.log(nomeProjeto)
-    //console.log(typeof(nomeProjeto))
-    var arrayProjetos = []; //"projeto1", "projeto2"
+  
+    var arrayProjetos = []; 
     //Se já existe o array com os nomes dos projetos, 
     if(localStorage.getItem("Projetos")){
         arrayProjetos= JSON.parse(localStorage.getItem("Projetos")) //recupera ele
-        //arrayProjetos= localStorage.getItem("Projetos")//recupera ele
-        //console.log(typeof(arrayProjetos))
-        //arrayProjetos= JSON.parse(arrayProjetos) //recupera ele
         ListaProjetos.innerHTML=""
         arrayProjetos.push(nomeProjeto) //adiciona o novo elemento no array
-        //console.log("Array: ", arrayProjetos)
         localStorage.setItem('Projetos', JSON.stringify(arrayProjetos))
         arrayProjetos.forEach(listarProjetos)
        setSite()
     } else {
         arrayProjetos.push(nomeProjeto) //adiciona elemento no array
         localStorage.setItem("Projetos", JSON.stringify(arrayProjetos)) // e grava no localstorage
-        //console.log("Nome de Projeto adicionado: " , nomeProjeto)
         setSite()
     }
-    //localStorage
 }
 
 var projetoSelecionado;
+
 function selecionarSite(){
 
     areaCSS.value=""
     areaHTML.value=""
-    
     projetoSelecionado = ListaProjetos.value
     NomeProjeto.innerText = projetoSelecionado
     localStorage.setItem("Projeto Atual", NomeProjeto.innerText)
@@ -59,23 +52,18 @@ function selecionarSite(){
     }else{
         console.log("Este projeto ainda não tem código!")
         codexist.src += '';
-    }
-
-    
-    
+    }   
 }
-
-//window.onload=
 
 function listarProjetosAoAbrir(){
     var arrayProjetos = [];
-    if(localStorage.getItem("Projetos")){}
+    if(localStorage.getItem("Projetos")){
         arrayProjetos= JSON.parse(localStorage.getItem("Projetos"))
         arrayProjetos.forEach(listarProjetos)  
+    }
 }
 
 function listarProjetos(iten, index){
-    //console.log(iten, index)
     var novo = document.createElement("option")
     novo.innerText= iten
     if(ListaProjetos){
@@ -91,23 +79,17 @@ function listarProjetos(iten, index){
 //    });
 
 
+
 function setSite(){
-
-    console.log(1)
-
     if(!NomeProjeto.innerText==""){
         site={
             nome:NomeProjeto.innerText,
             html:areaHTML.value,
             css: areaCSS.value,
-            js:"function alerta(){alert('alerta')}"    
+            js:areaJS.value // "window.onload = alert('teste de alerta')"    
         }
-    
-        //arrayProjetos=
-    
         // Transformar o objeto em string e salvar em localStorage
         localStorage.setItem(site.nome, JSON.stringify(site));
-        
         getSite();
         codexist.src += '';
     }
@@ -126,62 +108,20 @@ function BtnProjetos(){
         console.log("tett")
         box.style.display="block"
     }
-}
+};
 
 var siteString;
 var siteObj;
+
 function getSite(){
     var projetoAtual = localStorage.getItem("Projeto Atual")
-    //console.log("testandooooo")
-    // Receber a string
 
     if(localStorage.getItem(projetoAtual)){
         siteObj = JSON.parse(localStorage.getItem(projetoAtual)) ;
-        // transformar em objeto novamente
-        //siteObj = JSON.parse(siteString);
-        //console.log(siteObj.nome);
-        //console.log(siteObj.html);
-        //console.log(siteObj.css);
         areaHTML.value = siteObj.html;
-        areaCSS.value = siteObj.css
-    
+        areaCSS.value = siteObj.css;
+        areaJS.value = siteObj.js
     }
-
-    // if(!window.location.href.endsWith("page.html")){
-    //     //localStorage.setItem("Projeto Atual", projetoSelecionado)
-    //     //var projetoAtual = localStorage.getItem("Projeto Atual")
-    //     siteObj = JSON.parse(localStorage.getItem(projetoAtual)) ;
-    //     //const corpopage = document.getElementById("corpopage")
-    //     //const estilo = document.getElementById("estilo")
-    //     corpopage.innerHTML = siteObj.html; //localStorage.getItem("codeHTML")
-    //     estilo.innerHTML = siteObj.css; //localStorage.getItem("codeCSS")
-    //     console.log("pagina page carregada")
-    // }
-    //areaHTML.innerHTML =  siteObj.html;
-    //interpretarcodigo2()
-}
-
-function interpretarcodigo2() {
-
-    areaHTML.innerHTML =  siteObj.html;
-    //localStorage.setItem("codeHTML",areaHTML.value)
-    //localStorage.setItem("codeHTML",areaHTML.value)
-    areaCSS.innerHTML= siteObj.css;
-    //localStorage.setItem("codeCSS", areaCSS.value)
-    //localStorage.setItem("codeCSS", areaCSS.value)
-    
-    //codexist.src += '';
-}
-
-function interpretarcodigo() {
-
-    //codexist.innerHTML =  areaHTML.value;
-    localStorage.setItem("codeHTML",areaHTML.value)
-
-    //CSSexist.innerHTML= areaCSS.value;
-    localStorage.setItem("codeCSS", areaCSS.value)
-    
-    codexist.src += '';
 }
 
 // function recarregarPagina(){
@@ -191,39 +131,41 @@ function interpretarcodigo() {
 
 var corpopage;
 var estilo;
+var codeJS;
+
 window.onload = function (){
     listarProjetosAoAbrir()
     if(window.location.href.endsWith("page-view")||window.location.href.endsWith("page-view/")){
-        //localStorage.setItem("Projeto Atual", projetoSelecionado)
         var projetoAtual = localStorage.getItem("Projeto Atual")
         siteObj = JSON.parse(localStorage.getItem(projetoAtual)) ;
         corpopage = document.getElementById("corpopage")
         estilo = document.getElementById("estilo")
-
+        codeJS = document.getElementById('codejs')
+        
         if(siteObj){
-            corpopage.innerHTML = siteObj.html; //localStorage.getItem("codeHTML")
-            estilo.innerHTML = siteObj.css; //localStorage.getItem("codeCSS")
-            
+            corpopage.innerHTML = siteObj.html;
+            estilo.innerHTML = siteObj.css; 
+            var scrp = document.createElement('script')
+            scrp.text = siteObj.js
+            document.body.appendChild(scrp)
         }
-
-        //console.log("pagina page carregada")
     }
 
-    if(!window.location.href.endsWith("page-view")){
-            //NomeProjeto.innerText = localStorage.getItem("Projeto Atual")
-            //console.log("pagina index carregada")
+    if(!window.location.href.endsWith("page-view")||(!window.location.href.endsWith("page-view/"))){
+        if(areaHTML){
             areaHTML.addEventListener("input",setSite);
-            
-            //areaHTML.innerHTML = localStorage.getItem("codeHTML")
+        }
+        if(areaCSS){
             areaCSS.addEventListener("input",setSite);
-            //areaCSS.innerHTML = localStorage.getItem("codeCSS")
+        }
+        if(NomeProjeto){
             NomeProjeto.innerText = localStorage.getItem("Projeto Atual")
             getSite()
-        
+        }
+   
     }
 
 }
-
 
 function fechaView(){
 
@@ -248,8 +190,6 @@ function fechaView(){
         areaCSS.style.height="30vh";
         fechaView.style.backgroundColor="rgb(139, 73, 201)";
         fechaView.style.textDecoration = "none";
-        
-
-    }
+        }
 
 }
