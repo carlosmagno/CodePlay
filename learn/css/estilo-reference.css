@@ -2,7 +2,7 @@ body{
     margin:0 auto;
     padding: 0;
     width: 50%;
-    text-align: center;
+    /* text-align: center; */
     font-family: Verdana, Geneva, Tahoma, sans-serif, 'Times New Roman', Times, serif, Helvetica, sans-serif;
     
 }
@@ -14,35 +14,39 @@ body{
 
 }
 
+span.red{
+    color:red
+}
 h2, h3 {
     text-align: left;
 }
 p, li {
-    text-align: justify;
+    /* text-align: justify; */
 
     line-height: 1.6;
 }
-p {
-    text-indent: 2vw;
-}
+/* p {
+     text-indent: 2vw; 
+} */
 textarea.textarea-reference {
     width: 92%;
-    height: 30vh;
-    text-align: justify;
+    height:25vh;
+    background-color: rgb(240, 238, 236);
+    /* text-align: justify; */
     padding: 2vw;
     font-size: 1.3vw;
     font-family: 'Courier New', Courier, monospace;
     word-wrap: initial;
     border: solid 0.2vw;
     resize: none;
-    scroll-behavior: inherit;
+    /* scroll-behavior: inherit; */
     
 }
 
 div.div-view-reference{
     border: solid 0.2vw;
     width: 100%;
-    height: 30vh;
+    height: auto;
     color: black;
 }
 
