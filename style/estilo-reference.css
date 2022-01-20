@@ -87,7 +87,7 @@ a{
 a:hover{
     color: blue;
 }
-ul{
+section#menu_interno ul{
     list-style: none;
 }
 
