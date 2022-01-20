@@ -65,10 +65,24 @@ window.onload = function(){
     view4.innerHTML = a
 
     str=
-    '<p>O elemento "br" insere uma quebra de linha (do inglês "break row"), por exemplo:<br>Esta frase está em uma nova linha. </p>\n\n'
+    '<ol>Lista ordenada\n <li>Opção 1</li>\n <li>Opção 2</li>\n</ol>\n\n'+
+    '<ul>Lista não ordenada\n <li>Opção 1</li>\n <li>Opção 2</li>\n</ul>\n\n'+
+    '<p><b>Exemplo de tabela simples com cabeçalho</b></p>\n\n'+
+    '<table>\n <tr>\n  <th>Nome</th>\n  <th>Função</th>\n </tr>\n <tr>\n  <td>Carlos</td>\n  <td>Aluno</td>\n </tr>\n <tr>\n  <td>João</td>\n  <td>Professor</td>\n </tr>\n</table>\n\n'+
+    '<p><b>Exemplo de tabela com estrutura mais completa e estilo inline</b></p>\n\n'+
+    '<table style="border:solid 1px blue">\n <thead style="background-color:black;color:white">\n  <tr>\n   <th>Iten</th>\n   <th>Valor</th>\n  </tr>\n </thead>\n <tbody style="background-color:gray;color:white">\n  <tr>\n   <td>Feijão</td>\n   <td>R$10,00</td>\n  </tr>\n  <tr>\n   <td>Arroz</td>\n   <td>R$ 5,00</td>\n  </tr>\n </tbody>\n <tfoot style="background-color:blue;color:white">\n  <tr>\n   <th>Total</th>\n   <td>R$15,00</td>\n  </tr>\n </tfoot>\n</table>'
     txt5.value = str
     a = txt5.value.replace(/\\n/g, '<br>')
     view5.innerHTML = a
+
+    str=
+    '<code>var a = "variavel;"</code><br><br>\n\n'+
+    '<p><b>Link simples e com imagem</b></p>\n\n'+
+    '<a href="https://google.com">Google</a><br><br>\n\n'+
+    '<a href="https://masterplanilhas.blogspot.com"><img src="../../../arquives/images/logo-master-planilhas.png"></img></a>'
+    txt6.value = str
+    a = txt6.value.replace(/\\n/g, '<br>')
+    view6.innerHTML = a
 
     // const str =  '<html>\n  <head>\n    <title>Iniciando em HTML/title>\n  </head>\n  <body>\n    <p>Olá mundo! Eu sou um parágrafo.</p>\n  <!--Este é um comentário em HTML. Usando essas tags de abertura e fechamento, tudo o que escrever entre elas será ignorado pelo navegador ao renderizar a página.-->\n  </body>\n</html>';
     // txt1.value= str
