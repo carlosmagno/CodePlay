@@ -172,14 +172,28 @@ function fechaView(){
     let areaView = document.getElementById('AreaViewqwerty831809')
     let areaHTML = document.getElementById('areaHTMLqwerty831809')
     let areaCSS = document.getElementById('areaCSSqwerty831809')
+    //et areajS = document.getElementById('areajSqwerty831809')
     let fechaView = document.getElementById('fechaView')
+    let grid1 = document.getElementById('grid1')
 
     if(!(areaView.style.display=="none")){
         console.log("pronto")
         areaView.style.display="none";
         localStorage.setItem("preview", "off")
-        areaHTML.style.height="82vh";
-        areaCSS.style.height="82vh";
+        grid1.style.gridTemplateAreas=
+        "r r r r "
+        "a a b b "
+        "d d b b "
+        "g g g g "
+        "f f f f ";
+        // areaHTML.style.height="82vh";
+        areaHTML.style.position="absolute";
+        areaHTML.style.top="7vh";
+        areaHTML.style.left="2vh";
+        areaCSS.style.height="84vh";
+        areaJS.style.position="absolute";
+        areaJS.style.left="2vh";
+        areaJS.style.top="43vh";
         fechaView.style.backgroundColor="red";
         fechaView.style.textDecoration = "line-through";
         

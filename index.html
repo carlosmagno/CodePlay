@@ -30,7 +30,7 @@
 </head>
 <body id="corpo">
     
-    <div class="grid1">
+    <div class="grid1" id="grid1">
         
         <!-- <button id ="rtzbuton" onclick="recarregarPagina()">ATUALIZAR VISUALIZAÇÃO div#AreaView</button> -->
        
@@ -38,6 +38,15 @@
             <img src="icone.png" alt="" srcset="" id="logo">
             <h1  id="tituloqwerty831809">&lt;DevPlay/&gt;</h1>
             <h1 id="NomeProjeto"></h1>
+
+            <section id="buttons">
+                <span id="learn"><a href="./learn/html/conteudo_textual/" target="_blank" rel="noopener noreferrer">Aprender</a></span>
+                <span id="newPage"><a href="page-view" target="_blank" rel="noopener noreferrer">Nova Janela</a></span>
+                <span id="fechaView" onclick="fechaView()">Prévia</span>
+                <span id="fechaCode" onclick="BtnProjetos()">Projetos</span>
+                
+            </section>
+
         </header>
         <textarea spellcheck="false" type="text"name="" id="areaHTMLqwerty831809" class="AreaCodeqwerty831809" cols="" rows="" placeholder="Escreva aqui seu código HTML"></textarea>
 
@@ -45,11 +54,8 @@
 
         <textarea spellcheck="false" type="text"name="" id="areaJSqwerty831809" class="AreaCodeqwerty831809" cols="" rows="" placeholder="Escreva aqui seu código JS"></textarea>
         
-        <span id="learn"><a href="./learn/html/conteudo_textual/" target="_blank" rel="noopener noreferrer">Aprender</a></span>
-        <span id="newPage"><a href="page-view" target="_blank" rel="noopener noreferrer">Nova Janela</a></span>
-        <span id="fechaCode" onclick="BtnProjetos()">Projetos</span>
-        <span id="fechaView" onclick="fechaView()">Prévia</span>
 
+        
         <div id="box">
            <label for="ListaProjetos"> Projetos </label><br>
                 <select name="" id="ListaProjetos">
@@ -69,10 +75,28 @@
         <section id="principal">
             <main>
                 <h1>Aprenda Desenvolvimento WEB!</h1>
-             <ol>
+                <h2>O que é HTML?</h2>
+                <p><strong>HTML</strong> é a sigla de <en>HyperText Markup Language</en>, em português "Linguagem de Marcação de Hipertexto". Dito de modo simples é a linguagem responsável pelo conteúdo das páginas web. Faz parte das três principais tecnologias responsáveis por tudo o que vemos na internet. São elas com suas respectivas responsabilidades:
+                </p>
+                <ol>
+                    <li>HTML - conteúdo (como este texto, imagens etc...)</li>
+                    <li>CSS - aparência/ apresentação</li>
+                    <li>JavaScript - funcionalidade/ interação</li>
+                </ol>
+                <p>Essas linguagens, assim como muitas outras, são interpretadas pelos navegadores de internet como o Internet Explorer, Edge, Google Chrome e outros e possibilitam a grande facilidade de comunicação e compartilhamento de conteúdo na rede mundial. Mas o nosso objetivo neste curso é ensinar para você HTML 5. O número "5" se refere a versão atual desta linguagem, no momento da produção deste curso obviamente.
+                </p>
+                <p>Algo muito importante a se mencionar já agora é que como o próprio nome da linguagem diz, ela é uma linguagem de "marcação". Portanto não é correto dizer que você "programa" em HTML. Alguém pode programar em JavaScript por exemplo, mas não em HTML, embora as duas tecnologias possam geralmente estar relacionadas (no desenvolvimento front-end principalmente). Então para não ser "mal visto" por programadores ou até um possível contratante, evite esta "gafe". Você pode dizer que está aprendendo a desenvolver em HTML, já que o HTML é a linguagem mais básica para o desenvolvimento WEB.
+                </p>
+                <p>Você escreve HTML usando "elementos". Elementos são palavras específicas reservadas envolvidas em "tags" "&lt;" e "/&gt;". Esses elementos definem o tipo de conteúdo que será incluído dentro deles. Geralmente os elementos tem tags de abertura e fechamento. As tags de fechamento tem a barra "/" antes do nome do elemento. Por exemplo para escrever um parágrafo precisaríamos colocar nosso texto entre as tags <p> e </p>
+            </p> 
+                <p>HTML é uma linguagem "case insensitive", ou seja é insensível a caixa das letras. Então tanto faz escrever os nomes dos elementos e letras maiúsculas ou minúsculas ou uma combinação de ambos. O navegador vai interpretar do mesmo jeito.
+                </p>
+                <h2>Quer começar a aprender HTML?</h2>
+                <p>Consulte a referência...</p>
+             <!-- <ol>
                  <li>Javasript</li>
              </ol>
-                <h2>As 3 linguagens base do desenvolvimento WEB</h2>
+                <h2>As 3 linguagens base do desenvolvimento WEB</h2> -->
             </main>
         </section>
         

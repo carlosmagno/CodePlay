@@ -29,7 +29,7 @@ div#box{
     padding: 1vw;
 }
 .grid1 {
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(8, 8, 8);
     margin: auto;
     align-items: center;
     justify-items: center;
@@ -39,8 +39,8 @@ div#box{
     grid-template-areas:
     "r r r r "
     "a a b b "
-    "e e e e "
-    "d d c c "
+     /* "e e e e " */
+    "d d c c"
     "g g g g "
     "f f f f ";
     row-gap :1vh;
@@ -85,23 +85,26 @@ span.bts:hover{
     margin: 0 auto;
     text-align: center;
     width: 100%;
-    line-height: 5vh;
-    height: 5vh;
+    line-height: 6vh;
+    height: 6vh;
     font-family:'Courier New', Courier, monospace;
     font-weight: bold;
 
     background-color: black;
-    color: rgb(139, 73, 201);
+    color: rgb(165, 116, 211);
 }
 
 #tituloqwerty831809{
-position: absolute;
+    display: inline-flex;
+ position: absolute;
 top:0.6vh;
 left: 7vh;
 font-size: 1.4em;
 }
 
 #NomeProjeto{
+    display: inline-flex;
+    min-width:50%;
     font-size: 1.5em;
     color: white;
     /* background-color: chocolate; */
@@ -110,8 +113,21 @@ font-size: 1.4em;
     height: 5vh;
 }
 
+section#buttons{
+   min-width: 35%; 
+    display: inline-flex;
+    position: absolute;
+    top:1vh;
+    right: 2vh;
+    /* background-color: burlywood; */
+    align-self: flex-end;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
 span#fechaCode{
-    display: block;
+    /* display: block; */
     text-align: center;
     width: auto;
     height: 25px;
@@ -121,15 +137,15 @@ span#fechaCode{
     padding-left: 8px;
     padding-right: 8px;
     /* opacity: 80%; */
-    position: absolute;
+    /* position: absolute;
     top:1vh;
-    right: 2vh;
+    right: 2vh; */
     border-radius:2px;
 
 }
 
 span#fechaView{
-    display: block;
+    /* display: block; */
     text-align: center;
     width: auto;
     height: 25px;
@@ -139,14 +155,14 @@ span#fechaView{
     padding-left: 8px;
     padding-right: 8px;
     /* opacity: 80%; */
-    position: absolute;
+    /* position: absolute;
     top:1vh;
-    right: 14vh;
+    right: 14vh; */
     border-radius:2px;
 }
 
 span#learn{
-    display: block;
+    /* display: block; */
     text-align: center;
     width: auto;
     height: 25px;
@@ -156,13 +172,13 @@ span#learn{
     padding-left: 8px;
     padding-right: 8px;
     /* opacity: 80%; */
-    position: absolute;
+    /* position: absolute;
     top:1vh;
-    right: 38vh;
+    right: 38vh; */
     border-radius:2px;
 }
 span#newPage{
-    display: block;
+    /* display: block; */
     text-align: center;
     width: auto;
     height: 25px;
@@ -172,16 +188,18 @@ span#newPage{
     padding-left: 8px;
     padding-right: 8px;
     /* opacity: 80%; */
-    position: absolute;
+    /* position: absolute;
     top:1vh;
-    right: 24vh;
+    right: 24vh; */
     border-radius:2px;
 }
-span#fechaCode:hover, span#fechaView:hover, span#newPage:hover{
+span#fechaCode:hover, span#fechaView:hover, span#newPage:hover, span#learn:hover{
     /* color: rgb(255, 255, 255);
     background-color: rgb(236, 6, 6); */
     /* font-size: 1.4em; */
-    transform: scale(1.1);
+    /* transform: scale(1.1); */
+    /* color: rgb(139, 73, 201);
+    background-color: rgb(255, 255, 255); */
     cursor: pointer;
 
 }
@@ -224,7 +242,7 @@ span#fechaCode:hover, span#fechaView:hover, span#newPage:hover{
     font-family: 'Courier New', Courier, monospace;
 
 }
-span#center{
+/* span#center{
     grid-area:e;
     display: inline-block;
     color: white;
@@ -233,8 +251,9 @@ span#center{
     line-height: 4vh;
     height: 4vh;
     text-align: center;
-    /* padding-bottom: 10px; */
-}
+    padding-bottom: 10px;
+}  */
+
 iframe#AreaViewqwerty831809 {
     grid-area: c;
     /* position: absolute; */
@@ -242,10 +261,10 @@ iframe#AreaViewqwerty831809 {
     margin:0;
     padding: 0;
     overflow:scroll;
-    width: 48vw;
+    width: 47vw;
     /* min-height:20vh; */
     /* min-width: auto; */
-    height:51vh;
+    height:52vh;
     
     background-color: rgb(255, 255, 255);
     border: solid rgb(139, 73, 201) 0.5vh;
@@ -336,5 +355,21 @@ footer{
         display: none;
     }
     
+    h1#tituloqwerty831809{
+    display: none;
+    }
   
+    section#buttons{
+       width: 80%; 
+       font-size: 1.2em;
+         /* display: inline-flex;
+         position: absolute;
+         top:1vh;
+         right: 2vh; */
+         /* background-color: burlywood; */
+         /* align-self: flex-end;
+         align-items: center;
+         justify-content: space-between;
+      */
+     }
   }
