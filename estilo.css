@@ -125,14 +125,16 @@ font-size: 1.4em;
 
 #NomeProjeto{
     display: inline-flex;
-    min-width:50%;
+    maring-top: 0.5vh;
+    min-width:40%;
     font-size: 1.5em;
     color: white;
     background-color: gray;
     border-radius:4px;
     vertical-align: text-bottom;
-    line-height: 6vh;
-    height: 5vh;
+    padding:5px
+/*     line-height: 6vh;
+    height: 5vh; */
 }
 
 section#buttons{
