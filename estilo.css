@@ -118,8 +118,8 @@ span.bts:hover{
 #tituloqwerty831809{
     display: inline-flex;
  position: absolute;
-top:0.6vh;
-left: 7vh;
+top:0.5vh;
+left: 12vh;
 font-size: 1.4em;
 }
 
@@ -128,7 +128,8 @@ font-size: 1.4em;
     min-width:50%;
     font-size: 1.5em;
     color: white;
-    /* background-color: chocolate; */
+    background-color: gray;
+    border-radius:4px;
     vertical-align: text-bottom;
     line-height: 6vh;
     height: 5vh;
