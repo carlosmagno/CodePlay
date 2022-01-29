@@ -192,7 +192,7 @@ function fechaView(){
         // areaHTML.style.top="7vh";
         // areaHTML.style.left="2vh";
         //areaCSS.style.height="85vh";
-        if(btnHTML.style.display="block"){
+        if(btnHTML.style.display=="block"){
             divHTML.style.height="92.5vh";
             divCSS.style.height="92.5vh";
             divJS.style.height="92.5vh";
@@ -212,7 +212,7 @@ function fechaView(){
         localStorage.setItem("preview", "on")
         // areaHTML.style.height="30vh";
 
-        if(btnHTML.style.display="block"){
+        if(btnHTML.style.display=="none"){
             divHTML.style.height="45vh";
             divCSS.style.height="45vh";
             divJS.style.height="45vh";

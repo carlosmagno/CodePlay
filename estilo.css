@@ -1,6 +1,7 @@
 * {
     margin:0;
     padding: 0;
+    /* background-color: BLACK; */
 }
 a{
     color: white;
@@ -8,20 +9,20 @@ a{
 }
 
 span#menuIco{
-    width: 30px;
+    width: 2%;
     height: auto;
-    position: absolute;
+    /* position: absolute;
     top:0;
-    left: 0.5vh;
+    left: 0.5vh; */
     font-size: 2em;
 /*     display: none; */
 }
 img#logo{
     width: 5vh;
     height:5vh;
-    position: absolute;
+    /* position: absolute;
     top:0.5vh;
-    left: 6vh;
+    left: 6vh; */
     /* font-size: 1.5em; */
 }
 
@@ -90,12 +91,14 @@ span#codeselectHTML, span#codeselectCSS, span#codeselectJS{
     cursor: pointer; 
 } */
 #cabecalhoqwerty831809 {
-    grid-area: r;
+    /* grid-area: r; */
     margin: 0 auto;
+    /* margin-top: 1vh; */
+    display: flex;
     text-align: center;
     width: 100%;
-    line-height: 6vh;
-    height: 6vh;
+    /* line-height: 5vh;
+    height: 6vh; */
     font-family:'Courier New', Courier, monospace;
     font-weight: bold;
 
@@ -104,37 +107,46 @@ span#codeselectHTML, span#codeselectCSS, span#codeselectJS{
 }
 
 #tituloqwerty831809{
-    display: inline-flex;
- position: absolute;
+    /* display: inline-flex; */
+ /* position: absolute;
 top:0.5vh;
-left: 12vh;
+left: 12vh; */
+margin-top: 1vh; 
+width: 15%;
 font-size: 1.4em;
 }
 
 #NomeProjeto{
-    display: inline-flex;
-    margin-top: 0.5vh;
-    min-width:40%;
+    /* display: inline-flex; */
+    margin-top: 0.5vh; 
+    width:50%;
     font-size: 1.5em;
     color: white;
     background-color: gray;
     border-radius:4px;
     vertical-align: text-bottom;
     padding:0 10px;
-    line-height: 5vh;
-    height: 5vh;
+    line-height: 4vh;
+    height: 4vh;
+    /* margin-right: 5%; */
 }
 
 section#buttons{
    /* min-width: 10%;  */
+   /* background-color: blue; */
+   margin-top: 0.5vh;
+   margin-right: 0.5vh; 
     display: inline-flex;
-    position: absolute;
+    /* position: absolute;
     top:1vh;
-    right: 1vh;
+    right: 1vh; */
     /* background-color: burlywood; */
-    align-self: flex-end;
+    align-self: stretch;
     align-items: center;
-    justify-content: space-around;
+    justify-content: end;
+    line-height: 4vh;
+    height: 4vh;
+    width: 30%;
 
 }
 
@@ -143,8 +155,8 @@ span#fechaCode{
     margin-left:2px;
     text-align: center;
     width: auto;
-    height: 25px;
-    line-height: 25px;
+    /* height: 25px;
+    line-height: 25px; */
     color: rgb(255, 255, 255);
     background-color:rgb(139, 73, 201);
     padding-left: 8px;
@@ -162,8 +174,8 @@ span#fechaView{
     margin-left:2px;
     text-align: center;
     width: auto;
-    height: 25px;
-    line-height: 25px;
+    /* height: 25px;
+    line-height: 25px; */
     color: rgb(255, 255, 255);
     background-color:rgb(139, 73, 201);
     padding-left: 8px;
@@ -180,8 +192,8 @@ span#learn{
     margin-left:2px;
     text-align: center;
     width: auto;
-    height: 25px;
-    line-height: 25px;
+    /* height: 25px;
+    line-height: 25px; */
     color: rgb(255, 255, 255);
     background-color:rgb(139, 73, 201);
     padding-left: 8px;
@@ -197,8 +209,8 @@ span#newPage{
     margin-left:2px;
     text-align: center;
     width: auto;
-    height: 25px;
-    line-height: 25px;
+    /* height: 25px;
+    line-height: 25px; */
     color: rgb(255, 255, 255);
     background-color:rgb(139, 73, 201);
     padding-left: 8px;
