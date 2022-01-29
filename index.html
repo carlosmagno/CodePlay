@@ -30,43 +30,44 @@
 </head>
 <body id="corpo">
     
+    <header id="cabecalhoqwerty831809" >
+        <span id="menuIco"> ≡</span>   <img src="icone.png" alt="" srcset="" id="logo">
+        <h1  id="tituloqwerty831809">devPlay.app</h1>
+        <h1 id="NomeProjeto"></h1>
+
+        <section id="buttons">
+            <span id="learn"><a href="./learn/html/conteudo_textual/" target="_blank" rel="noopener noreferrer">Aprender</a></span>
+            <span id="newPage"><a href="page-view" target="_blank" rel="noopener noreferrer">Nova Janela</a></span>
+            <span id="fechaView" onclick="fechaView()">Prévia</span>
+            <span id="fechaCode" onclick="BtnProjetos()">Projetos</span>
+
+            <span id="codeselectHTML" onclick="viewHTML()">HTML</span>
+            <span id="codeselectCSS" onclick="viewCSS()">CSS</span>
+            <span id="codeselectJS" onclick="viewJS()">JS</span>
+            
+        </section>
+
+    </header>
     <div class="grid1" id="grid1">
         
         <!-- <button id ="rtzbuton" onclick="recarregarPagina()">ATUALIZAR VISUALIZAÇÃO div#AreaView</button> -->
        
-        <header id="cabecalhoqwerty831809" >
-            <span id="menuIco"> ≡</span>   <img src="icone.png" alt="" srcset="" id="logo">
-            <h1  id="tituloqwerty831809">devPlay.app</h1>
-            <h1 id="NomeProjeto"></h1>
 
-            <section id="buttons">
-                <span id="learn"><a href="./learn/html/conteudo_textual/" target="_blank" rel="noopener noreferrer">Aprender</a></span>
-                <span id="newPage"><a href="page-view" target="_blank" rel="noopener noreferrer">Nova Janela</a></span>
-                <span id="fechaView" onclick="fechaView()">Prévia</span>
-                <span id="fechaCode" onclick="BtnProjetos()">Projetos</span>
-
-                <span id="codeselectHTML" onclick="viewHTML()">HTML</span>
-                <span id="codeselectCSS" onclick="viewCSS()">CSS</span>
-                <span id="codeselectJS" onclick="viewJS()">JS</span>
-                
-            </section>
-
-        </header>
-        <div id="containerfatherHTML">
-            <div id="sonHTML">
-            <textarea spellcheck="false" type="text"name="" id="areaHTMLqwerty831809" class="AreaCodeqwerty831809" cols="" rows="" placeholder="Escreva aqui seu código HTML"></textarea>
+        <div id="containerfatherHTML" class="AreaCodeqwerty831809" >
+            <div id="sonHTML">HTML</div>
+            <textarea spellcheck="false" type="text"name="" id="areaHTMLqwerty831809" class="textCodeqwerty831809" cols="" rows="" placeholder="Escreva aqui seu código HTML"></textarea>
         </div>
             
-        <div id="containerfatherCSS">
-            <div id="sonCSS"> 
-            <textarea spellcheck="false" type="text"name="" id="areaCSSqwerty831809" class="AreaCodeqwerty831809" cols="" rows="" placeholder="Escreva aqui seu código CSS"></textarea>
+        <div id="containerfatherCSS" class="AreaCodeqwerty831809" >
+            <div id="sonCSS">CSS</div>
+            <textarea spellcheck="false" type="text"name="" id="areaCSSqwerty831809" class="textCodeqwerty831809" cols="" rows="" placeholder="Escreva aqui seu código CSS"></textarea>
         </div>
             
-        <div id="containerfatherJS">
-            <div id="sonJS"> 
-             <textarea spellcheck="false" type="text"name="" id="areaJSqwerty831809" class="AreaCodeqwerty831809" cols="" rows="" placeholder="Escreva aqui seu código JS"></textarea>
+        <div id="containerfatherJS"class="AreaCodeqwerty831809" >
+            <div id="sonJS">JS</div>
+             <textarea spellcheck="false" type="text"name="" id="areaJSqwerty831809" class="textCodeqwerty831809" cols="" rows="" placeholder="Escreva aqui seu código JS"></textarea>
         </div>
- 
+        <iframe id="AreaViewqwerty831809" src="page-view" frameborder="0"></iframe>
         <!-- Box a ser exibido quando clicar no botão projetos. Quando clicar novamente no botão box some -->
         <div id="box">
            <label for="ListaProjetos"> Projetos </label><br>
@@ -91,8 +92,8 @@
         
 
         <!-- <span id="center"><a href="page.html" target="_blank" rel="noopener noreferrer">Visualizar em outra guia</a></span> -->
-        <iframe id="AreaViewqwerty831809" src="page-view" frameborder="0"></iframe>
-        <section id="principal">
+        
+        <!-- <section id="principal">
             <main>
                 <h1>Aprenda Desenvolvimento WEB!</h1>
                 <h2>O que é HTML?</h2>
@@ -113,18 +114,18 @@
                 </p>
                 <h2>Quer começar a aprender HTML?</h2>
                 <p>Consulte a referência...</p>
-             <!-- <ol>
+            <ol>
                  <li>Javasript</li>
              </ol>
-                <h2>As 3 linguagens base do desenvolvimento WEB</h2> -->
+                <h2>As 3 linguagens base do desenvolvimento WEB</h2> 
             </main>
-        </section>
-        
-
-        <footer>&copy;2021. DevPlay </footer>
-
+        </section> -->
+    
 
     </div>
+
+    <footer>&copy;2021. devPlay.app </footer>
+
    
 
     <script src="script.js"></script>
