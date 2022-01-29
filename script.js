@@ -167,6 +167,7 @@ window.onload = function (){
 
 }
 
+const btnHTML = document.getElementById("codeselectHTML")
 function fechaView(){
 
     let areaView = document.getElementById('AreaViewqwerty831809')
@@ -180,17 +181,26 @@ function fechaView(){
         console.log("pronto")
         areaView.style.display="none";
         localStorage.setItem("preview", "off")
-        grid1.style.gridTemplateAreas=
-        "r r r r "
-        "a a b b "
-        "d d b b "
-        "g g g g "
-        "f f f f ";
+        // grid1.style.gridTemplateAreas=
+        // "r r r r "
+        // "a a b b "
+        // "d d b b "
+        // "g g g g "
+        // "f f f f ";
         // areaHTML.style.height="82vh";
         // areaHTML.style.position="absolute";
         // areaHTML.style.top="7vh";
         // areaHTML.style.left="2vh";
-        areaCSS.style.height="100vh";
+        //areaCSS.style.height="85vh";
+        if(btnHTML.style.display="block"){
+            divHTML.style.height="92.5vh";
+            divCSS.style.height="92.5vh";
+            divJS.style.height="92.5vh";
+
+        }else{
+            divCSS.style.height="92.5vh";
+        }
+
         // areaJS.style.position="absolute";
         // areaJS.style.left="2vh";
         // areaJS.style.top="43vh";
@@ -200,29 +210,54 @@ function fechaView(){
     } else if (localStorage.getItem("preview")=="off"){
         areaView.style.display="block";
         localStorage.setItem("preview", "on")
-        areaHTML.style.height="30vh";
-        areaCSS.style.height="30vh";
+        // areaHTML.style.height="30vh";
+
+        if(btnHTML.style.display="block"){
+            divHTML.style.height="45vh";
+            divCSS.style.height="45vh";
+            divJS.style.height="45vh";
+
+        }else{
+            divCSS.style.height="45vh";
+        }
         fechaView.style.backgroundColor="rgb(139, 73, 201)";
         fechaView.style.textDecoration = "none";
         }
 
 }
 
+
+const divHTML = document.getElementById("containerfatherHTML")
+const divCSS = document.getElementById("containerfatherCSS")
+const divJS = document.getElementById("containerfatherJS")
+
 function viewHTML() {
-    areaHTML.style.zIndex=2;
-    areaCSS.style.zIndex= 1;
-    areaJS.style.zIndex= 0;
+    // areaHTML.style.zIndex=2;
+    // areaCSS.style.zIndex= 1;
+    // areaJS.style.zIndex= 0;
+
+    divHTML.style.zIndex=2;
+    divCSS.style.zIndex=1;
+    divJS.style.zIndex=0;
 }
 
 
 function viewCSS() {
-    areaHTML.style.zIndex=1;
-    areaCSS.style.zIndex= 2;
-    areaJS.style.zIndex= 0
+    // areaHTML.style.zIndex=1;
+    // areaCSS.style.zIndex= 2;
+    // areaJS.style.zIndex= 0
+
+    divHTML.style.zIndex=1;
+    divCSS.style.zIndex=2;
+    divJS.style.zIndex=0;
 }
 
 function viewJS() {
-    areaHTML.style.zIndex=0;
-    areaCSS.style.zIndex= 1;
-    areaJS.style.zIndex= 2;
+    // areaHTML.style.zIndex=0;
+    // areaCSS.style.zIndex= 1;
+    // areaJS.style.zIndex= 2;
+
+    divHTML.style.zIndex=0;
+    divCSS.style.zIndex=1;
+    divJS.style.zIndex=2;
 }
