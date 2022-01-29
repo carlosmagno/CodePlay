@@ -24,6 +24,21 @@ img#logo{
     left: 6vh;
     /* font-size: 1.5em; */
 }
+
+div#containerfatherHTML, div#containerfatherCSS, div#containerfatherJS{
+    position:relative;
+}
+div#sonHTML, div#sonCSS, div#sonJS{
+    position: absolute;
+    top:0;
+    right:0;
+    width:30px;
+    height:15px;
+    background-color:white;
+    color:purple;
+    opacity:0.5;
+    
+}
 div#box{
     width: 200px;
     height: 17vh;
