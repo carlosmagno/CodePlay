@@ -187,13 +187,13 @@ function fechaView(){
         "g g g g "
         "f f f f ";
         // areaHTML.style.height="82vh";
-        areaHTML.style.position="absolute";
-        areaHTML.style.top="7vh";
-        areaHTML.style.left="2vh";
-        areaCSS.style.height="84vh";
-        areaJS.style.position="absolute";
-        areaJS.style.left="2vh";
-        areaJS.style.top="43vh";
+        // areaHTML.style.position="absolute";
+        // areaHTML.style.top="7vh";
+        // areaHTML.style.left="2vh";
+        areaCSS.style.height="100vh";
+        // areaJS.style.position="absolute";
+        // areaJS.style.left="2vh";
+        // areaJS.style.top="43vh";
         fechaView.style.backgroundColor="red";
         fechaView.style.textDecoration = "line-through";
         
