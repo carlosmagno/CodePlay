@@ -7,9 +7,18 @@ a{
     text-decoration: none;
 }
 
-img#logo{
+span#menuIco{
     width: 30px;
     height: auto;
+    position: absolute;
+    top:0.5vh;
+    left: 2vh;
+    font-size: 2em;
+    display: none;
+}
+img#logo{
+    width: 30px;
+    height: 30px;
     position: absolute;
     top:0.5vh;
     left: 2vh;
@@ -75,6 +84,18 @@ main{
     border-radius: 3px;
 }
 
+span#codeselectHTML, span#codeselectCSS, span#codeselectJS{
+    display:none;
+    text-align: center;
+    width: auto;
+    height: 25px;
+    line-height: 25px;
+    color: rgb(255, 255, 255);
+    background-color:rgb(10, 177, 33);
+    padding-left: 8px;
+    padding-right: 8px;
+
+}
 span.bts:hover{
     
     transform: scale(1.1);
@@ -343,9 +364,28 @@ footer{
 @media (max-width: 500px) {
 
     #cabecalhoqwerty831809 {
-        text-align: left;
+        text-align: center;
         font-size: 0.55em;
         width:97vw;
+    }
+
+    span#menuIco{
+        display: block;
+        left:1vh;
+        top:0;
+        font-size: 3em;
+    }
+    img#logo{
+        display: none;
+        
+    }
+    span#codeselectHTML, span#codeselectCSS, span#codeselectJS{
+    
+        display: block;    
+    }
+
+    #learn,#fechaCode{
+        display: none;
     }
 
     iframe#AreaViewqwerty831809 {
@@ -394,13 +434,13 @@ footer{
     #areaHTMLqwerty831809 {
         width:97vw;
         height:45vh;
-        z-index: 1;
+        z-index: 2;
     }
     
     #areaCSSqwerty831809 {
         width:97vw;
         height:45vh;
-        z-index: 2;
+        z-index: 1;
     }
     
     

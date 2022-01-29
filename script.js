@@ -207,3 +207,22 @@ function fechaView(){
         }
 
 }
+
+function viewHTML() {
+    areaHTML.style.zIndex=2;
+    areaCSS.style.zIndex= 1;
+    areaJS.style.zIndex= 0;
+}
+
+
+function viewCSS() {
+    areaHTML.style.zIndex=1;
+    areaCSS.style.zIndex= 2;
+    areaJS.style.zIndex= 0
+}
+
+function viewJS() {
+    areaHTML.style.zIndex=0;
+    areaCSS.style.zIndex= 1;
+    areaJS.style.zIndex= 2;
+}
