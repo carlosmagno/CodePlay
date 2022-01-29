@@ -261,7 +261,7 @@ span#fechaCode:hover, span#fechaView:hover, span#newPage:hover, span#learn:hover
     color: rgb(253, 253, 253);
     border-radius:5px;
     padding: 1vw;
-    resize: none;
+    resize: vertical;
     font-size: large;
     font-family: 'Courier New', Courier, monospace;
 
