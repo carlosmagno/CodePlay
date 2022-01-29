@@ -390,7 +390,7 @@ footer{
 
     iframe#AreaViewqwerty831809 {
         height:50vh;
-        width:97vw;
+        width:100vw;
         position:absolute;
         top:51vh;
         border:none;
@@ -430,22 +430,23 @@ footer{
         position:absolute;
         top:5vh;
         border:none;
+        border-radius:0;
     }
     #areaHTMLqwerty831809 {
-        width:97vw;
+        width:100vw;
         height:45vh;
         z-index: 2;
     }
     
     #areaCSSqwerty831809 {
-        width:97vw;
+        width:100vw;
         height:45vh;
         z-index: 1;
     }
     
     
     #areaJSqwerty831809 {
-        width:97vw;
+        width:100vw;
         height:45vh;
         z-index:0;
     }
