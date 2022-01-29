@@ -132,9 +132,9 @@ font-size: 1.4em;
     background-color: gray;
     border-radius:4px;
     vertical-align: text-bottom;
-    padding:5px
-/*     line-height: 6vh;
-    height: 5vh; */
+    padding:0 10px;
+    line-height: 5vh;
+    height: 5vh;
 }
 
 section#buttons{
