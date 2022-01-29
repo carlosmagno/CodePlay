@@ -125,7 +125,7 @@ font-size: 1.4em;
 
 #NomeProjeto{
     display: inline-flex;
-    maring-top: 0.5vh;
+    margin-top: 2vh;
     min-width:40%;
     font-size: 1.5em;
     color: white;
