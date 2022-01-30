@@ -204,7 +204,10 @@ function fechaView(){
 
         }else{
             divCSS.style.height="45vh";
+            // divHTML.style.height="45vh";
+            // divJS.style.height="45vh";
             areaCSS.style.height="95%";
+
         }
         fechaView.style.backgroundColor="rgb(139, 73, 201)";
         fechaView.style.textDecoration = "none";

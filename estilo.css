@@ -332,7 +332,8 @@ footer{
         align-items: center;
         font-size: 0.55em;
         min-width:90%;
-        /* background-color: aqua; */
+        height:6vh ;
+        background-color: aqua;
         /* height: 2vh; */
     }
     section#buttons{
@@ -368,8 +369,10 @@ footer{
         top:51vh;
         border:none;
         border-radius: 0;
-        border-top:2px solid rgb(0, 0, 0);
-        border-bottom:2px solid rgb(3, 3, 3);
+        border-top:2px solid rgb(190, 8, 245);
+        border-bottom:2px solid rgb(0, 0, 0);
+        top:49vh;
+    
     }
 
     #NomeProjeto{
@@ -387,45 +390,48 @@ footer{
 
 
     textarea.textCodeqwerty831809{
+        margin-top: -15px;
         display: block;
         position:absolute;
-        top:5vh;
+        top:3vh;
+        width:100%;
         border:none;
         border-radius:0;
-        font-size: 1em;;
+        font-size: 1em;
     }
     div#containerfatherHTML {
+    
         width:100vw;
-        height:45vh;
+        height:49vh;
         z-index: 2;
         position:absolute;
-        top:0;
+        top:0px;
         left:0;
+        /* background-color: rgb(33, 112, 9); */
     }
     
  
     div#containerfatherCSS {
         width:100vw;
-        height:45vh;
+        height:49vh;
         z-index: 1;
         position:absolute;
         top:0;
         left:0;
+        /* background-color: rgb(33, 112, 9); */
     }
     
     
     div#containerfatherJS {
         width:100vw;
-        height:45vh;
+        height:49vh;
         z-index:0;
         position:absolute;
         top:0;
         left:0;
+        /* background-color: rgb(33, 112, 9); */
     }
 
-    iframe#AreaViewqwerty831809{
-        top:50vh;
-    }
     main{
         width:90%;
         overflow-wrap: break-word;
