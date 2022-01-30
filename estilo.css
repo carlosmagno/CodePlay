@@ -1,7 +1,6 @@
 * {
     margin:0;
     padding: 0;
-    /* background-color: BLACK; */
 }
 a{
     color: white;
@@ -11,19 +10,11 @@ a{
 span#menuIco{
     width: 2%;
     height: auto;
-    /* position: absolute;
-    top:0;
-    left: 0.5vh; */
     font-size: 2em;
-/*     display: none; */
 }
 img#logo{
     width: 5vh;
     height:5vh;
-    /* position: absolute;
-    top:0.5vh;
-    left: 6vh; */
-    /* font-size: 1.5em; */
 }
 
 
@@ -41,17 +32,6 @@ div#box{
     padding: 1vw;
     z-index: 999;
 }
-
-
-
-
-/* section#principal{
-    grid-area: g;
-    margin-top: 4vh;
-    width: 98%;
-    background-color: white;
-    color:black;
-} */
 
 main{
     padding: 10px;
@@ -85,39 +65,25 @@ span#codeselectHTML, span#codeselectCSS, span#codeselectJS{
     padding-right: 8px;
 
 }
-/* span.bts:hover{
-    
-    transform: scale(1.1); 
-    cursor: pointer; 
-} */
+
 #cabecalhoqwerty831809 {
-    /* grid-area: r; */
     margin: 0 auto;
-    /* margin-top: 1vh; */
     display: flex;
     text-align: center;
     width: 100%;
-    /* line-height: 5vh;
-    height: 6vh; */
     font-family:'Courier New', Courier, monospace;
     font-weight: bold;
-
     background-color: black;
     color: rgb(165, 116, 211);
 }
 
 #tituloqwerty831809{
-    /* display: inline-flex; */
- /* position: absolute;
-top:0.5vh;
-left: 12vh; */
-margin-top: 1vh; 
-width: 15%;
-font-size: 1.4em;
+    margin-top:0.5vh; 
+    width: 15%;
+    font-size: 1.4em;
 }
 
 #NomeProjeto{
-    /* display: inline-flex; */
     margin-top: 0.5vh; 
     width:50%;
     font-size: 1.5em;
@@ -128,19 +94,12 @@ font-size: 1.4em;
     padding:0 10px;
     line-height: 4vh;
     height: 4vh;
-    /* margin-right: 5%; */
 }
 
 section#buttons{
-   /* min-width: 10%;  */
-   /* background-color: blue; */
    margin-top: 0.5vh;
    margin-right: 0.5vh; 
     display: inline-flex;
-    /* position: absolute;
-    top:1vh;
-    right: 1vh; */
-    /* background-color: burlywood; */
     align-self: stretch;
     align-items: center;
     justify-content: end;
@@ -151,126 +110,68 @@ section#buttons{
 }
 
 span#fechaCode{
-    /* display: block; */
     margin-left:2px;
     text-align: center;
     width: auto;
-    /* height: 25px;
-    line-height: 25px; */
     color: rgb(255, 255, 255);
     background-color:rgb(139, 73, 201);
     padding-left: 8px;
     padding-right: 8px;
-    /* opacity: 80%; */
-    /* position: absolute;
-    top:1vh;
-    right: 2vh; */
     border-radius:2px;
 
 }
 
 span#fechaView{
-    /* display: block; */
     margin-left:2px;
     text-align: center;
     width: auto;
-    /* height: 25px;
-    line-height: 25px; */
     color: rgb(255, 255, 255);
     background-color:rgb(139, 73, 201);
     padding-left: 8px;
     padding-right: 8px;
-    /* opacity: 80%; */
-    /* position: absolute;
-    top:1vh;
-    right: 14vh; */
     border-radius:2px;
 }
 
 span#learn{
-    /* display: block; */
     margin-left:2px;
     text-align: center;
     width: auto;
-    /* height: 25px;
-    line-height: 25px; */
     color: rgb(255, 255, 255);
     background-color:rgb(139, 73, 201);
     padding-left: 8px;
     padding-right: 8px;
-    /* opacity: 80%; */
-    /* position: absolute;
-    top:1vh;
-    right: 38vh; */
     border-radius:2px;
 }
 span#newPage{
-    /* display: block; */
     margin-left:2px;
     text-align: center;
     width: auto;
-    line-height: unset;
-    min
-    /* height: 25px;
-    line-height: 25px; */
     color: rgb(255, 255, 255);
     background-color:rgb(139, 73, 201);
     padding-left: 8px;
     padding-right: 8px;
-    /* opacity: 80%; */
-    /* position: absolute;
-    top:1vh;
-    right: 24vh; */
     border-radius:2px;
 }
 span#fechaCode:hover, span#fechaView:hover, span#newPage:hover, span#learn:hover{
-    /* color: rgb(255, 255, 255);
-    background-color: rgb(236, 6, 6); */
-    /* font-size: 1.4em; */
-    /* transform: scale(1.1); */
-    /* color: rgb(139, 73, 201);
-    background-color: rgb(255, 255, 255); */
     cursor: pointer;
-
 }
 
 .grid1 {
     position:relative;
-    /* background-color: rgb(235, 160, 160); */
-    /* margin: auto;
-    align-items: center;
-    justify-items: center;
-    display:grid; 
-    grid-template-columns: 1fr  1fr; */
-    /* grid-template-rows: 5vh ; */
-    /*
-    grid-template-areas:
-    "a a b b "
-    "d d c c";
-    */
     height: 90vh;
     width: 100%;
-    /* row-gap :1vh; */
-
 }
 
-/* div#containerfatherHTML, div#containerfatherCSS, div#containerfatherJS{
 
-display:relative
-}  */
+
 div#containerfatherHTML {
     background-color: rgb(5, 5, 5);
     position:absolute;
     top:0;
     left:0;
-    /* grid-area: a; */
     width: 50%;
-    /* min-width: auto; */
-    /* line-height: 30vh;
-    min-width: 50vw; */
     height: 45vh;
     border-right: 3vh solid white;
-    /* margin-right: 0px;  */
 }
 
 div#containerfatherCSS {
@@ -278,11 +179,9 @@ div#containerfatherCSS {
     position:absolute;
     top:0;
     right:0;
-    /* grid-area: b; */
     width: 50%;
-    /* min-width: auto; */
     height: 45vh;  
-    /* margin-left: 0px;    */
+
 }
 
 div#containerfatherJS{
@@ -290,13 +189,8 @@ div#containerfatherJS{
     position:absolute;
     top:45vh;
    left:0;
-    /* grid-area: d; */
     width: 50%;
-    /* color: rgb(8, 250, 238); */
-    /* min-width: auto; */
-    /* height: 30vh; */
     height:45vh;
-    /* margin-left: 0px;    */
 }
 
 div#sonHTML, div#sonCSS, div#sonJS{
@@ -332,10 +226,8 @@ div#sonCSS{
 .textCodeqwerty831809 {
     justify-self: center;
     align-self: center;
-    /* border: solid rgb(142, 122, 161) 0.5vh; */
     background-color: rgb(54, 54, 56);
     color: rgb(253, 253, 253);
-    /* border-radius:5px; */
     padding: 1%;
     resize: none;
     width: 97.5%;
@@ -345,24 +237,9 @@ div#sonCSS{
     overflow: scroll;
     white-space : nowrap;
 }
-/* 
-textarea#areaHTMLqwerty831809{
-    border-right: solid 5px red;
-} */
-/* span#center{
-    grid-area:e;
-    display: inline-block;
-    color: white;
-    background-color: rgb(0, 0, 0);
-    width: 90%;
-    line-height: 4vh;
-    height: 4vh;
-    text-align: center;
-    padding-bottom: 10px;
-}  */
+
 
 iframe#AreaViewqwerty831809 {
-    /* grid-area: c; */
     position: absolute;
     top: 45vh;
     right:0;
@@ -370,68 +247,27 @@ iframe#AreaViewqwerty831809 {
     padding: 0;
     overflow:scroll;
     width: 50%;
-    /* min-height:20vh; */
-    /* min-width: auto; */
     height:45vh;
-    
-    /* background-color: rgb(167, 54, 54); */
-    /* border: solid rgb(139, 73, 201) 0.5vh; */
-    /* border-radius:5px; */
-    /* border-radius:10px; */
-    /* border: solid rgb(139, 73, 201) 4px; */
-    /* padding: 20px; */
-
+    border-bottom: solid black 1px;
+    border-right: solid black 1px;
 }
 
-
-
-/* #tituloqwerty831809{
-    color:rgb(157, 105, 202);
-    margin: 0 auto;
-    text-align: center;
-    width: 100%;
-    height: 100%;
-    font-family:'Courier New', Courier, monospace;
-    font-weight: bold;
-    background-color: black;
-    border:none;
-} */
-
-
-
-/* #descr{
-    font-size: 15pt;
-} */
-/* #areaJS {
-    
-    width: 100vh;
-    height: 30vh;
-} */
-
-/* div {
-    border-style:none;
-} */
-/* 
-#rtzbuton {
-    grid-area: y;
-    background-color: rgb(139, 73, 201);
-    color: white;
-    margin: 10px;
-    
-    padding: 5px;
-    border-radius: 10px;
-    border: solid rgb(139, 73, 201) 4px;
+main {
+    margin:0 auto;
+    width: 50%;
+    text-align: justify;
     font-family: 'Courier New', Courier, monospace;
-    font-weight:bold;
-    font-size: large;
-    width: 96%;
+    font-size: 1.2em;
+    line-height: 1.5em;
 }
 
-#rtzbuton:hover {
-    background-color: rgb(149, 113, 180);
-    border: solid rgb(149, 113, 180) 4px;   
-} */
+main h1,h2{
+    margin: 20px 0;
+}
 
+main p{
+    text-indent: 40px;
+}
 footer{
     grid-area: f;
     background-color: rgb(0, 0, 0);
@@ -465,27 +301,46 @@ footer{
     }
 
     span#codeselectHTML{
+        display: inline-block;
         background-color: rgb(250, 63, 6);
         color: rgb(255, 255, 255);
+        margin-left: 2px;
+        width: 30px;
+        border-radius: 2px;
     }
     
     span#codeselectCSS{
+        display: inline-block;
         background-color: rgb(6, 132, 250);
         color: rgb(253, 251, 251);
+        margin-left: 2px;
+        width: 30px;
+        border-radius: 2px;
     }
     span#codeselectJS{
+        display: inline-block;
         background-color: rgb(250, 213, 6);
         color: rgb(7, 7, 7);
+        margin-left: 2px;
+        width: 30px;
+        border-radius: 2px;
     }
 
     #cabecalhoqwerty831809 {
+        display: flex;
         text-align: center;
+        align-items: center;
         font-size: 0.55em;
-        width:100%;
+        min-width:90%;
+        /* background-color: aqua; */
         /* height: 2vh; */
     }
     section#buttons{
-        min-width: 90%; 
+        /* margin: 0 auto; */
+        display: flex;
+        min-width:90%; 
+        /* background-color: blue; */
+        align-content: center;
 
     }    
     span#menuIco{
@@ -495,7 +350,7 @@ footer{
         font-size: 3em;
     }
     img#logo{
-        display: none;
+        display: block;
         
     }
     span#codeselectHTML, span#codeselectCSS, span#codeselectJS{
@@ -505,9 +360,7 @@ footer{
     #learn{
         display: none;
     }
-    /* #fechaCode{
-        display: none;
-    } */
+
     iframe#AreaViewqwerty831809 {
         height:50vh;
         width:100vw;
@@ -515,8 +368,8 @@ footer{
         top:51vh;
         border:none;
         border-radius: 0;
-        border-top:3px solid rgb(0, 0, 0);
-        border-bottom:3px solid rgb(211, 162, 211);
+        border-top:2px solid rgb(0, 0, 0);
+        border-bottom:2px solid rgb(3, 3, 3);
     }
 
     #NomeProjeto{
@@ -530,27 +383,16 @@ footer{
     section#buttons{
        width: 80%; 
        font-size: 1.2em;
-         /* display: inline-flex;
-         position: absolute;
-         top:1vh;
-         right: 2vh; */
-         /* background-color: burlywood; */
-         /* align-self: flex-end;
-         align-items: center;
-         justify-content: space-between;
-      */
      }
 
-     /* .grid1 {
-        display:block 
-    
-    } */
+
     textarea.textCodeqwerty831809{
         display: block;
         position:absolute;
         top:5vh;
         border:none;
         border-radius:0;
+        font-size: 1em;;
     }
     div#containerfatherHTML {
         width:100vw;
@@ -584,10 +426,18 @@ footer{
     iframe#AreaViewqwerty831809{
         top:50vh;
     }
-
-    section#principal{
-        position: absolute;
-        top:100vh;
-        background-color: rgb(0, 0, 0);
+    main{
+        width:90%;
+        overflow-wrap: break-word;
+        font-size: 1em;  
     }
+
+    main h1,h2{
+       text-align: left; 
+       font-size: 1.3em; 
+    }
+  section#principal{
+      margin-top: 50px;
+
+    } 
   }

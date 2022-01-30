@@ -186,8 +186,10 @@ function fechaView(){
             divJS.style.height="92.5vh";
 
         }else{
-            divCSS.style.height="92.5vh";
+            divCSS.style.height="90vh";
+            areaCSS.style.height="97.5%";
         }
+    
         fechaView.style.backgroundColor="red";
         fechaView.style.textDecoration = "line-through";
         
@@ -202,6 +204,7 @@ function fechaView(){
 
         }else{
             divCSS.style.height="45vh";
+            areaCSS.style.height="95%";
         }
         fechaView.style.backgroundColor="rgb(139, 73, 201)";
         fechaView.style.textDecoration = "none";
