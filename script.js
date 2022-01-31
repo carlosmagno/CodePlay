@@ -17,24 +17,46 @@ var objetoProjetos = {};
 var nomeProjeto;
 var arrayProjetos;
 
+function chamada(){
+    arrayProjetos = []
+   // nomeProjeto = NovoProjeto.value
+    if(localStorage.getItem("Projetos")){
+        arrayProjetos= JSON.parse(localStorage.getItem("Projetos")) //recupera ele
+        var a = arrayProjetos.some(compararNomes)
+        if(a==true){
+            NovoProjeto.value=""
+            alert("Já existe um projeto com esse nome!")
+        }else{
+            gravarProjeto()
+            //alert("Salvar projeto")
+        }
+    }else{
+        gravarProjeto()
+    }
+
+
+ 
+}
+
+function compararNomes(element, index, array){
+    nomeProjeto = NovoProjeto.value
+    return element==nomeProjeto
+}
 
 function gravarProjeto(){
     nomeProjeto = NovoProjeto.value
   
-   arrayProjetos = []; 
+   //arrayProjetos = []; 
     //Se já existe o array com os nomes dos projetos, 
     if(localStorage.getItem("Projetos")){
 
         if(nomeProjeto!=""){
             arrayProjetos= JSON.parse(localStorage.getItem("Projetos")) //recupera ele
             ListaProjetos.innerHTML=""
-            //Se o nome for igual a algum já existente não aceita gravar e avisa
-            arrayProjetos.forEach(compararNomes)
-            // if(compararNomes==false){
-            //     alert("Já existe um projeto com esse nome!")
-            // }else{
-
-            // }
+            arrayProjetos.push(nomeProjeto) //adiciona o novo elemento no array
+            localStorage.setItem('Projetos', JSON.stringify(arrayProjetos))
+            arrayProjetos.forEach(listarProjetos)
+            setSite()
             console.log(4)
         }else{ console.log("Nome não pode ser string vazio")}
 
@@ -44,35 +66,16 @@ function gravarProjeto(){
             arrayProjetos.push(nomeProjeto) //adiciona elemento no array
             localStorage.setItem("Projetos", JSON.stringify(arrayProjetos)) // e grava no localstorage
             setSite()
-            listarProjetosAoAbrir()    
+            arrayProjetos.forEach(listarProjetos)
+            //listarProjetosAoAbrir()    
             console.log(3)
         }else{ console.log("Nome não pode ser string vazio")}
 
     }
     NovoProjeto.value=""
+    alert("Projeto Salvo com sucesso!")
 }
 
-function compararNomes(iten, index){
-    //var nomeProjeto = NovoProjeto.value
-    var nomeExistente = iten
-    rotulo:{
-        if(nomeProjeto==nomeExistente){
-            alert("Já existe um projeto com esse nome!")
-            listarProjetosAoAbrir()
-            
-            console.log(2)
-            break rotulo;
-            
-        }else{
-            arrayProjetos.push(nomeProjeto) //adiciona o novo elemento no array
-            localStorage.setItem('Projetos', JSON.stringify(arrayProjetos))
-            arrayProjetos.forEach(listarProjetos)
-            setSite()
-            console.log(1)
-        }
-    }
-   
-}
 var projetoSelecionado;
 
 function selecionarSite(){
@@ -89,7 +92,8 @@ function selecionarSite(){
     }else{
         console.log("Este projeto ainda não tem código!")
         codexist.src += '';
-    }   
+    }
+    BtnProjetos()
 }
 
 function listarProjetosAoAbrir(){
@@ -134,10 +138,10 @@ function setSite(){
 }
 
 
-
+var box = document.getElementById("box")
 function BtnProjetos(){
 
-    var box = document.getElementById("box")
+    
     if(box.style.display=="block"){
       
         box.style.display="none"
@@ -184,7 +188,7 @@ window.onload = function (){
             estilo.innerHTML = siteObj.css; 
             var scrp = document.createElement('script')
             scrp.text = siteObj.js
-            document.body.appendChild(scrp)
+            document.body.appendChild(scrp,)
         }
     }
 

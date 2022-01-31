@@ -225,6 +225,11 @@ div#sonJS{
     background-color: rgb(250, 213, 6);
     color: rgb(7, 7, 7);
 }
+div#sonJS:hover{
+    background-color:rgb(7, 7, 7); 
+    color: rgb(250, 213, 6);
+    cursor:pointer;
+}
 
 div#sonCSS{
     background-color: rgb(6, 132, 250);
@@ -305,7 +310,7 @@ footer{
         padding: 2vw;
     }
 
-    div#sonHTML, div#sonCSS, div#sonJS{
+    div#sonHTML, div#sonCSS{
     display: none;
     }
 
