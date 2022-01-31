@@ -70,6 +70,7 @@ span#codeselectHTML, span#codeselectCSS, span#codeselectJS{
     margin: 0 auto;
     display: flex;
     text-align: center;
+    height: 6vh;
     width: 100%;
     font-family:'Courier New', Courier, monospace;
     font-weight: bold;
@@ -78,13 +79,13 @@ span#codeselectHTML, span#codeselectCSS, span#codeselectJS{
 }
 
 #tituloqwerty831809{
-    margin-top:0.5vh; 
+    margin-top:1vh; 
     width: 15%;
     font-size: 1.4em;
 }
 
 #NomeProjeto{
-    margin-top: 0.5vh; 
+    margin-top: 1vh; 
     width:50%;
     font-size: 1.5em;
     color: white;
@@ -97,7 +98,7 @@ span#codeselectHTML, span#codeselectCSS, span#codeselectJS{
 }
 
 section#buttons{
-   margin-top: 0.5vh;
+   margin-top: 1vh;
    margin-right: 0.5vh; 
     display: inline-flex;
     align-self: stretch;
@@ -118,6 +119,8 @@ span#fechaCode{
     padding-left: 8px;
     padding-right: 8px;
     border-radius:2px;
+    height: 25px;
+    line-height: 25px;
 
 }
 
@@ -130,6 +133,8 @@ span#fechaView{
     padding-left: 8px;
     padding-right: 8px;
     border-radius:2px;
+    height: 25px;
+    line-height: 25px;
 }
 
 span#learn{
@@ -141,6 +146,8 @@ span#learn{
     padding-left: 8px;
     padding-right: 8px;
     border-radius:2px;
+    height: 25px;
+    line-height: 25px;
 }
 span#newPage{
     margin-left:2px;
@@ -151,6 +158,8 @@ span#newPage{
     padding-left: 8px;
     padding-right: 8px;
     border-radius:2px;
+    height: 25px;
+    line-height: 25px;
 }
 span#fechaCode:hover, span#fechaView:hover, span#newPage:hover, span#learn:hover{
     cursor: pointer;
@@ -333,7 +342,7 @@ footer{
         font-size: 0.55em;
         min-width:90%;
         height:6vh ;
-        background-color: aqua;
+        /* background-color: aqua; */
         /* height: 2vh; */
     }
     section#buttons{
@@ -390,11 +399,12 @@ footer{
 
 
     textarea.textCodeqwerty831809{
-        margin-top: -15px;
+        margin-top: -3vh;
         display: block;
         position:absolute;
-        top:3vh;
+        top:4vh;
         width:100%;
+        /* height:47vh; */
         border:none;
         border-radius:0;
         font-size: 1em;
@@ -405,7 +415,7 @@ footer{
         height:49vh;
         z-index: 2;
         position:absolute;
-        top:0px;
+        top:0;
         left:0;
         /* background-color: rgb(33, 112, 9); */
     }
@@ -424,7 +434,7 @@ footer{
     
     div#containerfatherJS {
         width:100vw;
-        height:49vh;
+        height:49vh;    
         z-index:0;
         position:absolute;
         top:0;
@@ -442,7 +452,7 @@ footer{
        text-align: left; 
        font-size: 1.3em; 
     }
-  section#principal{
+    section#principal{
       margin-top: 50px;
 
     } 

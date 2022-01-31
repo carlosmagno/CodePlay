@@ -1,6 +1,6 @@
 
 const areaHTML = document.getElementById('areaHTMLqwerty831809');
-const codexist = document.getElementById('AreaViewqwerty831809');
+var codexist = document.getElementById('AreaViewqwerty831809');
 const areaCSS = document.getElementById('areaCSSqwerty831809');
 const CSSexist = document.getElementById('estilo2qwerty831809');
 const areaJS = document.getElementById('areaJSqwerty831809');
@@ -15,27 +15,64 @@ const NomeProjeto = document.getElementById("NomeProjeto");
 var site;
 var objetoProjetos = {};
 var nomeProjeto;
+var arrayProjetos;
 
 
 function gravarProjeto(){
     nomeProjeto = NovoProjeto.value
   
-    var arrayProjetos = []; 
+   arrayProjetos = []; 
     //Se já existe o array com os nomes dos projetos, 
     if(localStorage.getItem("Projetos")){
-        arrayProjetos= JSON.parse(localStorage.getItem("Projetos")) //recupera ele
-        ListaProjetos.innerHTML=""
-        arrayProjetos.push(nomeProjeto) //adiciona o novo elemento no array
-        localStorage.setItem('Projetos', JSON.stringify(arrayProjetos))
-        arrayProjetos.forEach(listarProjetos)
-       setSite()
+
+        if(nomeProjeto!=""){
+            arrayProjetos= JSON.parse(localStorage.getItem("Projetos")) //recupera ele
+            ListaProjetos.innerHTML=""
+            //Se o nome for igual a algum já existente não aceita gravar e avisa
+            arrayProjetos.forEach(compararNomes)
+            // if(compararNomes==false){
+            //     alert("Já existe um projeto com esse nome!")
+            // }else{
+
+            // }
+            console.log(4)
+        }else{ console.log("Nome não pode ser string vazio")}
+
     } else {
-        arrayProjetos.push(nomeProjeto) //adiciona elemento no array
-        localStorage.setItem("Projetos", JSON.stringify(arrayProjetos)) // e grava no localstorage
-        setSite()
+        //Se o nome do projeto não está vazio
+        if(nomeProjeto!=""){
+            arrayProjetos.push(nomeProjeto) //adiciona elemento no array
+            localStorage.setItem("Projetos", JSON.stringify(arrayProjetos)) // e grava no localstorage
+            setSite()
+            listarProjetosAoAbrir()    
+            console.log(3)
+        }else{ console.log("Nome não pode ser string vazio")}
+
     }
+    NovoProjeto.value=""
 }
 
+function compararNomes(iten, index){
+    //var nomeProjeto = NovoProjeto.value
+    var nomeExistente = iten
+    rotulo:{
+        if(nomeProjeto==nomeExistente){
+            alert("Já existe um projeto com esse nome!")
+            listarProjetosAoAbrir()
+            
+            console.log(2)
+            break rotulo;
+            
+        }else{
+            arrayProjetos.push(nomeProjeto) //adiciona o novo elemento no array
+            localStorage.setItem('Projetos', JSON.stringify(arrayProjetos))
+            arrayProjetos.forEach(listarProjetos)
+            setSite()
+            console.log(1)
+        }
+    }
+   
+}
 var projetoSelecionado;
 
 function selecionarSite(){
@@ -56,10 +93,10 @@ function selecionarSite(){
 }
 
 function listarProjetosAoAbrir(){
-    var arrayProjetos = [];
+    var arrayProjetos1 = [];
     if(localStorage.getItem("Projetos")){
-        arrayProjetos= JSON.parse(localStorage.getItem("Projetos"))
-        arrayProjetos.forEach(listarProjetos)  
+        arrayProjetos1= JSON.parse(localStorage.getItem("Projetos"))
+        arrayProjetos1.forEach(listarProjetos)  
     }
 }
 
@@ -166,47 +203,69 @@ window.onload = function (){
     }
 
 }
-
-const btnHTML = document.getElementById("codeselectHTML")
-function fechaView(){
-
-    let areaView = document.getElementById('AreaViewqwerty831809')
-    let areaHTML = document.getElementById('areaHTMLqwerty831809')
-    let areaCSS = document.getElementById('areaCSSqwerty831809')
-    let fechaView = document.getElementById('fechaView')
-    let grid1 = document.getElementById('grid1')
-
-    if(!(areaView.style.display=="none")){
-        console.log("pronto")
-        areaView.style.display="none";
+var fechaView = document.getElementById('fechaView')
+var btnHTML = document.getElementById('codeselectHTML')
+function preView(){
+    
+   // let areaView = document.getElementById('AreaViewqwerty831809')
+    //let areaHTML = document.getElementById('areaHTMLqwerty831809')
+    //let areaCSS = document.getElementById('areaCSSqwerty831809')
+    
+   //var btnHTML = document.getElementById("codeselectHTML")
+   // btnHTML.style.color="pink";
+    //console.log("peguei")
+    //let grid1 = document.getElementById('grid1')
+    var largura = window. screen.width
+    console.log(largura)
+    //Se a área de preview estiver visível
+    if(!(codexist.style.display=="none")){
+       console.log("sumiu")
+        codexist.style.display="none";
         localStorage.setItem("preview", "off")
-        if(btnHTML.style.display=="block"){
-            divHTML.style.height="92.5vh";
+        
+        var largura = window. screen.width
+        console.log(largura)
+        //Se for no celular
+        if(largura<=500){
+            divHTML.style.height="95vh";
+            areaHTML.style.height="100%";
             divCSS.style.height="92.5vh";
+            areaCSS.style.height="100%";
             divJS.style.height="92.5vh";
-
-        }else{
+            areaJS.style.height="100%";
+            console.log("preview no celular desligada")
+        //Se for no desktop  
+        }else if (largura>500){
             divCSS.style.height="90vh";
             areaCSS.style.height="97.5%";
+            console.log("preview no desktop desligada")
         }
     
         fechaView.style.backgroundColor="red";
         fechaView.style.textDecoration = "line-through";
-        
-    } else if (localStorage.getItem("preview")=="off"){
-        areaView.style.display="block";
+      ////Se o preview estiver em off no local storage
+    }else if (codexist.style.display=="none"){
+        console.log("apareceu")
+    //  else if (localStorage.getItem("preview")=="off")
+        codexist.style.display="block";
         localStorage.setItem("preview", "on")
-
-        if(btnHTML.style.display=="none"){
+        //Se for no computador
+        if(largura>500){
             divHTML.style.height="45vh";
             divCSS.style.height="45vh";
             divJS.style.height="45vh";
-
-        }else{
-            divCSS.style.height="45vh";
-            // divHTML.style.height="45vh";
-            // divJS.style.height="45vh";
             areaCSS.style.height="95%";
+            console.log("preview no desktop ligada")
+        //Se for no celular
+        }else if(largura<=500){
+            divCSS.style.height="49vh";
+            divHTML.style.height="49vh";
+            divJS.style.height="49vh";
+
+            areaHTML.style.height="95%";
+            areaCSS.style.height="95%";
+            areaJS.style.height="95%";
+            console.log("preview no celular ligada")
 
         }
         fechaView.style.backgroundColor="rgb(139, 73, 201)";
