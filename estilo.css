@@ -310,7 +310,7 @@ footer{
         padding: 2vw;
     }
 
-    div#sonHTML, div#sonCSS{
+    div#sonHTML, div#sonCSS, div#sonJS{
     display: none;
     }
 
