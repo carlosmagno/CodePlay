@@ -270,16 +270,18 @@ main {
     margin:0 auto;
     width: 50%;
     text-align: justify;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1.2em;
+    font-family: Verdana, Tahoma, sans-serif, 'Times New Roman', Times, serif, Helvetica, sans-serif;
+    /* font-size: 1.2em; */
     line-height: 1.5em;
 }
 
 main h1,h2{
     margin: 20px 0;
+    text-align: left;
 }
 
 main p{
+    margin-top:10px;
     text-indent: 40px;
 }
 footer{
