@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <style>
+* {
+    margin:0;
+    padding: 0;
+}
+
+body {
+
+    font-family: Georgia, 'Times New Roman', Times, serif, Times, serif, Tahoma, Geneva, Verdana, sans-serif, 'Times New Roman', Times, serif;
+    margin: 0 auto;
+    text-align: center;
+}
+
+header {
+    padding-top: 20px;
+    color: rgb(77, 77, 214);
+    width: 100%;
+
+   
+}
+
+menu {
+    text-align: right;
+}
+li {
+    display: inline-block;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+li:hover {
+    background-color: rgb(102, 42, 214);
+    color: white;
+}
+form {
+    display:flexbox;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 50px;
+    text-align: center;
+    font:bold;
+    width: 50%;
+    height: auto;
+    background-color: rgb(77, 77, 214);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 3px 3px 10px;
+    padding-bottom: 25px;
+    
+}
+
+form>p {
+    padding: 1px 30px;
+    font-size: 20px;
+    font:bold;
+    color: white;
+    text-align: left;
+    
+}
+
+video {
+    width: 600px;
+    height: 400px;
+}
+#txtUsuario, #txtSenha, #txtEmail, #assunto, #txtMensagem {
+    /* position: relative; */
+    /* left: 0; */
+    padding: 2px 5px;
+    margin-top: 5px;
+    font-size: 20px;
+    width: 90%;
+    height: 40px;
+    border-radius: 5px;
+    border-style:none; 
+    align-items: flex-start;
+}
+
+#xtMensagem{
+    height: 500px;
+}
+
+p{
+    margin-top: 15px;
+}
+form>button {
+    width: 100px;
+    height: 40px;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif, Times, serif, Tahoma, Verdana, sans-serif, 'Times New Roman', Times, serif;
+    font:bold;
+    margin-top: 25px;
+    border-radius: 5px;
+    border-style: none;
+}
+
+button:hover {
+    background-color: rgb(190, 183, 183);
+    width: 97px;
+    /* height: 38px; */
+}
+
+footer {
+    position: absolute;
+    display: block;
+    text-align: center;
+
+    width: 100%;
+    bottom: 0px;
+
+    color: rgb(77, 77, 214);
+ 
+
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Formulário de Contato</h2>
+    </header>
+
+    <main>
+        <form action="https://clubedoscursos.blogspot.com/" method="post">
+            <p>Nome</p><input type="text" name="txtUsuario" id="txtUsuario" placeholder=" Seu nome" required>
+            <p>E-mail</p><input type="email" name="txtEmail" id="txtEmail" placeholder=" Seu e-mail" required>
+            <p>Assunto</p>
+            <select id="assunto">
+                <option value="suporte">Suporte</option>
+                <option value="sugestao">Sugestão</option>
+                <option value="publicidade">Publicidade</option>
+                <option value="parceria">Parceria</option>
+                <option value="outros">Outros</option>
+
+            </select>
+            <p>Mensagem</p> <textarea name="txtMensagem" id="txtMensagem"></textarea>
+            
+            <!-- <input type="password" name="txtsenha" id="txtSenha" placeholder=" Sua senha" required > -->
+            <button type="submit">Enviar</button>
+        </form>
+    </main>
+
+    <footer>
+        &copy;2021. Desenvolvido por SGC (Soluções em Gestão e Controle).
+    </footer>
+</body>
+</html>
