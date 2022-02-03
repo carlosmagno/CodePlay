@@ -299,3 +299,36 @@ function viewJS() {
     divCSS.style.zIndex=1;
     divJS.style.zIndex=2;
 }
+
+
+var boxCookies = document.getElementById("boxCookies");
+onload = function(){
+  if(!(localStorage.getItem("cookie")=="yes")){
+  console.log("não tem cookie");
+  }else{
+   boxCookies.style.display="none";
+   console.log("tem cookie");
+  }
+}
+
+function closedBox(){
+  
+  boxCookies.style.display="none";
+  setCookie();
+
+}
+
+function setCookie(){
+
+ 
+  var dateToday = new Date();
+  var dateExpire = new Date();
+  dateExpire.setDate(dateToday.getDate()+365)//Troque 365 pelos nº de dias que deseja.
+  //alert('O cookie vai expirar em: '+dateExpire)
+  document.cookie = 'user-cookies-consent=yes;expires='+dateExpire+"'"
+  /*if (document.cookie.user-cookies-consent == "yes"){
+     //alert('O cookie vai expirar em: '+dateExpire)
+  }*/
+  localStorage.setItem("cookie","yes")
+
+}

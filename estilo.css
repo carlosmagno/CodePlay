@@ -300,6 +300,39 @@ footer{
     font-family:'Courier New', Courier, monospace;
 }
 
+div#boxCookies{
+    width:250px;
+    height:110px;
+    background-color:rgba(29,30,31,.95);
+    opacity:1;
+    padding: 10px 20px;
+    border-radius:5px;
+    font-weight:500;
+    font-family:arial;
+    color:white;
+    font-size:0.9em;
+    /* Mude estas propriedades para alterar a posição */
+    position:fixed;
+    bottom:30px;
+    right:20px;
+    /* * * * * */
+  }
+  
+  div#boxCookies #OK{
+    color:#4f8df9;
+    text-align:right;
+    cursor:pointer;
+  }
+  
+  div#boxCookies a{
+    text-decoration:none;
+  }
+  
+  div#boxCookies a:visited{
+    color:white;
+  }
+  
+
 
 @media (max-width: 500px) {
 
@@ -463,4 +496,23 @@ footer{
       margin-top: 50px;
 
     } 
+
+    div#boxCookies{
+        margin:0 auto;
+        width:90vw;
+        height:auto;
+        background-color:rgba(29,30,31,.95);
+        opacity:1;
+        padding: 5vw 5vw;
+        border-radius:5px;
+        font-weight:500;
+        font-family:arial;
+        color:white;
+        font-size:0.9em;
+        /* Mude estas propriedades para alterar a posição */
+        /* position:fixed;
+        bottom:0; */
+        /* right:0; */
+        /* * * * * */
+      }
   }
