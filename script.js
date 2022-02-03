@@ -210,6 +210,15 @@ window.onload = function (){
    
     }
 
+var boxCookies = document.getElementById("boxCookies");
+  if(!(localStorage.getItem("cookie")=="yes")){
+  console.log("não tem cookie");
+  boxCookies.style.display="block";
+  }else{
+   boxCookies.style.display="none";
+   console.log("tem cookie");
+  }
+
 }
 var fechaView = document.getElementById('fechaView')
 var btnHTML = document.getElementById('codeselectHTML')
@@ -305,16 +314,10 @@ function viewJS() {
 }
 
 
-var boxCookies = document.getElementById("boxCookies");
-onload = function(){
-  if(!(localStorage.getItem("cookie")=="yes")){
-  console.log("não tem cookie");
-  boxCookies.style.display="block";
-  }else{
-   boxCookies.style.display="none";
-   console.log("tem cookie");
-  }
-}
+
+
+
+
 
 function closedBox(){
   
