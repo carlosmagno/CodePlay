@@ -180,7 +180,7 @@ div#containerfatherHTML {
     left:0;
     width: 50%;
     height: 45vh;
-    border-right: 3vh solid white;
+    /* border-right: 3vh solid white; */
 }
 
 div#containerfatherCSS {
@@ -244,7 +244,7 @@ div#sonCSS{
     color: rgb(253, 253, 253);
     padding: 1%;
     resize: none;
-    width: 98%;
+    width: 97%;
     height: 95%;
     font-size: large;
     font-family: 'Courier New', Courier, monospace;
@@ -262,8 +262,8 @@ iframe#AreaViewqwerty831809 {
     overflow:scroll;
     width: 50%;
     height:45vh;
-    border-bottom: solid black 1px;
-    border-right: solid black 1px;
+    /* border-bottom: solid black 1px;
+    border-right: solid black 1px; */
 }
 
 main {
@@ -443,8 +443,8 @@ div#boxCookies{
         display: block;
         position:absolute;
         top:4vh;
-        padding:0;
-        width: auto;
+        /* padding:1%;
+        width: 98%; */
         border:none;
         border-radius:0;
         font-size: 1em;
