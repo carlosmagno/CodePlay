@@ -300,7 +300,7 @@ function viewJS() {
     divJS.style.zIndex=2;
 }
 
-
+/*
 var boxCookies = document.getElementById("boxCookies");
 onload = function(){
   if(!(localStorage.getItem("cookie")=="yes")){
@@ -329,6 +329,8 @@ function setCookie(){
   /*if (document.cookie.user-cookies-consent == "yes"){
      //alert('O cookie vai expirar em: '+dateExpire)
   }*/
-  localStorage.setItem("cookie","yes")
+ // localStorage.setItem("cookie","yes")
 
-}
+//}
+
+//*/
