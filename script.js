@@ -188,7 +188,7 @@ window.onload = function (){
             estilo.innerHTML = siteObj.css; 
             var scrp = document.createElement('script')
             scrp.text = siteObj.js
-            document.body.appendChild(scrp,)
+            document.body.appendChild(scrp)
         }
     }
 
