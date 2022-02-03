@@ -244,7 +244,7 @@ div#sonCSS{
     color: rgb(253, 253, 253);
     padding: 1%;
     resize: none;
-    width: 97%;
+    width: 97.5%;
     height: 95%;
     font-size: large;
     font-family: 'Courier New', Courier, monospace;
@@ -262,11 +262,16 @@ iframe#AreaViewqwerty831809 {
     overflow:scroll;
     width: 50%;
     height:45vh;
-    /* border-bottom: solid black 1px;
-    border-right: solid black 1px; */
+    /* border-bottom: solid black 1px; */
+   /*  border-right: solid black 1px; */
+}
+
+section#principal{
+    border-top:solid black 1px;
 }
 
 main {
+
     margin:0 auto;
     width: 50%;
     text-align: justify;
@@ -285,19 +290,26 @@ main p{
     text-indent: 40px;
 }
 footer{
-    grid-area: f;
+    /* grid-area: f; */
     background-color: rgb(0, 0, 0);
     border:none;
-    color: white;
+    color: rgb(231, 202, 236);
     display: block;
     /* position: absolute;
     bottom: 0; */
-    height: 6vh;
-    line-height: 6vh;
+    /* height: 6vh;
+    line-height: 6vh; */
+    padding-top: 10px;
+    padding-bottom: 10px;
     width: 100%;
     /* border-top:solid 1px black; */
     text-align: center;
     font-family:'Courier New', Courier, monospace;
+}
+
+footer p{
+    margin-top: 10px;
+    color: rgb(231, 202, 236);
 }
 
 div#boxCookies{
@@ -419,7 +431,7 @@ div#boxCookies{
         border:none;
         border-radius: 0;
         border-top:2px solid rgb(190, 8, 245);
-        border-bottom:2px solid rgb(0, 0, 0);
+        /* border-bottom:2px solid rgb(0, 0, 0); */
         top:49vh;
     
     }
@@ -499,12 +511,15 @@ div#boxCookies{
 
     div#boxCookies{
         display:none;
+        position:fixed;
+        bottom:0;
+        left:0;
         margin:0 auto;
-        width:90vw;
+        width:90%;
         height:auto;
         background-color:rgba(29,30,31,.95);
         opacity:1;
-        padding: 5vw 5vw;
+        padding: 5% 5%;
         border-radius:5px;
         font-weight:500;
         font-family:arial;

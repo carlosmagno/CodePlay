@@ -193,6 +193,10 @@ window.onload = function (){
     }
 
     if(!window.location.href.endsWith("page-view")||(!window.location.href.endsWith("page-view/"))){
+        if(localStorage.getItem("Projeto Atual")){
+            ListaProjetos.value=localStorage.getItem("Projeto Atual")
+        }
+
         if(areaHTML){
             areaHTML.addEventListener("input",setSite);
         }
@@ -300,11 +304,12 @@ function viewJS() {
     divJS.style.zIndex=2;
 }
 
-/*
+
 var boxCookies = document.getElementById("boxCookies");
 onload = function(){
   if(!(localStorage.getItem("cookie")=="yes")){
   console.log("não tem cookie");
+  boxCookies.style.display="block";
   }else{
    boxCookies.style.display="none";
    console.log("tem cookie");
@@ -329,8 +334,8 @@ function setCookie(){
   /*if (document.cookie.user-cookies-consent == "yes"){
      //alert('O cookie vai expirar em: '+dateExpire)
   }*/
- // localStorage.setItem("cookie","yes")
+localStorage.setItem("cookie","yes")
 
-//}
+}
 
-//*/
+

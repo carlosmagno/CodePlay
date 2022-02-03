@@ -76,9 +76,9 @@ console.log("[PWA Builder] Service worker has been registered for scope: " + reg
 
         <section id="buttons">
             <!-- <span id="learn"><a href="./learn/html/conteudo_textual/" target="_blank" rel="noopener noreferrer">Reference</a></span> -->
-            <span id="newPage"><a href="page-view" target="_blank" rel="noopener noreferrer">Window</a></span>
+            <span id="newPage"><a href="page-view" target="_blank" rel="noopener noreferrer">Full</a></span>
             <span id="fechaView" onclick="preView()">Preview</span>
-            <span id="fechaCode" onclick="BtnProjetos()">Projects</span>
+            <span id="fechaCode" onclick="BtnProjetos()">Projetos</span>
 
             <span id="codeselectHTML" onclick="viewHTML()">HTML</span>
             <span id="codeselectCSS" onclick="viewCSS()">CSS</span>
@@ -109,14 +109,14 @@ console.log("[PWA Builder] Service worker has been registered for scope: " + reg
         <iframe id="AreaViewqwerty831809" src="page-view" frameborder="0" title="Preview-of-page"></iframe>
         <!-- Box a ser exibido quando clicar no botão projetos. Quando clicar novamente no botão box some -->
         <div id="box">
-           <label for="ListaProjetos"> Projects </label><br>
+           <label for="ListaProjetos"> Projetos </label><br>
                 <select name="" id="ListaProjetos">
                 
 
                 </select>
                 <span id="btOKselectProject" class="bts" onclick="selecionarSite()">OK</span>
                 <br><br>
-           <label for="NovoProjeto"> New Project </label><br>
+           <label for="NovoProjeto"> Novo Projeto </label><br>
            <input type="text" name="" id="NovoProjeto"><span id="btOKnewProject" onclick="chamada()" class="bts">OK</span>
         </div>
 <!-- 
@@ -145,14 +145,14 @@ console.log("[PWA Builder] Service worker has been registered for scope: " + reg
             <p>O devPlay salva seus projetos no armazenamento local do próprio navegador. Isto significa que qualquer dispositivo que você usar, computador ou smarthpone, ou mesmo
             que use o mesmo dispositivo com sessões/login diferentes, cada um deles terá seu próprio armazenamento independente ao usar o devPlay.</p>
              <h2>Como usar?</h2>
-            <p>Clique no botão "Projects" para criar ou acessar seus projetos. Para criar um novo projeto digite um nome no campo "New Project" e clique em "OK". Todos os projetos criados ficam alistados na caixa
-            de seleção acima "Projects". Selecione o projeto que deseja editar ou visualizar e clique em "OK".</p>
+            <p>Clique no botão "Projetos" para criar ou acessar seus projetos. Para criar um novo projeto digite um nome no campo "Novo Projeto" e clique em "OK". Todos os projetos criados ficam alistados na caixa
+            de seleção acima "Projetos". Selecione o projeto que deseja editar ou visualizar e clique em "OK".</p>
             <p>Agora é só codar! Simples assim. Ao digitar código HTML e CSS nas caixas correspondentes, automaticamente o devPlay salva seu código no navegador e atualiza a previsualização
             do seu projeto. O código JavaScript não é salvo automaticamente para evitar problemas causados por execução não desejada, enquanto você escreve as funções do seu programa. Clique no botão "JS" 
             para salvar seu código, ou simplesmente altere algo nas caixas de HTML ou CSS. O código será salvo e executado.</p>
             <h2>Previsualização e visualização em tela cheia</h2>
             <p>A qualquer momento você pode desabilitar ou habilitar a visualização prévia do seu projeto, clicando no botão "Preview". Para visualizar o projeto em tela cheia numa nova guia
-            do navegador clique no botão "Window". Se quiser trabalhar desse forma usando a visualização numa nova janela, basta recarregar a página de visualização sempre que quiser ver as suas últimas alterações.</p>
+            do navegador clique no botão "F". Se quiser trabalhar desse forma usando a visualização numa nova janela, basta recarregar a página de visualização sempre que quiser ver as suas últimas alterações.</p>
             <h2>Layout personalizado para cada dispositivo</h2>
             <p>A interface de devPlay foi desenvolvida para tentar aproveitar ao máximo o tamanho da tela de cada dispositivo. Por isso o layout para dispositivo móvel é diferente do layout para desktop. No celular você pode alternar facilmente entre as caixas de código clicando nos botões correspondentes.</p>
              <!-- <p></p>
@@ -197,7 +197,7 @@ console.log("[PWA Builder] Service worker has been registered for scope: " + reg
       
       </div>
       
-    <footer>&copy;2021. devPlay.app | <a href="politica-de-privacidade">Política de Privacidade</a> </footer>
+    <footer><span>&copy;2021. devPlay.app </span><p><a href="politica-de-privacidade">Política de Privacidade</a></p> </footer>
 
    
 
