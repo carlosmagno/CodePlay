@@ -19,7 +19,7 @@ img#logo{
 
 
 div#box{
-    width: 252px;
+    width: 400px;
     height: 120px;
     display:none;
     color:white;
@@ -29,7 +29,7 @@ div#box{
     right: 12px;
     border: solid rgb(139, 73, 201) 0.5vh;
     border-radius:5px;
-    padding: 1vw;
+    padding: 5px;
     z-index: 999;
 }
 
@@ -38,11 +38,15 @@ main{
 }
 #ListaProjetos{
     width: 80%;
+    height: 29px;
+    font-size: 1.1em;
 }
 
 #NovoProjeto{
-    width: 78%;
+    width: 79%;
     margin-right: 4px;
+    height: 25px;
+    font-size: 1.1em;
 }
 
 .bts{
@@ -52,7 +56,12 @@ main{
     padding: 4px;
     border-radius: 3px;
 }
-
+span#btExcluiProject{
+    width: 21px;
+    text-align: center;
+    margin-left: 10px;
+    background-color: red;
+}
 span#codeselectHTML, span#codeselectCSS, span#codeselectJS{
     display:none;
     text-align: center;
@@ -349,12 +358,13 @@ div#boxCookies{
 @media (max-width: 500px) {
 
     div#box{
-        width: 90%;
+        width: 98%;
         height: 120px;
         position: absolute;
         top:0;
-        right: 10px;
-        padding: 2vw;
+        right: 0;
+        padding: 1%;
+        border:none;
     }
 
     div#sonHTML, div#sonCSS, div#sonJS{

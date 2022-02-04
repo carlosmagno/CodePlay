@@ -5,12 +5,12 @@ const areaCSS = document.getElementById('areaCSSqwerty831809');
 const CSSexist = document.getElementById('estilo2qwerty831809');
 const areaJS = document.getElementById('areaJSqwerty831809');
 
-const ListaProjetos = document.getElementById("ListaProjetos");
+var ListaProjetos = document.getElementById("ListaProjetos");
 const btOKselectProject = document.getElementById("btOKselectProject");
-const NovoProjeto = document.getElementById("NovoProjeto");
+var NovoProjeto = document.getElementById("NovoProjeto");
 const btOKnewProject = document.getElementById("btOKnewProject");
 
-const NomeProjeto = document.getElementById("NomeProjeto");
+var NomeProjeto = document.getElementById("NomeProjeto");
 
 var site;
 var objetoProjetos = {};
@@ -37,6 +37,44 @@ function chamada(){
 
  
 }
+
+function isProject(value) {
+    nomeProjeto = ListaProjetos.value
+    return value!=nomeProjeto;
+}
+function chamadaExcluir(){
+   
+    arrayProjetos = []
+    arrayProjetos= JSON.parse(localStorage.getItem("Projetos")) //recupera ele
+
+    if (arrayProjetos=="[]"||(!arrayProjetos)){
+      var filtered = arrayProjetos.filter(isProject);
+      console.log(filtered)
+      localStorage.setItem("Projetos", JSON.stringify(filtered))
+      ListaProjetos.innerHTML=""
+      arrayProjetos.forEach(listarProjetos)  
+      excluirSite()
+
+    }else{
+        console.log("não há array")
+        localStorage.removeItem("Projetos")
+        localStorage.removeItem("Projeto Atual")
+        NomeProjeto.value=''
+    }
+      // filtrado é [12, 130, 44]
+    /*
+    var a = arrayProjetos.some(compararNomes)
+    if(a==true){
+        excluirSite()
+        //arrayProjetos.slice(index)
+        console.log("1111")
+        console.log(index)
+    }else{
+        console.log("2222")      
+    }
+    */
+}
+
 
 function compararNomes(element, index, array){
     nomeProjeto = NovoProjeto.value
@@ -96,6 +134,17 @@ function selecionarSite(){
     BtnProjetos()
 }
 
+
+function excluirSite(){
+
+    projetoSelecionado = ListaProjetos.value;
+    //Remove do localStorage
+    localStorage.removeItem(projetoSelecionado)
+    //Remove do array
+
+
+    alert("Projeto excluído com sucesso!")
+}
 function listarProjetosAoAbrir(){
     var arrayProjetos1 = [];
     if(localStorage.getItem("Projetos")){
@@ -148,6 +197,7 @@ function BtnProjetos(){
     }else{
         console.log("tett")
         box.style.display="block"
+        ListaProjetos.value=localStorage.getItem("Projeto Atual")
     }
 };
 
@@ -193,8 +243,8 @@ window.onload = function (){
     }
 
     if(!window.location.href.endsWith("page-view")||(!window.location.href.endsWith("page-view/"))){
-        if(localStorage.getItem("Projeto Atual")){
-            ListaProjetos.value=localStorage.getItem("Projeto Atual")
+        if(localStorage.getItem("Projeto Atual")&&localStorage.getItem("Projeto Atual")!="[]"){
+            
         }
 
         if(areaHTML){
