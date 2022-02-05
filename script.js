@@ -1,3 +1,4 @@
+//const { consoleOrigin } = require("firebase-tools/lib/api");
 
 const areaHTML = document.getElementById('areaHTMLqwerty831809');
 var codexist = document.getElementById('AreaViewqwerty831809');
@@ -10,12 +11,42 @@ const btOKselectProject = document.getElementById("btOKselectProject");
 var NovoProjeto = document.getElementById("NovoProjeto");
 const btOKnewProject = document.getElementById("btOKnewProject");
 
-var NomeProjeto = document.getElementById("NomeProjeto");
+
 
 var site;
 var objetoProjetos = {};
 var nomeProjeto;
 var arrayProjetos;
+var NomeProjeto = document.getElementById("NomeProjeto");
+var NomePmudar;
+var temp;
+/*
+if(NomeProjeto){
+    
+    NomeProjeto.addEventListener('click', function(){
+       if(box.style.display=="block") {
+           box.style.display="none"
+       }
+        
+        temp= NomeProjeto.value
+        NomeProjeto.removeAttribute("readonly")
+        console.log("cliquei")
+    });
+
+    NomeProjeto.addEventListener('blur', function(){
+        NomePmudar = NomeProjeto.value
+        chamadaExcluir()
+        chamadaRenomear()
+        localStorage.setItem("Projeto Atual", NomePmudar)
+        //console.log(NomePmudar)
+    })
+    
+}
+
+*/
+
+
+
 
 function chamada(){
     arrayProjetos = []
@@ -33,34 +64,125 @@ function chamada(){
     }else{
         gravarProjeto()
     }
+ 
+}
 
 
+function chamadaRenomear(){
+    arrayProjetos = []
+   // nomeProjeto = NovoProjeto.value
+    if(localStorage.getItem("Projetos")){
+        arrayProjetos= JSON.parse(localStorage.getItem("Projetos")) //recupera ele
+        var a = arrayProjetos.some(compararNomesRenomear)
+        if(a==true){
+
+            if(NomePmudar=temp){
+
+            }else{
+                NomeProjeto.value=""
+                alert("Já existe um projeto com esse nome!")
+            }
+
+        }else{
+            gravarProjetoRenomeado()
+            localStorage.removeItem(temp)
+            //alert("Salvar projeto")
+        }
+    }else{
+        gravarProjetoRenomeado()
+        localStorage.removeItem(temp)
+    }
+ 
+}
+
+function gravarProjetoRenomeado(){
+    nomeProjeto = NomePmudar
+  
+    //if(NomePmudar=temp){
+
+    //}else{
+        if(localStorage.getItem("Projetos")){
+
+            if(nomeProjeto!=""){
+                arrayProjetos= JSON.parse(localStorage.getItem("Projetos")) //recupera ele
+                ListaProjetos.innerHTML=""
+                arrayProjetos.push(nomeProjeto) //adiciona o novo elemento no array
+                localStorage.setItem('Projetos', JSON.stringify(arrayProjetos))
+                arrayProjetos.forEach(listarProjetos)
+                setSite()
+                console.log(4)
+            }else{ console.log("Nome não pode ser string vazio")}
+    
+        } else {
+            //Se o nome do projeto não está vazio
+            if(nomeProjeto!=""){
+                arrayProjetos.push(nomeProjeto) //adiciona elemento no array
+                localStorage.setItem("Projetos", JSON.stringify(arrayProjetos)) // e grava no localstorage
+                setSite()
+                arrayProjetos.forEach(listarProjetos)
+                //listarProjetosAoAbrir()    
+                console.log(3)
+            }else{ console.log("Nome não pode ser string vazio")}
+    
+        }
+        //NovoProjeto.value=""
+        alert("Seu Projeto foi renomeado!")
+    //}
  
 }
 
 function isProject(value) {
-    nomeProjeto = ListaProjetos.value
+
+    if(box.style.display=="block"){
+        nomeProjeto = ListaProjetos.value
+    }else{
+        nomeProjeto = temp
+    }
+    
     return value!=nomeProjeto;
 }
 function chamadaExcluir(){
+
+    if (window.confirm("Você realmente quer excluir o projeto?")) {
+        
+    
    
     arrayProjetos = []
     arrayProjetos= JSON.parse(localStorage.getItem("Projetos")) //recupera ele
 
-    if (arrayProjetos=="[]"||(!arrayProjetos)){
+    if (arrayProjetos.length>1){
       var filtered = arrayProjetos.filter(isProject);
-      console.log(filtered)
-      localStorage.setItem("Projetos", JSON.stringify(filtered))
-      ListaProjetos.innerHTML=""
-      arrayProjetos.forEach(listarProjetos)  
       excluirSite()
-
-    }else{
-        console.log("não há array")
+      NomeProjeto.value=''
+      console.log("tem array com "+arrayProjetos.length+ " elementos" )
+      console.log(filtered)
+      console.log("Agora o array tem "+filtered.length+ " elementos" )
+      localStorage.setItem("Projetos", JSON.stringify(filtered))
+      localStorage.setItem("Projeto Atual", "")
+      ListaProjetos.innerHTML=""
+      filtered.forEach(listarProjetos)  
+      
+      areaHTML.value = ""
+      areaCSS.value = ""
+      areaJS.value = ""
+      codexist.src += '';
+    }else if(arrayProjetos.length==1){
+        excluirSite()
+        NomeProjeto.value=''
         localStorage.removeItem("Projetos")
         localStorage.removeItem("Projeto Atual")
-        NomeProjeto.value=''
+        ListaProjetos.innerHTML=""
+        console.log("não há array")
+
+        areaHTML.value = ""
+        areaCSS.value = ""
+        areaJS.value = ""
+        codexist.src += '';
+        //localStorage.removeItem(nomeProjeto)
+        
     }
+
+}
       // filtrado é [12, 130, 44]
     /*
     var a = arrayProjetos.some(compararNomes)
@@ -74,7 +196,11 @@ function chamadaExcluir(){
     }
     */
 }
-
+var nomeProjetoRenomear;
+function compararNomesRenomear(element, index, array){
+    nomeProjetoRenomear = NomePmudar
+    return element==nomeProjetoRenomear 
+}
 
 function compararNomes(element, index, array){
     nomeProjeto = NovoProjeto.value
@@ -121,9 +247,9 @@ function selecionarSite(){
     areaCSS.value=""
     areaHTML.value=""
     projetoSelecionado = ListaProjetos.value
-    NomeProjeto.innerText = projetoSelecionado
-    localStorage.setItem("Projeto Atual", NomeProjeto.innerText)
-    if(localStorage.getItem(NomeProjeto.innerText)){
+    NomeProjeto.value = projetoSelecionado
+    localStorage.setItem("Projeto Atual", NomeProjeto.value)
+    if(localStorage.getItem(NomeProjeto.value)){
         console.log("Projeto Existente")
         getSite()
         codexist.src += '';
@@ -141,15 +267,15 @@ function excluirSite(){
     //Remove do localStorage
     localStorage.removeItem(projetoSelecionado)
     //Remove do array
-
-
-    alert("Projeto excluído com sucesso!")
+    console.log("Projeto "  + projetoSelecionado +" excluído com sucesso!")
 }
 function listarProjetosAoAbrir(){
     var arrayProjetos1 = [];
     if(localStorage.getItem("Projetos")){
         arrayProjetos1= JSON.parse(localStorage.getItem("Projetos"))
         arrayProjetos1.forEach(listarProjetos)  
+    }else{
+        console.log("Não há projetos para listar")
     }
 }
 
@@ -171,9 +297,9 @@ function listarProjetos(iten, index){
 
 
 function setSite(){
-    if(!NomeProjeto.innerText==""){
+    if(!NomeProjeto.value==""){
         site={
-            nome:NomeProjeto.innerText,
+            nome:NomeProjeto.value,
             html:areaHTML.value,
             css: areaCSS.value,
             js:areaJS.value // "window.onload = alert('teste de alerta')"    
@@ -198,6 +324,7 @@ function BtnProjetos(){
         console.log("tett")
         box.style.display="block"
         ListaProjetos.value=localStorage.getItem("Projeto Atual")
+        console.log("esta parte funcionou")
     }
 };
 
@@ -225,6 +352,8 @@ var estilo;
 var codeJS;
 
 window.onload = function (){
+
+
     listarProjetosAoAbrir()
     if(window.location.href.endsWith("page-view")||window.location.href.endsWith("page-view/")){
         var projetoAtual = localStorage.getItem("Projeto Atual")
@@ -254,22 +383,27 @@ window.onload = function (){
             areaCSS.addEventListener("input",setSite);
         }
         if(NomeProjeto){
-            NomeProjeto.innerText = localStorage.getItem("Projeto Atual")
+            NomeProjeto.value = localStorage.getItem("Projeto Atual")
             getSite()
         }
    
     }
+/************** */
 
-var boxCookies = document.getElementById("boxCookies");
-  if(!(localStorage.getItem("cookie")=="yes")){
+  if(!localStorage.getItem("cookie")){
   console.log("não tem cookie");
-  boxCookies.style.display="block";
+  var boxCookies = document.getElementById("boxCookies");
+    if(boxCookies){
+        boxCookies.style.display="block";
+    }
   }else{
-   boxCookies.style.display="none";
+   //boxCookies.style.display="none";
    console.log("tem cookie");
   }
 
 }
+
+/************** */
 var fechaView = document.getElementById('fechaView')
 var btnHTML = document.getElementById('codeselectHTML')
 function preView(){
