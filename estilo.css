@@ -384,15 +384,20 @@ div#boxCookies{
 @media (max-width: 500px) {
 
     div#box{
-        width: 98%;
-        height: 120px;
+        width: 90vw;
+        height: 140px;
         position: absolute;
         top:0;
         right: 0;
-        padding: 1%;
+        padding-left: 10vw;
         border:none;
     }
-
+    #ListaProjetos{
+        width: 70%;
+    }
+    #NovoProjeto{
+        width: 68%;
+    }
     div#sonHTML, div#sonCSS, div#sonJS{
     display: none;
     }
