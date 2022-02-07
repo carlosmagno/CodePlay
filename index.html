@@ -4,8 +4,7 @@
 
         <!-- MUDAR A COR SE QUISER DENTRO DE CONTENT -->
         <meta name="theme-color" content="black">
-        <!-- COLOCAR URL DO SITE DENTRO DAS APAS HREF NO CANONICAL EX:
-        https://edsonolcheski.com> -->
+        <!-- COLOCAR URL DO SITE DENTRO DAS APAS HREF NO CANONICAL-->
         <link rel="canonical" href="https://devplay.app">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -48,7 +47,6 @@
 </head>
 <body id="corpo">
     <!-- ESSE SCRIPT VAI NA PRMEIRA LINHA ABAIXO DO body no codigo html -->
-<!-- ELE ESTA DIFENTE DO VIDEO MAIS É O MESMO PROCESSO COPIAR E COLAR -->
 <script>
 // This is the service worker with the Cache-first network
 // Add this below content to your HTML page, or add the js file to your page at the very top to register service worker
@@ -116,9 +114,12 @@ console.log("[PWA Builder] Service worker has been registered for scope: " + reg
 
                 </select>
                 <span id="btOKselectProject" class="bts" onclick="selecionarSite()">OK</span><span  class="bts" id="btExcluiProject" onclick="chamadaExcluir()">X</span>
-                <br><br>
-           <label for="NovoProjeto"> Novo Projeto </label><br>
-           <input type="text" name="" id="NovoProjeto"><span id="btOKnewProject" onclick="chamada()" class="bts">OK</span>
+                <br>
+            <label for="renomearProjeto"> Renomear Projeto </label><br>
+            <input type="text" name="" id="renomearProjeto"><span id="btOKrenameProject" onclick="" class="bts">SALVAR</span><br>
+           
+            <label for="NovoProjeto"> Novo Projeto </label><br>
+           <input type="text" name="" id="NovoProjeto"><span id="btOKnewProject" onclick="chamada()" class="bts">SALVAR</span>
         </div>
 <!-- 
         <div id="codeselect">

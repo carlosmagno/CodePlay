@@ -20,7 +20,7 @@ img#logo{
 
 div#box{
     width: 400px;
-    height: 120px;
+    height: 155px;
     display:none;
     color:white;
     background-color: rgb(2, 2, 2);
@@ -40,6 +40,7 @@ main{
     width: 80%;
     height: 29px;
     font-size: 1.1em;
+    margin-bottom: 4px;
 }
 
 #NovoProjeto{
@@ -47,6 +48,14 @@ main{
     margin-right: 4px;
     height: 25px;
     font-size: 1.1em;
+    margin-bottom: 4px;
+}
+#renomearProjeto{
+    width: 79%;
+    margin-right: 4px;
+    height: 25px;
+    font-size: 1.1em;
+    margin-bottom: 4px;
 }
 
 .bts{
@@ -96,10 +105,12 @@ span#codeselectHTML, span#codeselectCSS, span#codeselectJS{
 #NomeProjeto{
     z-index: 999;
     margin-top: 1vh; 
-    width:50%;
-    font-size: 1.3em;
+    width: 50%;
+    max-width:50%;
+    min-width: 10%;
+    font-size: 1.2em;
     color: white;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(73, 71, 71);
     border-radius:4px;
     vertical-align: text-bottom;
     padding:0 10px;
@@ -119,13 +130,16 @@ span#codeselectHTML, span#codeselectCSS, span#codeselectJS{
 section#buttons{
    margin-top: 1vh;
    margin-right: 0.5vh; 
+   position: absolute;
+   right: 0.5vh;
     display: inline-flex;
     align-self: stretch;
     align-items: center;
     justify-content: end;
     line-height: 4vh;
     height: 4vh;
-    width: 30%;
+    min-width: 30%;
+    z-index: 999;
 
 }
 
@@ -385,7 +399,7 @@ div#boxCookies{
 
     div#box{
         width: 90vw;
-        height: 140px;
+        height: 155px;
         position: absolute;
         top:0;
         right: 0;
@@ -395,7 +409,7 @@ div#boxCookies{
     #ListaProjetos{
         width: 70%;
     }
-    #NovoProjeto{
+    #NovoProjeto, #renomearProjeto{
         width: 68%;
     }
     div#sonHTML, div#sonCSS, div#sonJS{
