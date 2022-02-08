@@ -74,10 +74,10 @@ console.log("[PWA Builder] Service worker has been registered for scope: " + reg
         <input type="text" name="NomeProjeto1" id="NomeProjeto"  value="" readonly>
 
         <section id="buttons">
-            <!-- <span id="learn"><a href="./learn/html/conteudo_textual/" target="_blank" rel="noopener noreferrer">Reference</a></span> -->
-            <span id="newPage"><a href="page-view" target="_blank" rel="noopener noreferrer">Full</a></span>
-            <span id="fechaView" onclick="preView()">Preview</span>
-            <span id="fechaCode" onclick="BtnProjetos()">Projetos</span>
+            <!-- <span id="learn" class="btsUp"><a href="./learn/html/conteudo_textual/" target="_blank" rel="noopener noreferrer">Reference</a></span> -->
+            <span id="newPage" class="btsUp"><a href="page-view" target="_blank" rel="noopener noreferrer">Full</a></span>
+            <span id="fechaView" class="btsUp" onclick="preView()">Preview</span>
+            <span id="fechaCode" class="btsUp" onclick="BtnProjetos()">Projetos</span>
 
             <span id="codeselectHTML" onclick="viewHTML()">HTML</span>
             <span id="codeselectCSS" onclick="viewCSS()">CSS</span>
@@ -108,18 +108,20 @@ console.log("[PWA Builder] Service worker has been registered for scope: " + reg
         <iframe id="AreaViewqwerty831809" src="page-view" frameborder="0" title="Preview-of-page"></iframe>
         <!-- Box a ser exibido quando clicar no botão projetos. Quando clicar novamente no botão box some -->
         <div id="box">
-           <label for="ListaProjetos"> Projetos </label><br>
+           <!-- <label for="ListaProjetos"> Projetos </label><br> -->
                 <select name="" id="ListaProjetos">
                 
 
                 </select>
-                <span id="btOKselectProject" class="bts" onclick="selecionarSite()">OK</span><span  class="bts" id="btExcluiProject" onclick="chamadaExcluir()">X</span>
+                <span id="btOKselectProject" class="bts" onclick="selecionarSite()">OK</span>
                 <br>
-            <label for="renomearProjeto"> Renomear Projeto </label><br>
-            <input type="text" name="" id="renomearProjeto"><span id="btOKrenameProject" onclick="" class="bts">SALVAR</span><br>
+                <p><span onclick="exibeRename()" class="bts bts2" id="btRename">Renomear</span><span  class="bts bts2" id="btExcluiProject" onclick="chamadaExcluir()">Excluir</span><span  class="bts bts2" id="btNovo" onclick="novo()">Novo</span></p>
+
+            <label for="renomearProjeto" style="display:none"> Renomear Projeto </label>
+            <input type="text" name="" id="renomearProjeto" style="display:none"><span id="btOKrenameProject" onclick="chamadaRenomear()" class="bts" style="display:none">SALVAR</span><br>
            
-            <label for="NovoProjeto"> Novo Projeto </label><br>
-           <input type="text" name="" id="NovoProjeto"><span id="btOKnewProject" onclick="chamada()" class="bts">SALVAR</span>
+            <label for="NovoProjeto" style="display:none"> Novo Projeto </label><br>
+           <input type="text" name="" id="NovoProjeto" style="display:none"><span id="btOKnewProject" onclick="chamada()" class="bts" style="display:none">SALVAR</span>
         </div>
 <!-- 
         <div id="codeselect">
@@ -144,7 +146,7 @@ console.log("[PWA Builder] Service worker has been registered for scope: " + reg
                 em projetos maiores, ganhando assim muito mais tempo para empreender nas personalizações do seu projeto. </p>
             <h2>Salve seus projetos</h2>
             <p>O devPlay salva seus projetos no armazenamento local do próprio navegador. Isto significa que qualquer  dispositivo que você usar, computador ou smarthpone, ou mesmo
-            que use o mesmo dispositivo com sessões/login diferentes, cada um deles terá seu próprio armazenamento independente ao usar o devPlay. Para excluir o projeto, ao selecioná-lo clique no botão "X" e confirme. </p>
+            que use o mesmo dispositivo com sessões/login diferentes, cada um deles terá seu próprio armazenamento independente ao usar o devPlay. Para excluir o projeto, ao selecioná-lo clique no botão "Excluir" e confirme. </p>
              <h2>Como usar?</h2>
             <p>Clique no botão "Projetos" para criar ou acessar seus projetos. Para criar um novo projeto digite um nome no campo "Novo Projeto" e clique em "OK". Todos os projetos criados ficam alistados na caixa
             de seleção acima "Projetos". Selecione o projeto que deseja editar ou visualizar e clique em "OK".</p>

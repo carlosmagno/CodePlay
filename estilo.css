@@ -20,13 +20,13 @@ img#logo{
 
 div#box{
     width: 400px;
-    height: 155px;
+    height: min-content;
     display:none;
     color:white;
     background-color: rgb(2, 2, 2);
     position: absolute;
     top:0;
-    right: 12px;
+   right: 0.5vh; 
     border: solid rgb(139, 73, 201) 0.5vh;
     border-radius:5px;
     padding: 5px;
@@ -40,7 +40,9 @@ main{
     width: 80%;
     height: 29px;
     font-size: 1.1em;
-    margin-bottom: 4px;
+    margin-left: 5px;
+    margin-bottom: 8px;
+    margin-top: 8px;
 }
 
 #NovoProjeto{
@@ -55,7 +57,9 @@ main{
     margin-right: 4px;
     height: 25px;
     font-size: 1.1em;
-    margin-bottom: 4px;
+    margin-bottom: 8px;
+    margin-left: 5px;
+    margin-top: 8px;
 }
 
 .bts{
@@ -65,11 +69,28 @@ main{
     padding: 4px;
     border-radius: 3px;
 }
+
+.bts:hover{
+    opacity: 0.8;
+    cursor:pointer;
+}
 span#btExcluiProject{
-    width: 21px;
+    /* width: 21px; */
     text-align: center;
-    margin-left: 10px;
+    /* margin-left: 5px; */
     background-color: red;
+}
+
+.bts2{
+    padding:5px 8px;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 65px;
+    text-align: center;
+
+}
+.bts2:hover{
+    cursor:pointer;
 }
 span#codeselectHTML, span#codeselectCSS, span#codeselectJS{
     display:none;
@@ -142,22 +163,7 @@ section#buttons{
     z-index: 999;
 
 }
-
-span#fechaCode{
-    margin-left:2px;
-    text-align: center;
-    width: auto;
-    color: rgb(255, 255, 255);
-    background-color:rgb(139, 73, 201);
-    padding-left: 8px;
-    padding-right: 8px;
-    border-radius:2px;
-    height: 25px;
-    line-height: 25px;
-
-}
-
-span#fechaView{
+.btsUp{
     margin-left:2px;
     text-align: center;
     width: auto;
@@ -170,32 +176,10 @@ span#fechaView{
     line-height: 25px;
 }
 
-span#learn{
-    margin-left:2px;
-    text-align: center;
-    width: auto;
-    color: rgb(255, 255, 255);
-    background-color:rgb(139, 73, 201);
-    padding-left: 8px;
-    padding-right: 8px;
-    border-radius:2px;
-    height: 25px;
-    line-height: 25px;
-}
-span#newPage{
-    margin-left:2px;
-    text-align: center;
-    width: auto;
-    color: rgb(255, 255, 255);
-    background-color:rgb(139, 73, 201);
-    padding-left: 8px;
-    padding-right: 8px;
-    border-radius:2px;
-    height: 25px;
-    line-height: 25px;
-}
-span#fechaCode:hover, span#fechaView:hover, span#newPage:hover, span#learn:hover{
+.btsUp:hover{
     cursor: pointer;
+    opacity: 0.8;
+
 }
 
 .grid1 {

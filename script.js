@@ -20,33 +20,125 @@ var arrayProjetos;
 var NomeProjeto = document.getElementById("NomeProjeto");
 var NomePmudar;
 var temp;
-/*
-if(NomeProjeto){
-    
-    NomeProjeto.addEventListener('click', function(){
-       if(box.style.display=="block") {
-           box.style.display="none"
-       }
-        
-        temp= NomeProjeto.value
-        NomeProjeto.removeAttribute("readonly")
-        console.log("cliquei")
-    });
+var inputRename = document.getElementById('renomearProjeto')
+var btOKrenameProject = document.getElementById('btOKrenameProject')
 
-    NomeProjeto.addEventListener('blur', function(){
-        NomePmudar = NomeProjeto.value
-        chamadaExcluir()
-        chamadaRenomear()
-        localStorage.setItem("Projeto Atual", NomePmudar)
-        //console.log(NomePmudar)
-    })
+function exibeRename(){
+
+    inputRename.style.display="inline"
+    btOKrenameProject.style.display="inline"
+}
+
+if(inputRename){
+    ListaProjetos.addEventListener('change', (event) => {
+        getNameProject()
+      });
     
 }
 
-*/
+
+//Chamada ao clicar no botão "Renomear"
+//Trocar por um observador no select Lista Projetos ao mudar o valor chamar essa função
+function getNameProject(){
+
+    inputRename.value=ListaProjetos.value
+    //nameProjectSubs=
+}
+
+
+var  btOKrenameProject = document.getElementById('btOKrenameProject') 
+
+
+var nameProjectSubs;
+var codeProjectSubs;
+var newNameProject;
+function saveNewNameProject(){
+
+    nameProjectSubs = ListaProjetos.value.trim()
+    codeProjectSubs = localStorage.getItem(nameProjectSubs)
+    newNameProject = inputRename.value.trim()
+    console.log("nameProjectSubs: ", nameProjectSubs)
+    console.log("localStorage.getItem('Projeto Atual') ", localStorage.getItem("Projeto Atual"))
+ //Se existir esse projeto ele remove ele e grava o novo
+    if(localStorage.getItem(nameProjectSubs)){
+        localStorage.removeItem(nameProjectSubs)
+        localStorage.setItem(newNameProject, codeProjectSubs)
+    }
+
+    //Se o projeto selecionado no lista de projetos for o projeto atual...
+    if(nameProjectSubs==localStorage.getItem("Projeto Atual")){
+        console.log("nameProjectSubs: ", nameProjectSubs)
+        console.log("localStorage.getItem('Projeto Atual') ", localStorage.getItem("Projeto Atual"))
+        localStorage.setItem("Projeto Atual", newNameProject)
+        NomeProjeto.value = newNameProject
+        //ListaProjetos.value=localStorage.getItem("Projeto Atual")
+    }
 
 
 
+}
+
+//Primeiro verifica se não tem um com nome igual, antes de gravar
+function chamadaRenomear(){
+    arrayProjetos = []
+
+   // nomeProjeto = NovoProjeto.value
+    if(localStorage.getItem("Projetos")){
+        arrayProjetos= JSON.parse(localStorage.getItem("Projetos")) //recupera ele
+        var a = arrayProjetos.some(compararNomesRenomear)
+        if(a==true){
+
+               console.log("Já existe um projeto com esse nome!")
+      
+
+        }else{
+            console.log("Esse nome está livre!")
+            saveNewNameProject()
+            console.log("Projeto renomeado")
+            updateArray()
+            console.log("Array atualizado")
+        }
+    }else{
+       console.log("Ainda não há projetos")
+    }
+ 
+}
+
+var nomeProjetoRenomear;
+function compararNomesRenomear(element, index, array){
+    nomeProjetoRenomear =  inputRename.value
+    return element==nomeProjetoRenomear 
+}
+
+
+function isProjectRename(value) {
+
+    nomeProjeto = nameProjectSubs
+    return value!=nomeProjeto;
+}
+
+function updateArray(){
+
+    arrayProjetos = []
+    arrayProjetos= JSON.parse(localStorage.getItem("Projetos")) //recupera ele
+
+    if (arrayProjetos.length>1){
+        var filtered = arrayProjetos.filter(isProjectRename);
+        filtered.push(newNameProject) //adiciona o novo elemento no array
+        localStorage.setItem("Projetos", JSON.stringify(filtered))
+        ListaProjetos.innerHTML=""
+        filtered.forEach(listarProjetos)
+
+        if(NomeProjeto.value==localStorage.getItem("Projeto Atual")){
+
+            ListaProjetos.value=localStorage.getItem("Projeto Atual")
+        }
+        
+     }else if(arrayProjetos.length==1){
+
+    }    
+
+}
 
 function chamada(){
     arrayProjetos = []
@@ -68,32 +160,8 @@ function chamada(){
 }
 
 
-function chamadaRenomear(){
-    arrayProjetos = []
-   // nomeProjeto = NovoProjeto.value
-    if(localStorage.getItem("Projetos")){
-        arrayProjetos= JSON.parse(localStorage.getItem("Projetos")) //recupera ele
-        var a = arrayProjetos.some(compararNomesRenomear)
-        if(a==true){
 
-            if(NomePmudar=temp){
 
-            }else{
-                NomeProjeto.value=""
-                alert("Já existe um projeto com esse nome!")
-            }
-
-        }else{
-            gravarProjetoRenomeado()
-            localStorage.removeItem(temp)
-            //alert("Salvar projeto")
-        }
-    }else{
-        gravarProjetoRenomeado()
-        localStorage.removeItem(temp)
-    }
- 
-}
 
 function gravarProjetoRenomeado(){
     nomeProjeto = NomePmudar
@@ -141,6 +209,8 @@ function isProject(value) {
     
     return value!=nomeProjeto;
 }
+
+
 function chamadaExcluir(){
 
     if (window.confirm("Você realmente quer excluir o projeto?")) {
@@ -195,11 +265,6 @@ function chamadaExcluir(){
         console.log("2222")      
     }
     */
-}
-var nomeProjetoRenomear;
-function compararNomesRenomear(element, index, array){
-    nomeProjetoRenomear = NomePmudar
-    return element==nomeProjetoRenomear 
 }
 
 function compararNomes(element, index, array){
@@ -299,13 +364,13 @@ function listarProjetos(iten, index){
 function setSite(){
     if(!NomeProjeto.value==""){
         site={
-            nome:NomeProjeto.value,
+            //nome:NomeProjeto.value,
             html:areaHTML.value,
             css: areaCSS.value,
             js:areaJS.value // "window.onload = alert('teste de alerta')"    
         }
         // Transformar o objeto em string e salvar em localStorage
-        localStorage.setItem(site.nome, JSON.stringify(site));
+        localStorage.setItem(NomeProjeto.value, JSON.stringify(site));
         getSite();
         codexist.src += '';
     }
@@ -398,7 +463,7 @@ window.onload = function (){
     }
   }else{
    //boxCookies.style.display="none";
-   console.log("tem cookie");
+   //console.log("tem cookie");
   }
 
 }
@@ -524,5 +589,4 @@ function setCookie(){
 localStorage.setItem("cookie","yes")
 
 }
-
 
