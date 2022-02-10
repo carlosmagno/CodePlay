@@ -20,7 +20,7 @@ img#logo{
 
 div#box{
     width: 400px;
-    height: min-content;
+    height: 80px;
     display:none;
     color:white;
     background-color: rgb(2, 2, 2);
@@ -45,13 +45,17 @@ main{
     margin-top: 8px;
 }
 
-#NovoProjeto{
+input#NovoProjeto{
+    /* margin-top: -150px; */
     width: 79%;
     margin-right: 4px;
     height: 25px;
     font-size: 1.1em;
     margin-bottom: 4px;
+    margin-left: 5px;
+    margin-top: 8px;
 }
+
 #renomearProjeto{
     width: 79%;
     margin-right: 4px;
@@ -68,6 +72,15 @@ main{
     background-color: rgb(139, 73, 201) ;
     padding: 4px;
     border-radius: 3px;
+
+    /*Código para não permitir seleção nos conteúdos do span*/
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /**********************************************************/
 }
 
 .bts:hover{
@@ -174,6 +187,15 @@ section#buttons{
     border-radius:2px;
     height: 25px;
     line-height: 25px;
+
+       /*Código para não permitir seleção nos conteúdos do span*/
+       -webkit-touch-callout: none;
+       -webkit-user-select: none;
+       -khtml-user-select: none;
+       -moz-user-select: none;
+       -ms-user-select: none;
+       user-select: none;
+       /**********************************************************/
 }
 
 .btsUp:hover{
