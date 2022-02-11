@@ -41,6 +41,7 @@ function exibeDivMessage(message){
     //var novaDiv = document.createElement("div")
     divMessage.innerText=message
     divMessage.style.display="block"
+   // divMessage.style.zIndex=999
     //divMessage.style.position="absolute"
     //divMessage.style.top=0
     //divMessage.style.backgroundColor="white"
