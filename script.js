@@ -38,8 +38,9 @@ var btnHTML = document.getElementById('codeselectHTML')
 
 function exibeDivMessage(message){
      var divMessage=document.getElementById('message')
+     var pMessage = document.getElementById('pMessage')
     //var novaDiv = document.createElement("div")
-    divMessage.innerText=message
+    pMessage.innerText=message
     divMessage.style.display="block"
    // divMessage.style.zIndex=999
     //divMessage.style.position="absolute"
