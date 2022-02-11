@@ -636,4 +636,13 @@ div#boxCookies{
         /* right:0; */
         /* * * * * */
       }
+
+      .bts2{
+        padding:5px 5px;
+        margin-left: 5px;
+        margin-right: 5px;
+        width: 68px;
+        text-align: center;
+    
+    }
   }
