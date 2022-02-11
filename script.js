@@ -36,6 +36,20 @@ var projetoSelecionado;
 var fechaView = document.getElementById('fechaView')
 var btnHTML = document.getElementById('codeselectHTML')
 
+function exibeDivMessage(message){
+     var divMessage=document.getElementById('message')
+    //var novaDiv = document.createElement("div")
+    divMessage.innerText=message
+    divMessage.style.display="block"
+    //divMessage.style.position="absolute"
+    //divMessage.style.top=0
+    //divMessage.style.backgroundColor="white"
+    //divMessage.style.width="100%"
+    //divMessage.style.heigth="100px"
+   // document.body.insertBefore(novaDiv, divVelha)
+     setTimeout(() => { divMessage.style.display="none"}, 1000);
+
+}
 
 function exibeRename(){
     box.style.height="120px"
@@ -110,21 +124,25 @@ function chamadaRenomear(){
         arrayProjetos= JSON.parse(localStorage.getItem("Projetos")) //recupera ele
         var a = arrayProjetos.some(compararNomesRenomear)
         if(a==true){
-               console.log("Já existe um projeto com esse nome!")
+            exibeDivMessage("Já existe um projeto com esse nome!")
+               //console.log("Já existe um projeto com esse nome!")
         }else{
-            console.log("Esse nome está livre!")
+            exibeDivMessage("Projeto renomeado")
+            //console.log("Esse nome está livre!")
             saveNewNameProject()
-            console.log("Projeto renomeado")
+            //console.log("Projeto renomeado")
             updateArray()
-            console.log("Array atualizado")
+            //console.log("Array atualizado")
+
+            inputRename.style.display="none"
+            btOKrenameProject.style.display="none"
+            box.style.height="80px"
+            BtnProjetos()
         }
     }else{
-       console.log("Ainda não há projetos")
+       //console.log("Ainda não há projetos")
     }
-    inputRename.style.display="none"
-    btOKrenameProject.style.display="none"
-    box.style.height="80px"
-    BtnProjetos()
+
 };
 
 var nomeProjetoRenomear;
@@ -167,19 +185,33 @@ function chamada(){
         var a = arrayProjetos.some(compararNomes)
         if(a==true){
             NovoProjeto.value=""
-            alert("Já existe um projeto com esse nome!")
+            exibeDivMessage("Já existe um projeto com esse nome!")
         }else{
             gravarProjeto()
-            //alert("Salvar projeto")
+
+            if(NovoProjeto.value==""){
+
+            }else{
+            NovoProjeto.style.display="none"
+            btOKnewProject.style.display="none"
+            box.style.height="80px"
+            }
+         
+
         }
     }else{
         gravarProjeto()
+        if(NovoProjeto.value==""){
+
+        }else{
+        NovoProjeto.style.display="none"
+        btOKnewProject.style.display="none"
+        box.style.height="80px"
+        }
     }
     
-    NovoProjeto.style.display="none"
-    btOKnewProject.style.display="none"
-    box.style.height="80px"
-    BtnProjetos()
+
+    //BtnProjetos()
 };
 
 function gravarProjetoRenomeado(){
@@ -194,8 +226,10 @@ function gravarProjetoRenomeado(){
             arrayProjetos.forEach(listarProjetos)
             setSite()
             console.log(4)
-        }else{ console.log("Nome não pode ser string vazio")}
-
+        }else{ 
+            exibeDivMessage("Você precisa definir um nome!")
+           console.log("Nome não pode ser string vazio1")
+        }
     } else {
         //Se o nome do projeto não está vazio
         if(nomeProjeto!=""){
@@ -205,11 +239,15 @@ function gravarProjetoRenomeado(){
             arrayProjetos.forEach(listarProjetos)
             //listarProjetosAoAbrir()    
             console.log(3)
-        }else{ console.log("Nome não pode ser string vazio")}
+        }else{ 
+            exibeDivMessage("Você precisa definir um nome!")
+            console.log("Nome não pode ser string vazio2")
+        }
 
     }
         //NovoProjeto.value=""
-        console.log("Seu Projeto foi renomeado!")
+        exibeDivMessage("Seu Projeto foi renomeado!")
+        //console.log("Seu Projeto foi renomeado!")
     //}
  
 };
@@ -246,6 +284,7 @@ function chamadaExcluir(){
       areaCSS.value = ""
       areaJS.value = ""
       codexist.src += '';
+      exibeDivMessage("Projeto excluído.")
     }else if(arrayProjetos.length==1){
         excluirSite()
         NomeProjeto.value=''
@@ -257,6 +296,7 @@ function chamadaExcluir(){
         areaCSS.value = ""
         areaJS.value = ""
         codexist.src += '';
+        exibeDivMessage("Projeto excluído.")
         //localStorage.removeItem(nomeProjeto)       
     }
 };
@@ -293,9 +333,16 @@ function gravarProjeto(){
             localStorage.setItem('Projetos', JSON.stringify(arrayProjetos))
             arrayProjetos.forEach(listarProjetos)
             setSite()
+           
+            exibeDivMessage("Projeto salvo! Selecione o projeto e comece a codar!")
+            NovoProjeto.style.display="none"
+            btOKnewProject.style.display="none"
+            box.style.height="80px"
+            //alert("Projeto Salvo com sucesso!")
+        }else{ 
+            exibeDivMessage("Você precisa definir um nome!")
             console.log(4)
-            alert("Projeto Salvo com sucesso!")
-        }else{ console.log("Nome não pode ser string vazio")}
+        }
 
     } else {
         //Se o nome do projeto não está vazio
@@ -305,8 +352,12 @@ function gravarProjeto(){
             setSite()
             arrayProjetos.forEach(listarProjetos)
             //listarProjetosAoAbrir()    
+           
+        }else{
+            exibeDivMessage("Você precisa definir um nome!")
             console.log(3)
-        }else{ console.log("Nome não pode ser string vazio")}
+
+        }
 
     }
     NovoProjeto.value=""
@@ -321,11 +372,11 @@ function selecionarSite(){
     NomeProjeto.value = projetoSelecionado
     localStorage.setItem("Projeto Atual", NomeProjeto.value)
     if(localStorage.getItem(NomeProjeto.value)){
-        console.log("Projeto Existente")
+        //console.log("Projeto Existente")
         getSite()
         codexist.src += '';
     }else{
-        console.log("Este projeto ainda não tem código!")
+        //console.log("Este projeto ainda não tem código!")
         codexist.src += '';
     }
     BtnProjetos()
@@ -337,7 +388,7 @@ function excluirSite(){
     //Remove do localStorage
     localStorage.removeItem(projetoSelecionado)
     //Remove do array
-    console.log("Projeto "  + projetoSelecionado +" excluído com sucesso!")
+    //console.log("Projeto "  + projetoSelecionado +" excluído com sucesso!")
 };
 function listarProjetosAoAbrir(){
     var arrayProjetos1 = [];
@@ -345,7 +396,7 @@ function listarProjetosAoAbrir(){
         arrayProjetos1= JSON.parse(localStorage.getItem("Projetos"))
         arrayProjetos1.forEach(listarProjetos)  
     }else{
-        console.log("Não há projetos para listar")
+        //console.log("Não há projetos para listar")
     }
 };
 
@@ -465,15 +516,15 @@ window.onload = function (){
 function preView(){
 
     var largura = window. screen.width
-    console.log(largura)
+    //console.log(largura)
     //Se a área de preview estiver visível
     if(!(codexist.style.display=="none")){
-       console.log("sumiu")
+      // console.log("sumiu")
         codexist.style.display="none";
         localStorage.setItem("preview", "off")
         
         var largura = window. screen.width
-        console.log(largura)
+       // console.log(largura)
         //Se for no celular
         if(largura<=500){
             divHTML.style.height="95vh";
@@ -482,19 +533,19 @@ function preView(){
             areaCSS.style.height="100%";
             divJS.style.height="92.5vh";
             areaJS.style.height="100%";
-            console.log("preview no celular desligada")
+            //console.log("preview no celular desligada")
         //Se for no desktop  
         }else if (largura>500){
             divCSS.style.height="90vh";
             areaCSS.style.height="97.5%";
-            console.log("preview no desktop desligada")
+            //console.log("preview no desktop desligada")
         }
     
         fechaView.style.backgroundColor="red";
         fechaView.style.textDecoration = "line-through";
       ////Se o preview estiver em off no local storage
     }else if (codexist.style.display=="none"){
-        console.log("apareceu")
+        //console.log("apareceu")
     //  else if (localStorage.getItem("preview")=="off")
         codexist.style.display="block";
         localStorage.setItem("preview", "on")
@@ -504,7 +555,7 @@ function preView(){
             divCSS.style.height="45vh";
             divJS.style.height="45vh";
             areaCSS.style.height="95%";
-            console.log("preview no desktop ligada")
+            //console.log("preview no desktop ligada")
         //Se for no celular
         }else if(largura<=500){
             divCSS.style.height="49vh";
@@ -513,7 +564,7 @@ function preView(){
             areaHTML.style.height="95%";
             areaCSS.style.height="95%";
             areaJS.style.height="95%";
-            console.log("preview no celular ligada")
+            //console.log("preview no celular ligada")
         }
         fechaView.style.backgroundColor="rgb(139, 73, 201)";
         fechaView.style.textDecoration = "none";
