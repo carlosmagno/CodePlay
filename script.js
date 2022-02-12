@@ -35,6 +35,7 @@ var newNameProject;
 var projetoSelecionado;
 var fechaView = document.getElementById('fechaView')
 var btnHTML = document.getElementById('codeselectHTML')
+var languageList = document.getElementById('Language')
 
 function exibeDivMessage(message){
      var divMessage=document.getElementById('message')
@@ -126,10 +127,20 @@ function chamadaRenomear(){
         arrayProjetos= JSON.parse(localStorage.getItem("Projetos")) //recupera ele
         var a = arrayProjetos.some(compararNomesRenomear)
         if(a==true){
-            exibeDivMessage("Já existe um projeto com esse nome!")
+            if(localStorage.getItem("lang")=="PT-BR"){
+                exibeDivMessage("Já existe um projeto com esse nome!")
+            }else if(localStorage.getItem("lang")=="EN"){
+                exibeDivMessage("There is already a project with that name!")
+            }
+            
                //console.log("Já existe um projeto com esse nome!")
         }else{
-            exibeDivMessage("Projeto renomeado")
+            if(localStorage.getItem("lang")=="PT-BR"){
+                exibeDivMessage("Projeto renomeado")
+            }else if(localStorage.getItem("lang")=="EN"){
+                exibeDivMessage("Renamed project")
+            }
+           
             //console.log("Esse nome está livre!")
             saveNewNameProject()
             //console.log("Projeto renomeado")
@@ -187,7 +198,12 @@ function chamada(){
         var a = arrayProjetos.some(compararNomes)
         if(a==true){
             NovoProjeto.value=""
-            exibeDivMessage("Já existe um projeto com esse nome!")
+            if(localStorage.getItem("lang")=="PT-BR"){
+                exibeDivMessage("Já existe um projeto com esse nome!")
+            }else if(localStorage.getItem("lang")=="EN"){
+                exibeDivMessage("There is already a project with that name!")
+            }
+            
         }else{
             gravarProjeto()
 
@@ -229,7 +245,13 @@ function gravarProjetoRenomeado(){
             setSite()
             console.log(4)
         }else{ 
-            exibeDivMessage("Você precisa definir um nome!")
+
+            if(localStorage.getItem("lang")=="PT-BR"){
+                exibeDivMessage("Você precisa definir um nome!")
+            }else if(localStorage.getItem("lang")=="EN"){
+                exibeDivMessage("You need to define a name!")
+            }
+            
            console.log("Nome não pode ser string vazio1")
         }
     } else {
@@ -242,13 +264,21 @@ function gravarProjetoRenomeado(){
             //listarProjetosAoAbrir()    
             console.log(3)
         }else{ 
-            exibeDivMessage("Você precisa definir um nome!")
+            if(localStorage.getItem("lang")=="PT-BR"){
+                exibeDivMessage("Você precisa definir um nome!")
+            }else if(localStorage.getItem("lang")=="EN"){
+                exibeDivMessage("You need to define a name!")
+            }
             console.log("Nome não pode ser string vazio2")
         }
 
     }
         //NovoProjeto.value=""
-        exibeDivMessage("Seu Projeto foi renomeado!")
+        if(localStorage.getItem("lang")=="PT-BR"){
+            exibeDivMessage("Projeto renomeado")
+        }else if(localStorage.getItem("lang")=="EN"){
+            exibeDivMessage("Renamed project")
+        }
         //console.log("Seu Projeto foi renomeado!")
     //}
  
@@ -264,8 +294,13 @@ function isProject(value) {
 };
 
 function chamadaExcluir(){
-
-    if (window.confirm("Você realmente quer excluir o projeto?")) {
+    var ms;
+    if(localStorage.getItem("lang")=="PT-BR"){
+       ms="Você realmente quer excluir o projeto?"
+    }else if(localStorage.getItem("lang")=="EN"){
+        ms="Do you really want to delete the project?"
+    }
+    if (window.confirm(ms)) {
         
     arrayProjetos = []
     arrayProjetos= JSON.parse(localStorage.getItem("Projetos")) //recupera ele
@@ -335,14 +370,23 @@ function gravarProjeto(){
             localStorage.setItem('Projetos', JSON.stringify(arrayProjetos))
             arrayProjetos.forEach(listarProjetos)
             setSite()
-           
-            exibeDivMessage("Projeto salvo! Selecione o projeto e comece a codar!")
+
+            if(localStorage.getItem("lang")=="PT-BR"){
+                exibeDivMessage("Projeto salvo! Selecione o projeto e comece a codar!")
+            }else if(localStorage.getItem("lang")=="EN"){
+                exibeDivMessage("Project saved! Select the project and start coding!")
+            }
+
             NovoProjeto.style.display="none"
             btOKnewProject.style.display="none"
             box.style.height="80px"
             //alert("Projeto Salvo com sucesso!")
         }else{ 
-            exibeDivMessage("Você precisa definir um nome!")
+             if(localStorage.getItem("lang")=="PT-BR"){
+                exibeDivMessage("Você precisa definir um nome!")
+            }else if(localStorage.getItem("lang")=="EN"){
+                exibeDivMessage("You need to define a name!")
+            }
             console.log(4)
         }
 
@@ -356,7 +400,11 @@ function gravarProjeto(){
             //listarProjetosAoAbrir()    
            
         }else{
-            exibeDivMessage("Você precisa definir um nome!")
+            if(localStorage.getItem("lang")=="PT-BR"){
+                exibeDivMessage("Você precisa definir um nome!")
+            }else if(localStorage.getItem("lang")=="EN"){
+                exibeDivMessage("You need to define a name!")
+            }
             console.log(3)
 
         }
@@ -458,11 +506,59 @@ function getSite(){
     }
 };
 
+var textPT = document.getElementById('textPT')
+var textEN = document.getElementById('textEN')
+var fechaCode = document.getElementById('fechaCode')
+function setLanguage(){
+    var language=""
+    var language = languageList.value; 
+ 
+    localStorage.setItem("lang", language)
+    if(localStorage.getItem("lang")=="PT-BR"){
+        textPT.style.display="block"
+        textEN.style.display="none"
+        
+    }
+    if(localStorage.getItem("lang")=="EN"){
+        textPT.style.display="none"
+        textEN.style.display="block"
+        btNovo.innerText="New"
+        btExcluiProject.innerText="Delete"
+        btOKnewProject.innerText="Save"
+        btOKrenameProject.innerText="Save"
+        btRename.innerText="Rename"
+        fechaCode .innerText="Projects"
+        areaCSS.setAttribute("placeholder", "Write your CSS code here")
+        areaHTML.setAttribute("placeholder", "Write your HTML code here")
+        areaJS.setAttribute("placeholder", "Write your JavaScript code here")
+      
+    }   
+ 
+}
+
+
 window.onload = function (){
+
 
     if(inputRename){
         ListaProjetos.addEventListener('change', (event) => {
             getNameProject()
+        });
+    }
+
+    if(languageList){
+
+        if(localStorage.getItem("lang")){
+            languageList.value = localStorage.getItem("lang")
+            setLanguage()
+        }
+        languageList.addEventListener('change',(event) => {
+            setLanguage()
+            if(localStorage.getItem("lang")=="PT-BR"){
+                window.location=""+ window.location    
+            }
+         
+            console.log("lingua mudada") 
         });
     }
 

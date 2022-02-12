@@ -66,7 +66,7 @@ console.log("[PWA Builder] Service worker has been registered for scope: " + reg
 }
 }
 </script>
-    
+
     <header id="cabecalhoqwerty831809" >
         <!-- <span id="menuIco"> ≡</span> -->   <img src="icone.png" alt="" srcset="" id="logo">
         <h1  id="tituloqwerty831809">devPlay.app</h1>
@@ -75,6 +75,11 @@ console.log("[PWA Builder] Service worker has been registered for scope: " + reg
 
         <section id="buttons">
             <!-- <span id="learn" class="btsUp"><a href="./learn/html/conteudo_textual/" target="_blank" rel="noopener noreferrer">Reference</a></span> -->
+            <!-- <span id="downloadPage" class="btsUp" ><a href="#AreaViewqwerty831809" download="Meu Projeto devPlay">Baixar</a></span> -->
+            <select name="Language" id="Language">
+                <option value="PT-BR">PT-BR</option>
+                <option value="EN">EN</option>
+            </select>
             <span id="newPage" class="btsUp"><a href="page-view" target="_blank" rel="noopener noreferrer">Full</a></span>
             <span id="fechaView" class="btsUp" onclick="preView()">Preview</span>
             <span id="fechaCode" class="btsUp" onclick="BtnProjetos()">Projetos</span>
@@ -143,7 +148,7 @@ console.log("[PWA Builder] Service worker has been registered for scope: " + reg
     </div>
 
     <section id="principal">
-        <main>
+        <main id="textPT">
             <h1>O que é devPlay.app?</h1>
             <p>O devPlay é uma PWA (Progressive Web App). Isso significa você pode usar no navegador online ou pode instalar como um app em seu dispostivo Windows, Android ou IOS, e assim usar o aplicativo mesmo estando offline. A instalação é leve pois devPlay usa apenas recursos de seu navegador. O app foi desenvolvido principalmente para ajudar quem está iniciando nos estudos do desenvolvimento web front-end. O foco é nas três tecnologias básicas e fundamentais para o desenvolvimento de sites e aplicações web, que são HTML, CSS e JavaScript. Basicamente seu objetivo é editar e ver snippets ou blocos de códigos acompanhando sua execução ao vivo, usando apenas o próprio navegador de internet. </p>
             <p>Também pode ser usado por desenvolvedores pra criar uma "biblioteca", organizando snippets de códigos com o objetivo de servir como referência ou mesmo para reutilização
@@ -166,6 +171,7 @@ console.log("[PWA Builder] Service worker has been registered for scope: " + reg
              <!-- <p></p>
             <h2></h2>-->
 
+            
               <!-- <h1>Aprenda Desenvolvimento WEB!</h1>
              <h2>O que é HTML?</h2>
              <p><strong>HTML</strong> é a sigla de <en>HyperText Markup Language</en>, em português "Linguagem de Marcação de Hipertexto". Dito de modo simples é a linguagem responsável pelo conteúdo das páginas web. Faz parte das três principais tecnologias responsáveis por tudo o que vemos na internet. São elas com suas respectivas responsabilidades:
@@ -190,7 +196,29 @@ console.log("[PWA Builder] Service worker has been registered for scope: " + reg
           </ol>
              <h2>As 3 linguagens base do desenvolvimento WEB</h2> --> 
          </main>
+         <main id="textEN" style="display:none">
+            <h1>What is devPlay.app?</h1>
+            <p>DevPlay is a PWA (Progressive Web App). That means you can use it in the online browser or you can install it as an app on your Windows, Android or IOS device, and thus use the app even when offline. Installation is light as devPlay only uses your browser resources. The app was mainly developed to help those who are starting to study front-end web development. The focus is on the three basic and fundamental technologies for the development of websites and web applications, which are HTML, CSS and JavaScript. Basically, its objective is to edit and see snippets or code blocks following its execution live, using only the internet browser itself.</p>
+            <p>It can also be used by developers to create a "library", organizing code snippets to serve as a reference or even for reuse.
+                in larger projects, thus gaining much more time to undertake the customizations of your project. </p>
+            <h2>Save your projects</h2>
+            <p>DevPlay saves your projects to the browser's own local storage. This means that any device you use, computer or smartphone, or even
+                that use the same device with different sessions/login, each of them will have their own independent storage when using devPlay. To delete the project, when selecting it, click on the "Delete" button and confirm. </p>
+             <h2>How to use?</h2>
+            <p>Click the "Projects" button to create or access your projects. To create a new project, enter a name in the "New Project" field and click "OK". All projects created are listed in the box
+                selection above "Projects". Select the project you want to edit or view and click "OK".</p>
+            <p>Now just code! That simple. When typing HTML and CSS code in the corresponding boxes, devPlay automatically saves your code in the browser and updates the preview
+                of your project. JavaScript code is not automatically saved to avoid problems caused by unwanted execution while you are writing your program functions. Click the "JS" button
+                to save your code, or simply change something in the HTML or CSS boxes. The code will be saved and executed.</p>
+            <h2>Preview and full screen preview</h2>
+            <p>At any time you can disable or enable the preview of your project by clicking on the "Preview" button. To view the project in full screen in a new tab, click on the "Full" button. If you want to work this way using the preview in a new window, just reload the preview page whenever you want to see your latest changes.</p>
+            <h2>Custom layout for each device</h2>
+            <p>The devPlay interface was developed to try to make the most of the screen size of each device. That's why mobile layout is different from desktop layout. On mobile you can easily switch between code boxes by clicking on the corresponding buttons.</p>
+            <p>We hope you like devPlay.app because it was made with lots of ❤️!</p>
+            <p>Oh, and if you want to support the project and allow new features to be developed you can <strong><a href="https://www.buymeacoffee.com/devplay" style="color:black">buy us a coffee!</a></strong></p>
+         </main>
      </section>
+    
      <div id="boxCookies" style="display:none">
 
         <p>

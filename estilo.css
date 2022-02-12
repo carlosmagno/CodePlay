@@ -94,6 +94,18 @@ main{
     outline: 0;
 }
 
+#Language{
+    margin-right: 10px;
+    height: 25px;
+    background-color: rgb(139, 73, 201) ;
+    color: white;
+}
+#Language:focus{
+    /* background-color: rgb(48, 46, 46); */
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
 .bts{
     display: inline-block;
     color: white;
