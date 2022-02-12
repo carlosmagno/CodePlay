@@ -40,7 +40,8 @@
     {
       "src": "images/384x384.png",
       "sizes": "384x384",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "images/512x512.png",

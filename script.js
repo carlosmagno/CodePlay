@@ -509,6 +509,9 @@ function getSite(){
 var textPT = document.getElementById('textPT')
 var textEN = document.getElementById('textEN')
 var fechaCode = document.getElementById('fechaCode')
+var Privacy = document.getElementById('Privacy')
+var Support = document.getElementById('Support')
+var Contact = document.getElementById('Contact')
 function setLanguage(){
     var language=""
     var language = languageList.value; 
@@ -531,6 +534,9 @@ function setLanguage(){
         areaCSS.setAttribute("placeholder", "Write your CSS code here")
         areaHTML.setAttribute("placeholder", "Write your HTML code here")
         areaJS.setAttribute("placeholder", "Write your JavaScript code here")
+        Privacy.innerText="Privacy Policy"
+        Support.innerText="Share and support!"
+        Contact.innerText="Contact"
       
     }   
  

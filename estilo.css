@@ -463,6 +463,12 @@ div#boxCookies{
         z-index: 999;
         word-wrap: break-word;
     }
+    #Language{
+        margin:0;
+        font-size: 1em;
+        width: 52px;
+        border-radius: 2px;
+    }
 
     div#box{
         width: 90vw;
@@ -486,18 +492,22 @@ div#boxCookies{
     span#codeselectHTML{
         display: inline-block;
         background-color: rgb(250, 63, 6);
-        color: rgb(255, 255, 255);
+        color: rgb(7, 7, 7);
         margin-left: 2px;
-        width: 30px;
+        width: 20px;
         border-radius: 2px;
+        text-align: left;
+        padding-right: 10px;
+        padding-left: 8px;
+        /* padding: 0; */
     }
     
     span#codeselectCSS{
         display: inline-block;
         background-color: rgb(6, 132, 250);
-        color: rgb(253, 251, 251);
+        color: rgb(7, 7, 7);
         margin-left: 2px;
-        width: 30px;
+        width: 20px;
         border-radius: 2px;
     }
     span#codeselectJS{
@@ -505,7 +515,7 @@ div#boxCookies{
         background-color: rgb(250, 213, 6);
         color: rgb(7, 7, 7);
         margin-left: 2px;
-        width: 30px;
+        width: 20px;
         border-radius: 2px;
     }
 
