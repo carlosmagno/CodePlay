@@ -65,16 +65,17 @@ function sendMessage2(){
 
     if(nomeForm2.value==""||emailForm2.value==""||assuntoForm2.value==""||mensagemForm2.value==""){
         //console.log("Nenhum campo pode estar vazio!");
-        exibeDivMessage("Nenhum campo pode estar vazio!")
+        exibeDivMessage("No field can be empty!")
     }else{
         BD_Message.child('Message').push(msg).then(()=>{
             //console.log(UltimaPergunta)
-            if(localStorage.getItem("lang")=="PT-BR"||!(localStorage.getItem("lang"))){
-                exibeDivMessage("Mensagem enviada!")
-                }else{
-                exibeDivMessage("Message sent!")
-                }
-            //console.log("Mensagem enviada!");
+            exibeDivMessage("Message sent!")
+            // if(localStorage.getItem("lang")=="PT-BR"||!(localStorage.getItem("lang"))){
+            //     exibeDivMessage("Mensagem enviada!")
+            //     }else{
+            //     exibeDivMessage("Message sent!")
+            //     }
+            
         });
     }
 
