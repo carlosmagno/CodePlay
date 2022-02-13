@@ -95,10 +95,11 @@ main{
 }
 
 #Language{
-    margin-right: 10px;
+    margin-right:1px;
     height: 25px;
     background-color: rgb(139, 73, 201) ;
     color: white;
+    border-radius: 2px;
 }
 #Language:focus{
     /* background-color: rgb(48, 46, 46); */
@@ -675,5 +676,10 @@ div#boxCookies{
     #btRename{
         width:90px;
 
+    }
+
+    .btsUp{
+        padding-left: 4px;
+        padding-right: 4px;
     }
   }
