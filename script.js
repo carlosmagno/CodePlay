@@ -1,4 +1,6 @@
-//const { consoleOrigin } = require("firebase-tools/lib/api");
+/**
+ * Código desenvolvido e de propriedade de devPlay.app. Cópia não permitida. Todos os direitos reservados
+ */
 
 const areaHTML = document.getElementById('areaHTMLqwerty831809');
 var codexist = document.getElementById('AreaViewqwerty831809');
@@ -38,19 +40,11 @@ var btnHTML = document.getElementById('codeselectHTML')
 var languageList = document.getElementById('Language')
 
 function exibeDivMessage(message){
-     var divMessage=document.getElementById('message')
-     var pMessage = document.getElementById('pMessage')
-    //var novaDiv = document.createElement("div")
+    var divMessage=document.getElementById('message')
+    var pMessage = document.getElementById('pMessage')
     pMessage.innerText=message
     divMessage.style.display="block"
-   // divMessage.style.zIndex=999
-    //divMessage.style.position="absolute"
-    //divMessage.style.top=0
-    //divMessage.style.backgroundColor="white"
-    //divMessage.style.width="100%"
-    //divMessage.style.heigth="100px"
-   // document.body.insertBefore(novaDiv, divVelha)
-     setTimeout(() => { divMessage.style.display="none"}, 1000);
+    setTimeout(() => { divMessage.style.display="none"}, 1000);
 
 }
 
@@ -90,8 +84,7 @@ function ocultaRename(){
         btOKrenameProject.style.display="none"
     }
 };
-//Chamada ao clicar no botão "Renomear"
-//Trocar por um observador no select Lista Projetos ao mudar o valor chamar essa função
+
 function getNameProject(){
     inputRename.value=ListaProjetos.value
 };
@@ -114,7 +107,6 @@ function saveNewNameProject(){
         console.log("localStorage.getItem('Projeto Atual') ", localStorage.getItem("Projeto Atual"))
         localStorage.setItem("Projeto Atual", newNameProject)
         NomeProjeto.value = newNameProject
-        //ListaProjetos.value=localStorage.getItem("Projeto Atual")
     }
 };
 
@@ -122,9 +114,8 @@ function saveNewNameProject(){
 function chamadaRenomear(){
     arrayProjetos = []
 
-   // nomeProjeto = NovoProjeto.value
     if(localStorage.getItem("Projetos")){
-        arrayProjetos= JSON.parse(localStorage.getItem("Projetos")) //recupera ele
+        arrayProjetos= JSON.parse(localStorage.getItem("Projetos"))
         var a = arrayProjetos.some(compararNomesRenomear)
         if(a==true){
             if(localStorage.getItem("lang")=="PT-BR"){
@@ -133,27 +124,21 @@ function chamadaRenomear(){
                 exibeDivMessage("There is already a project with that name!")
             }
             
-               //console.log("Já existe um projeto com esse nome!")
         }else{
             if(localStorage.getItem("lang")=="PT-BR"){
                 exibeDivMessage("Projeto renomeado")
             }else if(localStorage.getItem("lang")=="EN"){
                 exibeDivMessage("Renamed project")
             }
-           
-            //console.log("Esse nome está livre!")
             saveNewNameProject()
-            //console.log("Projeto renomeado")
             updateArray()
-            //console.log("Array atualizado")
-
             inputRename.style.display="none"
             btOKrenameProject.style.display="none"
             box.style.height="80px"
             BtnProjetos()
         }
     }else{
-       //console.log("Ainda não há projetos")
+     
     }
 
 };
@@ -171,11 +156,11 @@ function isProjectRename(value) {
 
 function updateArray(){
     arrayProjetos = []
-    arrayProjetos= JSON.parse(localStorage.getItem("Projetos")) //recupera ele
+    arrayProjetos= JSON.parse(localStorage.getItem("Projetos"))
 
     if (arrayProjetos.length>1){
         var filtered = arrayProjetos.filter(isProjectRename);
-        filtered.push(newNameProject) //adiciona o novo elemento no array
+        filtered.push(newNameProject)
         localStorage.setItem("Projetos", JSON.stringify(filtered))
         ListaProjetos.innerHTML=""
         filtered.forEach(listarProjetos)
@@ -192,7 +177,6 @@ function updateArray(){
 
 function chamada(){
     arrayProjetos = []
-   // nomeProjeto = NovoProjeto.value
     if(localStorage.getItem("Projetos")){
         arrayProjetos= JSON.parse(localStorage.getItem("Projetos")) //recupera ele
         var a = arrayProjetos.some(compararNomes)
@@ -206,7 +190,6 @@ function chamada(){
             
         }else{
             gravarProjeto()
-
             if(NovoProjeto.value==""){
 
             }else{
@@ -229,7 +212,6 @@ function chamada(){
     }
     
 
-    //BtnProjetos()
 };
 
 function gravarProjetoRenomeado(){
@@ -237,9 +219,9 @@ function gravarProjetoRenomeado(){
     if(localStorage.getItem("Projetos")){
 
         if(nomeProjeto!=""){
-            arrayProjetos= JSON.parse(localStorage.getItem("Projetos")) //recupera ele
+            arrayProjetos= JSON.parse(localStorage.getItem("Projetos"))
             ListaProjetos.innerHTML=""
-            arrayProjetos.push(nomeProjeto) //adiciona o novo elemento no array
+            arrayProjetos.push(nomeProjeto)
             localStorage.setItem('Projetos', JSON.stringify(arrayProjetos))
             arrayProjetos.forEach(listarProjetos)
             setSite()
@@ -251,8 +233,7 @@ function gravarProjetoRenomeado(){
             }else if(localStorage.getItem("lang")=="EN"){
                 exibeDivMessage("You need to define a name!")
             }
-            
-           console.log("Nome não pode ser string vazio1")
+
         }
     } else {
         //Se o nome do projeto não está vazio
@@ -261,8 +242,6 @@ function gravarProjetoRenomeado(){
             localStorage.setItem("Projetos", JSON.stringify(arrayProjetos)) // e grava no localstorage
             setSite()
             arrayProjetos.forEach(listarProjetos)
-            //listarProjetosAoAbrir()    
-            console.log(3)
         }else{ 
             if(localStorage.getItem("lang")=="PT-BR"){
                 exibeDivMessage("Você precisa definir um nome!")
@@ -273,14 +252,12 @@ function gravarProjetoRenomeado(){
         }
 
     }
-        //NovoProjeto.value=""
+
         if(localStorage.getItem("lang")=="PT-BR"){
             exibeDivMessage("Projeto renomeado")
         }else if(localStorage.getItem("lang")=="EN"){
             exibeDivMessage("Renamed project")
         }
-        //console.log("Seu Projeto foi renomeado!")
-    //}
  
 };
 
@@ -302,53 +279,37 @@ function chamadaExcluir(){
     }
     if (window.confirm(ms)) {
         
-    arrayProjetos = []
-    arrayProjetos= JSON.parse(localStorage.getItem("Projetos")) //recupera ele
+        arrayProjetos = []
+        arrayProjetos= JSON.parse(localStorage.getItem("Projetos")) 
 
-    if (arrayProjetos.length>1){
-      var filtered = arrayProjetos.filter(isProject);
-      excluirSite()
-      NomeProjeto.value=''
-      console.log("tem array com "+arrayProjetos.length+ " elementos" )
-      console.log(filtered)
-      console.log("Agora o array tem "+filtered.length+ " elementos" )
-      localStorage.setItem("Projetos", JSON.stringify(filtered))
-      localStorage.setItem("Projeto Atual", "")
-      ListaProjetos.innerHTML=""
-      filtered.forEach(listarProjetos)  
-      
-      areaHTML.value = ""
-      areaCSS.value = ""
-      areaJS.value = ""
-      codexist.src += '';
-      exibeDivMessage("Projeto excluído.")
-    }else if(arrayProjetos.length==1){
-        excluirSite()
-        NomeProjeto.value=''
-        localStorage.removeItem("Projetos")
-        localStorage.removeItem("Projeto Atual")
-        ListaProjetos.innerHTML=""
-        console.log("não há array")
-        areaHTML.value = ""
-        areaCSS.value = ""
-        areaJS.value = ""
-        codexist.src += '';
-        exibeDivMessage("Projeto excluído.")
-        //localStorage.removeItem(nomeProjeto)       
-    }
-};
-      // filtrado é [12, 130, 44]
-    /*
-    var a = arrayProjetos.some(compararNomes)
-    if(a==true){
-        excluirSite()
-        //arrayProjetos.slice(index)
-        console.log("1111")
-        console.log(index)
-    }else{
-        console.log("2222")      
-    }
-    */
+        if (arrayProjetos.length>1){
+            var filtered = arrayProjetos.filter(isProject);
+            excluirSite()
+            NomeProjeto.value=''
+            localStorage.setItem("Projetos", JSON.stringify(filtered))
+            localStorage.setItem("Projeto Atual", "")
+            ListaProjetos.innerHTML=""
+            filtered.forEach(listarProjetos)  
+            
+            areaHTML.value = ""
+            areaCSS.value = ""
+            areaJS.value = ""
+            codexist.src += '';
+            exibeDivMessage("Projeto excluído.")
+        }else if(arrayProjetos.length==1){
+            excluirSite()
+            NomeProjeto.value=''
+            localStorage.removeItem("Projetos")
+            localStorage.removeItem("Projeto Atual")
+            ListaProjetos.innerHTML=""
+            areaHTML.value = ""
+            areaCSS.value = ""
+            areaJS.value = ""
+            codexist.src += '';
+            exibeDivMessage("Projeto excluído.")
+        }
+    };
+   
 };
 
 function compararNomes(element, index, array){
@@ -358,15 +319,14 @@ function compararNomes(element, index, array){
 
 function gravarProjeto(){
     nomeProjeto = NovoProjeto.value
-  
-   //arrayProjetos = []; 
+
     //Se já existe o array com os nomes dos projetos, 
     if(localStorage.getItem("Projetos")){
 
         if(nomeProjeto!=""){
-            arrayProjetos= JSON.parse(localStorage.getItem("Projetos")) //recupera ele
+            arrayProjetos= JSON.parse(localStorage.getItem("Projetos"))
             ListaProjetos.innerHTML=""
-            arrayProjetos.push(nomeProjeto) //adiciona o novo elemento no array
+            arrayProjetos.push(nomeProjeto)
             localStorage.setItem('Projetos', JSON.stringify(arrayProjetos))
             arrayProjetos.forEach(listarProjetos)
             setSite()
@@ -376,18 +336,16 @@ function gravarProjeto(){
             }else if(localStorage.getItem("lang")=="EN"){
                 exibeDivMessage("Project saved! Select the project and start coding!")
             }
-
             NovoProjeto.style.display="none"
             btOKnewProject.style.display="none"
             box.style.height="80px"
-            //alert("Projeto Salvo com sucesso!")
         }else{ 
              if(localStorage.getItem("lang")=="PT-BR"){
                 exibeDivMessage("Você precisa definir um nome!")
             }else if(localStorage.getItem("lang")=="EN"){
                 exibeDivMessage("You need to define a name!")
             }
-            console.log(4)
+
         }
 
     } else {
@@ -396,8 +354,7 @@ function gravarProjeto(){
             arrayProjetos.push(nomeProjeto) //adiciona elemento no array
             localStorage.setItem("Projetos", JSON.stringify(arrayProjetos)) // e grava no localstorage
             setSite()
-            arrayProjetos.forEach(listarProjetos)
-            //listarProjetosAoAbrir()    
+            arrayProjetos.forEach(listarProjetos)  
            
         }else{
             if(localStorage.getItem("lang")=="PT-BR"){
@@ -405,8 +362,6 @@ function gravarProjeto(){
             }else if(localStorage.getItem("lang")=="EN"){
                 exibeDivMessage("You need to define a name!")
             }
-            console.log(3)
-
         }
 
     }
@@ -422,11 +377,9 @@ function selecionarSite(){
     NomeProjeto.value = projetoSelecionado
     localStorage.setItem("Projeto Atual", NomeProjeto.value)
     if(localStorage.getItem(NomeProjeto.value)){
-        //console.log("Projeto Existente")
         getSite()
         codexist.src += '';
     }else{
-        //console.log("Este projeto ainda não tem código!")
         codexist.src += '';
     }
     BtnProjetos()
@@ -435,10 +388,8 @@ function selecionarSite(){
 function excluirSite(){
 
     projetoSelecionado = ListaProjetos.value;
-    //Remove do localStorage
     localStorage.removeItem(projetoSelecionado)
-    //Remove do array
-    //console.log("Projeto "  + projetoSelecionado +" excluído com sucesso!")
+
 };
 function listarProjetosAoAbrir(){
     var arrayProjetos1 = [];
@@ -446,7 +397,7 @@ function listarProjetosAoAbrir(){
         arrayProjetos1= JSON.parse(localStorage.getItem("Projetos"))
         arrayProjetos1.forEach(listarProjetos)  
     }else{
-        //console.log("Não há projetos para listar")
+
     }
 };
 
@@ -462,10 +413,9 @@ function listarProjetos(iten, index){
 function setSite(){
     if(!NomeProjeto.value==""){
         site={
-            //nome:NomeProjeto.value,
             html:areaHTML.value,
             css: areaCSS.value,
-            js:areaJS.value // "window.onload = alert('teste de alerta')"    
+            js:areaJS.value  
         }
         // Transformar o objeto em string e salvar em localStorage
         localStorage.setItem(NomeProjeto.value, JSON.stringify(site));
@@ -488,10 +438,8 @@ function BtnProjetos(){
       
         box.style.display="none"
     }else{
-        //console.log("tett")
         box.style.display="block"
         ListaProjetos.value=localStorage.getItem("Projeto Atual")
-        //console.log("esta parte funcionou")
     }
 };
 
@@ -564,7 +512,6 @@ window.onload = function (){
                 window.location=""+ window.location    
             }
          
-            console.log("lingua mudada") 
         });
     }
 
@@ -605,14 +552,12 @@ window.onload = function (){
 /************** */
 
   if(!localStorage.getItem("cookie")){
-  console.log("não tem cookie");
   var boxCookies = document.getElementById("boxCookies");
     if(boxCookies){
         boxCookies.style.display="block";
     }
   }else{
-   //boxCookies.style.display="none";
-   //console.log("tem cookie");
+
   }
 
 };
@@ -620,15 +565,12 @@ window.onload = function (){
 function preView(){
 
     var largura = window. screen.width
-    //console.log(largura)
     //Se a área de preview estiver visível
     if(!(codexist.style.display=="none")){
-      // console.log("sumiu")
         codexist.style.display="none";
-        localStorage.setItem("preview", "off")
-        
-        var largura = window. screen.width
-       // console.log(largura)
+        localStorage.setItem("preview", "off")    
+        largura = window. screen.width
+
         //Se for no celular
         if(largura<=500){
             divHTML.style.height="95vh";
@@ -637,20 +579,18 @@ function preView(){
             areaCSS.style.height="100%";
             divJS.style.height="92.5vh";
             areaJS.style.height="100%";
-            //console.log("preview no celular desligada")
+            
         //Se for no desktop  
         }else if (largura>500){
             divCSS.style.height="90vh";
             areaCSS.style.height="97.5%";
-            //console.log("preview no desktop desligada")
+
         }
     
         fechaView.style.backgroundColor="red";
         fechaView.style.textDecoration = "line-through";
-      ////Se o preview estiver em off no local storage
+      //Se o preview estiver em off no local storage
     }else if (codexist.style.display=="none"){
-        //console.log("apareceu")
-    //  else if (localStorage.getItem("preview")=="off")
         codexist.style.display="block";
         localStorage.setItem("preview", "on")
         //Se for no computador
@@ -659,7 +599,6 @@ function preView(){
             divCSS.style.height="45vh";
             divJS.style.height="45vh";
             areaCSS.style.height="95%";
-            //console.log("preview no desktop ligada")
         //Se for no celular
         }else if(largura<=500){
             divCSS.style.height="49vh";
@@ -668,7 +607,6 @@ function preView(){
             areaHTML.style.height="95%";
             areaCSS.style.height="95%";
             areaJS.style.height="95%";
-            //console.log("preview no celular ligada")
         }
         fechaView.style.backgroundColor="rgb(139, 73, 201)";
         fechaView.style.textDecoration = "none";
@@ -701,12 +639,8 @@ function closedBox(){
 function setCookie(){
     var dateToday = new Date();
     var dateExpire = new Date();
-    dateExpire.setDate(dateToday.getDate()+365)//Troque 365 pelos nº de dias que deseja.
-    //alert('O cookie vai expirar em: '+dateExpire)
+    dateExpire.setDate(dateToday.getDate()+365)
     document.cookie = 'user-cookies-consent=yes;expires='+dateExpire+"'"
-    /*if (document.cookie.user-cookies-consent == "yes"){
-        //alert('O cookie vai expirar em: '+dateExpire)
-    }*/
     localStorage.setItem("cookie","yes")
 };
 
