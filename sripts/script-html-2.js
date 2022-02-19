@@ -41,9 +41,11 @@ window.onload = function(){
     "<p>Eu sou um parágrafo. Aqui vai o seu texto...</p>\n"+
     "<p>Eu sou outro parágrafo. Aqui vai mais texto...</p>\n"+
     '<p> A tag <span style="color:red">span</span> é usada para agrupar elementos inline para fins de estilo. '
-    txt2.value = str
-    a = txt2.value.replace(/\\n/g, '<br>')
-    view2.innerHTML = a
+    var str1="<body>"
+    var str2="</body>"
+    txt2.value = str1+"\n"+view2.innerHTML+"\n"+str2
+    //a = txt2.value.replace(/\\n/g, '<br>')
+    //view2.innerHTML = a
 
     str=
     '<p>Usamos a tag "strong" para indicar que uma palavra ou expressão dentro do nosso texto é <strong>de forte importância</strong>. Se quisermos apenas colocar uma palavra em <b>negrito</b> usamos a tag "b" de "bold".</p>\n\n'+
