@@ -1,7 +1,8 @@
 body{
+    position: relative;
     margin:0 auto;
     padding: 0;
-    width: 50%;
+    /* width: 50%; */
     /* text-align: center; */
     font-family: Verdana, Tahoma, sans-serif, 'Times New Roman', Times, serif, Helvetica, sans-serif;
     
@@ -14,20 +15,94 @@ body{
 
 }
 
+header{
+    /* display: none; */
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 5vh;
+    background-color: rgb(0, 0, 0);
+    color:rgb(176, 136, 212);
+    z-index: 999;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+img#logo, span#tituloqwerty831809, span#ref{
+    display: inline-block;
+    height: 5vh;
+    line-height: 5vh;
+    vertical-align: middle;
+    border: none;
+}
+
+span#tituloqwerty831809{
+    width: 16vw;
+}
+section#menu_interno{
+    /* display: none; */
+    /* background-color: aqua; */
+    position: fixed;
+    top:5vh;
+    left: 0;
+    overflow-y: scroll;
+    text-align: left;
+    width: 20vw;
+    height: 90vh;
+    border-right: 1px solid black;
+    /* margin-bottom: 5vh; */
+    /* padding-bottom: -100px; */
+    /* padding-left: 0; */
+    /* padding-right: 10px;  */
+
+}
+
+section#menu_interno ul{
+    /* text-align: left; */
+    /* width: 15vw; */
+    position: absolute;
+    top:0;
+   left: 0;
+    /* background-color: rgb(161, 150, 150); */
+    padding: 0 1vw;
+    /* width: 20vw; */
+}
+section#conteudo{
+    /* display: none; */
+    position: absolute;
+    /* background-color: aqua; */
+    top:40px;
+    left:20vw;
+    margin: 0 2vw;
+    width: 60vw;
+    /* margin-top: 100px; */
+    padding-bottom: 50px;
+}
+
+img#image-article{
+    width: 100%;
+    text-align: center;
+}
 span.red{
     color:red
 }
 h2, h3 {
     text-align: left;
 }
-p, li {
-    /* text-align: justify; */
 
-    line-height: 1.6;
+#conteudo p {
+    text-align: justify;
+
+    line-height: 2;
+    font-size: 20px;
 }
-/* p {
-     text-indent: 2vw; 
-} */
+#conteudo li{
+    line-height: 2;
+    font-size: 20px;
+}
+
 textarea.textarea-reference {
     border-radius: 4px;
     width: 92%;
@@ -53,22 +128,7 @@ div.div-view-reference{
     color: black;
 }
 
-section#menu_interno{
-    overflow-y: scroll;
-    position: fixed;
-    left: 0;
-    top:0;
-    text-align: left;
-    width: 20vw;
-    height: 100vh;
-    border-right: 1px solid black;
-    padding-right: 10px; 
-   
-}
 
-section#conteudo {
-    margin-top: 100px;
-}
 div#nome-curso{
     text-align: left;
     /* display: block;
@@ -80,36 +140,86 @@ div#nome-curso{
     background-color: white;
     border-bottom: 1px solid black; */
 }
-a{
+#menu_interno a, div#buttons>span.btnAntProx a{
     text-decoration: none;
-    color: black;
+    color: rgb(39, 35, 41);
 }
-a:hover{
-    color: blue;
+#menu_interno a:hover, div#buttons>span.btnAntProx a:hover{
+    /* color: rgb(139, 73, 201); */
+    opacity: 0.8;
 }
 section#menu_interno ul{
     list-style: none;
 }
 
 details>li{
+    width: 100%;
+    line-height: 2;
     margin-top:5px;
-    padding-left: 5px;
+    padding: 0 5px;
     background-color: rgb(242, 242, 242);
     border-radius: 4px;
 }
 
-summary{
-    margin-top:5px;
+details>summary{
+    margin-top:10px;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
     font-weight: bold;
+    padding: 5px 0;
 }
 
+div#buttons{
+    /* display: flex; */
+    position: fixed;
+    width: 100vw;
+    bottom: -20px;
+    margin-bottom: 0;
+    left: 0;
+    background-color: rgb(5, 5, 5);
+    margin-bottom: 20px;
+    height: 5vh;
+    
+}
+
+div#buttons>span.btnAntProx{
+    display: inline-block;
+    height: 4vh;
+    width: 100px;
+    line-height: 4vh;
+    vertical-align: middle;
+    background-color: rgb(139, 73, 201);
+    color: rgb(255, 255, 255);
+    padding: 0 15px;
+    border-radius: 4px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    margin-top:0.5vh;
+}
+
+div#buttons>span.btnAntProx a{
+    color: white;
+}
+
+div#buttons>span.btnAntProx:hover{
+ cursor: pointer;
+ opacity: 0.9;
+}
+
+div#buttons> span#btnAnt{
+    position: absolute;
+    left:22vw;
+}
+div#buttons> span#btnProx{
+    position: absolute;
+    right:18vw;
+}
 @media (max-width: 700px) {
 
-    body{
+    /* body{
         width: 90%;
 
-    }
+    } */
 
 }
