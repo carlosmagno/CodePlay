@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layout e organização | REFERÊNCIA HTML 5</title>
+    <title>Conteúdos laterais e rodapé | REFERÊNCIA HTML 5</title>
     <link rel="stylesheet" href="../../../style/estilo-reference.css">
 </head>
 <body>
     <header id="cabecalhoqwerty831809" >
         <img src="/icone-min.png" alt="" srcset="" id="logo">
         <span  id="tituloqwerty831809">devPlay.app</span>
-        <span id="ref">REFERÊNCIA HTML 5 > Cabeçalho e menus de navegação</span>
+        <span id="ref">REFERÊNCIA HTML 5 > Conteúdos laterais e rodapé</span>
     </header>
     
 
@@ -19,7 +19,6 @@
 
         <nav>
             <ul> 
-                <details open>
                     <details open>
                         <summary>1 - Conteúdo textual</summary>
                         <li><a href="../introducao-html/">Introdução a HTML</a></li>
@@ -72,80 +71,92 @@
     </section>
 
  <section id="conteudo">
-    <h2 id="cabecalhos-e-menus-de-navegacao">Cabeçalhos e menus de navegação</h2>
-
-            <textarea type="text" name="" id="txt1" cols="" rows=""  class="textarea-reference" readonly>
-
-            </textarea>
-            <h3>Resultado</h3>
-            <div id="view1" class="div-view-reference"></div>
-            <br>
-            <hr>
-
-    <h2 id="corpo-e-secoes-do-site">Corpo e seções do site</h2>
-
-            <textarea name="" id="txt2" cols="" rows=""  class="textarea-reference" readonly></textarea>
-            <h3>Resultado</h3>
-            <div id="view2" class="div-view-reference">
- <section id="ArtigosBlog">
-  <h2>Artigos do Blog</h2><hr>
-
-  <article id="PostNumero1">
-    <h3>Título do Post Número 1</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptatem impedit at aperiam fugit nihil nobis quibusdam autem ad. Exercitationem eaque saepe iusto ut aspernatur quis id cupiditate officiis quae?</p> 
-    <address>
-        Autor: Charles Darwin <br>
-        Rua Paraíso, 128, São Paulo, SP <br>
-        Site: <a href="https://www.link-do-site.com">www.link-do-site.com</a>
-    </address>
-  </article>
-
-  <article id="PostNumer2">
-    <h3>Título do Post Número 2</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptatem impedit at aperiam fugit nihil nobis quibusdam autem ad. Exercitationem eaque saepe iusto ut aspernatur quis id cupiditate officiis quae?</p>
-    <address>
-        Autor: Benjamim Franklin <br>
-        Rua Vale do Céu, 129, Brasília, DF<br>
-        Site: <a href="https://www.link-do-site.com">www.link-do-site.com</a>
-    </address>
-  </article>
-
-</section>
-
-<section id="Cursos">
- <h2>Nossos Cursos</h2><hr>
-
- <article id="HTML5">
-  <h3>Curso de HTML5</h3>
-  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae quis esse nihil amet aliquam fugiat quidem, unde libero illo quod nam repellendus ipsum suscipit impedit. Saepe consequatur dolores vel dolorum.</p>
- </article>
-
- <article id="Javasript"></article>
-  <h3>Curso de JavaScript</h3>
-  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem sed voluptatum ullam praesentium assumenda quisquam amet laboriosam molestias delectus commodi tempora, voluptas quod recusandae beatae sequi laudantium aspernatur blanditiis distinctio?</p>
- </article> 
-
-</section>
-            </div>
-            <br>
-            <hr>
 
         <h2 id="conteudos-laterais-e-rodapé">Conteúdos laterais e rodapé</h2>
 
             <textarea name="" id="txt3" cols="" rows=""  class="textarea-reference" readonly></textarea>
             <h3>Resultado</h3>
-            <div id="view3" class="div-view-reference"></div>
+            <div id="view3" class="div-view-reference">
+
+                <aside>
+                    <span>Barra Lateral</span>
+                   </aside>
+                   
+                   <section id="ArtigosBlog">
+                     <h2>Artigos do Blog</h2>
+                   
+                     <article id="PostNumero1">
+                       <h3>Título do Post Número 1</h3>
+                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptatem impedit at aperiam fugit nihil nobis quibusdam autem ad. Exercitationem eaque saepe iusto ut aspernatur quis id cupiditate officiis quae?...</p> 
+                       <address>
+                           Autor: Charles Darwin <br>
+                           Rua Paraíso, 128, São Paulo, SP <br>
+                           Site: <a href="https://www.link-do-site.com">www.link-do-site.com</a>
+                       </address>
+                     </article>
+                   
+                     <article id="PostNumer2">
+                       <h3>Título do Post Número 2</h3>
+                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptatem impedit at aperiam fugit nihil nobis quibusdam autem ad. Exercitationem eaque saepe iusto ut aspernatur quis id cupiditate officiis quae?...</p>
+                       <address>
+                           Autor: Benjamim Franklin <br>
+                           Rua Vale do Céu, 129, Brasília, DF<br>
+                           Site: <a href="https://www.link-do-site.com">www.link-do-site.com</a>
+                       </address>
+                     </article>
+                   
+                   </section>
+                   
+                   <footer>
+                    <span>Rodapé</span>
+                   </footer>
+                   <style>
+
+div.div-view-reference{
+    position:relative;
+    height: auto;
+    overflow: scroll;
+}
+aside{
+position:absolute;
+background-color:purple;
+color:white;
+text-align:center;
+float:left;
+width:100px;
+min-height:90%;
+border:1px solid black;
+}
+
+section#ArtigosBlog{
+
+border:1px solid;
+background-color:orange;
+width:100%;
+min-height:90%;
+}
+
+footer{
+background-color:aqua;
+position:static;
+text-align:center;
+/* top:90%; */
+min-height:10%;
+width:100%;
+border:1px solid black;
+}
+
+h2, article{
+padding:0 3% 0 13%;
+}
+
+                   </style>
+                   
+
+            </div>
             <br>
             <hr>
-
-        <h2 id="containers">Containers</h2>
-
-            <textarea name="" id="txt4" cols="" rows=""  class="textarea-reference" readonly></textarea>
-            <h3>Resultado</h3>
-            <div id="view4" class="div-view-reference"></div>
-            <br>
-            <hr>
-    </section>
+ </section>
     <div id="buttons">
         <span id="btnAnt" class="btnAntProx"><a href="../introducao-html/">&lt; Anterior</a></span>
         <span id="btnProx" class="btnAntProx"><a href="../titulos-e-paragrafos/">Próximo &gt;</a> </span>
