@@ -51,7 +51,8 @@ window.onload = function(){
         //str=
         //'<aside></aside>'+
         //'aguardando edição'
-        txt3.value = str1+"\n"+view3.innerHTML+"\n"+str2
+        //txt3.value = str1+"\n"+view3.innerHTML+"\n"+str2
+        txt3.value = view3.innerHTML
         //txt3.value = str
         //a = txt3.value.replace(/\\n/g, '<br>')
         //view3.innerHTML = a  
