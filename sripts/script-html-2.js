@@ -60,11 +60,12 @@ window.onload = function(){
 
     //Containers
     if(txt4){
-        str=
-        'aguardando edição'
-        txt4.value = str
-        a = txt4.value.replace(/\\n/g, '<br>')
-        view4.innerHTML = a
+        //str=
+        //'aguardando edição'
+        //txt4.value = str
+        //a = txt4.value.replace(/\\n/g, '<br>')
+        //view4.innerHTML = a
+        txt4.value =  view4.innerHTML
     }
 
     if(txt5){
