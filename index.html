@@ -69,12 +69,13 @@ console.log("[PWA Builder] Service worker has been registered for scope: " + reg
         <input type="text" name="NomeProjeto1" id="NomeProjeto"  value="" readonly>
 
         <section id="buttons">
-            <span id="learn" class="btsUp"><a href="referencia/" target="_blank" rel="noopener noreferrer">Reference</a></span>
+            <span id="learn" class="btsUp"><a href="referencia/" target="_blank" rel="noopener noreferrer">Referência CSS</a></span>
+            
             <!-- <span id="downloadPage" class="btsUp" ><a href="#AreaViewqwerty831809" download="Meu Projeto devPlay">Baixar</a></span> -->
-            <select name="Language" id="Language">
+            <!-- <select name="Language" id="Language">
                 <option value="PT-BR">PT-BR</option>
                 <option value="EN">EN</option>
-            </select>
+            </select> -->
             <span id="newPage" class="btsUp"><a href="page-view" target="_blank" rel="noopener noreferrer">Full</a></span>
             <span id="fechaView" class="btsUp" onclick="preView()">Preview</span>
             <span id="fechaCode" class="btsUp" onclick="BtnProjetos()">Projetos</span>
@@ -82,10 +83,117 @@ console.log("[PWA Builder] Service worker has been registered for scope: " + reg
             <span id="codeselectHTML" onclick="viewHTML()">HTML</span>
             <span id="codeselectCSS" onclick="viewCSS()">CSS</span>
             <span id="codeselectJS" onclick="viewJS();setSite()" title="Clique para salvar o código">JS</span>
+            <span id="icon_menu" class="btsUp2">☰</span>
             
         </section>
 
     </header>
+
+    <div id="oculto" style="display:none;">
+        <div id="areaHTMLdemo">
+<!--
+Este é um comentário em HTML. Altere
+o conteúdo dos elementos e veja o resultado!
+-->
+
+<h2>Projeto Demo | Bem-vindo a devPlay!</h2>
+
+<p>Fala Dev! Seja bem-vindo ao Projeto de Demonstração. 
+Você pode editar os códigos HTML, CSS ou JavaScript e ver o resultado ao vivo.
+</p>
+
+<p>
+Para saber como usar devPlay.app assista ao vídeo a seguir.
+ Também pode rolar a página principal para ler mais informações.
+</p>
+
+<p>
+Se você ainda não começou a aprender a desenvolver sites e 
+aplicações web, consulte aqui mesmo as referências básicas das
+ linguagens de Desenvolvimento Web e comece hoje mesmo!
+</p>
+
+
+<!-- <iframe width="90%" height="300" src="https://www.youtube.com/embed/6matjjcQHkk" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe> -->
+
+<p>
+Veja como é fácil criar sites como essa página que você está vendo agora!
+</p>
+
+        </div>
+        <div id="areaCSSdemo">
+/*
+Este é um comentário em CSS.
+Altere uma das propriedades nos
+seletores abaixo e veja a mágica
+acontecendo!
+*/
+
+*{
+margin:0 auto;
+text-align:center;
+}
+
+body{
+background-color:rgb(54, 54, 56);
+font-family:arial;
+}
+
+h2{
+background-color:rgb(139, 73, 201);
+color:white;
+width:90%;
+padding:5px 0;
+border-radius:8px;
+border:solid 4px rgb(139, 73, 201);
+text-align:center;
+margin:20px auto;
+}
+
+iframe {
+margin:20px 0;
+border-radius:8px;
+border:solid 4px rgb(139, 73, 201);
+}
+
+p{
+width:90%;
+color:white;
+text-align:left;
+font-size:1.3em;
+margin-bottom:1em;
+}
+
+@media(min-width:900px){
+ body{
+ background-color:white;
+ font-family:arial;
+ width:60vw;
+ }
+
+ p{
+ color:black;
+ }
+
+ iframe {
+ height:50vh;
+ }
+}
+
+        </div>
+        <div id="areaJSdemo">            
+/*
+Este é um comentário em JavaScript.
+Sempre que terminar de digitar seu código JS aqui clique no botão amarelo
+'JS' acima para salvar seu código JavaScript e atualizar sua página em 
+construção.
+*/
+        </div>
+</div>
+
     <div class="grid1" id="grid1">
 
         <div id="containerfatherHTML" class="AreaCodeqwerty831809" >
@@ -220,8 +328,9 @@ console.log("[PWA Builder] Service worker has been registered for scope: " + reg
             </p> </footer>
 
    
-
+    <script src="script2.js"></script>
     <script src="script.js"></script>
+    
  <script type="module">
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-app.js";

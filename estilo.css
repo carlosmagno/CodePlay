@@ -430,7 +430,19 @@ div#boxCookies{
   p#ultimo a:hover{
     color: blueviolet;
  }
-
+ #icon_menu{
+    /* height: 5vh; */
+    /* display:block; */
+    /* position:fixed; */
+    top:0;
+    right: 5px;
+    width: 25px;
+    padding-left: 4px;
+    /* padding-right: 4px; */
+    font-size: 25px;
+    font-weight: bold;
+    /* background-color: aqua; */
+}
  @media (max-width: 1000px) {
     #tituloqwerty831809{
         display:none;
@@ -444,6 +456,12 @@ div#boxCookies{
  }
 @media (max-width: 500px) {
 
+    /* span#icon_menu{
+        display:block;
+        position:fixed;
+        top:0;
+        right: 5px;
+    } */
     div#message{
         /* display:block; */
         position: fixed;
@@ -678,8 +696,17 @@ div#boxCookies{
 
     }
 
-    .btsUp{
-        padding-left: 4px;
-        padding-right: 4px;
+   #icon_menu{
+        height: 5vh;
+        display:block;
+        /* position:fixed; */
+        top:0;
+        right: 5px;
+        width: 100%;
+        /* padding-left: 4px; */
+        /* padding-right: 4px; */
+        font-size: 20px;
+        font-weight: bold;
+        /* background-color: aqua; */
     }
   }

@@ -42,9 +42,13 @@ var languageList = document.getElementById('Language')
 function exibeDivMessage(message){
     var divMessage=document.getElementById('message')
     var pMessage = document.getElementById('pMessage')
-    pMessage.innerText=message
-    divMessage.style.display="block"
-    setTimeout(() => { divMessage.style.display="none"}, 1000);
+    if(pMessage && divMessage){
+        pMessage.innerText=message
+        divMessage.style.display="block"
+        setTimeout(() => { divMessage.style.display="none"}, 1000);
+    
+    }
+    
 
 }
 
@@ -162,12 +166,17 @@ function updateArray(){
         var filtered = arrayProjetos.filter(isProjectRename);
         filtered.push(newNameProject)
         localStorage.setItem("Projetos", JSON.stringify(filtered))
-        ListaProjetos.innerHTML=""
+        if( ListaProjetos){
+            ListaProjetos.innerHTML=""
+        }
         filtered.forEach(listarProjetos)
 
-        if(NomeProjeto.value==localStorage.getItem("Projeto Atual")){
-            ListaProjetos.value=localStorage.getItem("Projeto Atual")
+        if(NomeProjeto){
+            if(NomeProjeto.value==localStorage.getItem("Projeto Atual")){
+                ListaProjetos.value=localStorage.getItem("Projeto Atual")
+            }
         }
+     
         
      }else if(arrayProjetos.length==1){
 
@@ -491,76 +500,6 @@ function setLanguage(){
 }
 
 
-window.onload = function (){
-
-
-    if(inputRename){
-        ListaProjetos.addEventListener('change', (event) => {
-            getNameProject()
-        });
-    }
-
-    if(languageList){
-
-        if(localStorage.getItem("lang")){
-            languageList.value = localStorage.getItem("lang")
-            setLanguage()
-        }
-        languageList.addEventListener('change',(event) => {
-            setLanguage()
-            if(localStorage.getItem("lang")=="PT-BR"){
-                window.location=""+ window.location    
-            }
-         
-        });
-    }
-
-    listarProjetosAoAbrir()
-    if(window.location.href.endsWith("page-view")||window.location.href.endsWith("page-view/")){
-        var projetoAtual = localStorage.getItem("Projeto Atual")
-        siteObj = JSON.parse(localStorage.getItem(projetoAtual)) ;
-        corpopage = document.getElementById("corpopage")
-        estilo = document.getElementById("estilo")
-        codeJS = document.getElementById('codejs')
-        
-        if(siteObj){
-            corpopage.innerHTML = siteObj.html;
-            estilo.innerHTML = siteObj.css; 
-            var scrp = document.createElement('script')
-            scrp.text = siteObj.js
-            document.body.appendChild(scrp)
-        }
-    }
-
-    if(!window.location.href.endsWith("page-view")||(!window.location.href.endsWith("page-view/"))){
-        if(localStorage.getItem("Projeto Atual")&&localStorage.getItem("Projeto Atual")!="[]"){
-            
-        }
-
-        if(areaHTML){
-            areaHTML.addEventListener("input",setSite);
-        }
-        if(areaCSS){
-            areaCSS.addEventListener("input",setSite);
-        }
-        if(NomeProjeto){
-            NomeProjeto.value = localStorage.getItem("Projeto Atual")
-            getSite()
-        }
-   
-    }
-/************** */
-
-  if(!localStorage.getItem("cookie")){
-  var boxCookies = document.getElementById("boxCookies");
-    if(boxCookies){
-        boxCookies.style.display="block";
-    }
-  }else{
-
-  }
-
-};
 
 function preView(){
 
@@ -644,3 +583,191 @@ function setCookie(){
     localStorage.setItem("cookie","yes")
 };
 
+function chamadaProjetoDemo(){
+    arrayProjetos = []
+    if(localStorage.getItem("Projetos")){
+        //gravarProjetoDemo()
+    }else{
+        gravarProjetoDemo()
+        if(NovoProjeto.value==""){
+
+        }else{
+        NovoProjeto.style.display="none"
+        btOKnewProject.style.display="none"
+        box.style.height="80px"
+        }
+    }
+    
+
+};
+
+var nomeProjetoRenomearDemo;
+function compararNomesRenomearDemo(element, index, array){
+    nomeProjetoRenomearDemo =  nomeProjeto
+    return element== nomeProjetoRenomearDemo
+};
+
+function gravarProjetoDemo(){
+    nomeProjeto = "Projeto Demo"
+
+    //Se já existe o array com os nomes dos projetos, 
+    if(localStorage.getItem("Projetos")){
+
+        if(nomeProjeto!=""){
+            arrayProjetos= JSON.parse(localStorage.getItem("Projetos"))
+
+            var a = arrayProjetos.some(compararNomesRenomearDemo)
+            if(a==true){
+                if(localStorage.getItem("lang")=="PT-BR"){
+                    exibeDivMessage("Projeto de demonstração carregado!")
+                }else if(localStorage.getItem("lang")=="EN"){
+                    exibeDivMessage("There is already a project with that name!")
+                }
+                
+            }else{
+                if( ListaProjetos){
+                    ListaProjetos.innerHTML=""
+                }
+                
+                
+                arrayProjetos.push(nomeProjeto)
+                updateArray()
+                localStorage.setItem('Projetos', JSON.stringify(arrayProjetos))
+                //arrayProjetos.forEach(listarProjetos)
+                setSiteDemo()
+            }
+
+
+
+            // if(localStorage.getItem("lang")=="PT-BR"){
+            //     exibeDivMessage("Projeto salvo! Selecione o projeto e comece a codar!")
+            // }else if(localStorage.getItem("lang")=="EN"){
+            //     exibeDivMessage("Project saved! Select the project and start coding!")
+            // }
+            // NovoProjeto.style.display="none"
+            // btOKnewProject.style.display="none"
+            // box.style.height="80px"
+        }else{ 
+            //  if(localStorage.getItem("lang")=="PT-BR"){
+            //     exibeDivMessage("Você precisa definir um nome!")
+            // }else if(localStorage.getItem("lang")=="EN"){
+            //     exibeDivMessage("You need to define a name!")
+            // }
+
+        }
+
+    } else {
+        //Se o nome do projeto não está vazio
+        // if(nomeProjeto!=""){
+        //     arrayProjetos.push(nomeProjeto) //adiciona elemento no array
+        //     localStorage.setItem("Projetos", JSON.stringify(arrayProjetos)) // e grava no localstorage
+        //     setSiteDemo()
+        //     arrayProjetos.forEach(listarProjetos)  
+           
+        // }else{
+        //     if(localStorage.getItem("lang")=="PT-BR"){
+        //         exibeDivMessage("Você precisa definir um nome!")
+        //     }else if(localStorage.getItem("lang")=="EN"){
+        //         exibeDivMessage("You need to define a name!")
+        //     }
+        // }
+
+    }
+    // NovoProjeto.value=""
+    
+};
+
+const areaHTMLdemo = document.getElementById("areaHTMLdemo")
+const areaCSSdemo = document.getElementById("areaCSSdemo")
+const areaJSdemo = document.getElementById("areaJSdemo")
+
+function setSiteDemo(){
+    nomeProjeto = "Projeto Demo"
+    if (areaHTMLdemo && areaCSSdemo && areaJSdemo){
+        
+        site={
+            html:areaHTMLdemo.innerHTML,
+            css: areaCSSdemo.innerHTML,
+            js:areaJSdemo.innerHTML 
+        }
+        // Transformar o objeto em string e salvar em localStorage
+        localStorage.setItem(nomeProjeto, JSON.stringify(site));
+        getSite();
+        codexist.src += '';
+    }
+
+    
+  
+};
+window.onload = function (){
+
+    chamadaProjetoDemo();
+    // arrayProjetos = []
+    // ListaProjetos.innerHTML=""
+    if(inputRename){
+        ListaProjetos.addEventListener('change', (event) => {
+            getNameProject()
+        });
+    }
+
+    if(languageList){
+
+        if(localStorage.getItem("lang")){
+            languageList.value = localStorage.getItem("lang")
+            setLanguage()
+        }
+        languageList.addEventListener('change',(event) => {
+            setLanguage()
+            if(localStorage.getItem("lang")=="PT-BR"){
+                window.location=""+ window.location    
+            }
+         
+        });
+    }
+
+    listarProjetosAoAbrir()
+    if(window.location.href.endsWith("page-view")||window.location.href.endsWith("page-view/")){
+        var projetoAtual = localStorage.getItem("Projeto Atual")
+        siteObj = JSON.parse(localStorage.getItem(projetoAtual)) ;
+        corpopage = document.getElementById("corpopage")
+        estilo = document.getElementById("estilo")
+        codeJS = document.getElementById('codejs')
+        
+        if(siteObj){
+            corpopage.innerHTML = siteObj.html;
+            estilo.innerHTML = siteObj.css; 
+            var scrp = document.createElement('script')
+            scrp.text = siteObj.js
+            document.body.appendChild(scrp)
+        }
+    }
+
+    if(!window.location.href.endsWith("page-view")||(!window.location.href.endsWith("page-view/"))){
+        if(localStorage.getItem("Projeto Atual")&&localStorage.getItem("Projeto Atual")!="[]"){
+            
+        }
+
+        if(areaHTML){
+            areaHTML.addEventListener("input",setSite);
+        }
+        if(areaCSS){
+            areaCSS.addEventListener("input",setSite);
+        }
+        if(NomeProjeto){
+            NomeProjeto.value = localStorage.getItem("Projeto Atual")
+            getSite()
+        }
+   
+    }
+/************** */
+
+  if(!localStorage.getItem("cookie")){
+  var boxCookies = document.getElementById("boxCookies");
+    if(boxCookies){
+        boxCookies.style.display="block";
+    }
+  }else{
+
+  }
+
+};

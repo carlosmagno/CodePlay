@@ -15,6 +15,11 @@ body{
 
 }
 
+span#icon_menu{
+    display:none;
+    position:fixed;
+    right: 5px;
+}
 header#cabecalhoqwerty831809{
     /* display: none; */
     position: fixed;
@@ -26,7 +31,7 @@ header#cabecalhoqwerty831809{
     color:rgb(176, 136, 212);
     z-index: 999;
     font-family:'Courier New', Courier, monospace;
-    font-size: 1.4em;
+    font-size: 20px;
     font-weight: bold;
 }
 
@@ -82,8 +87,8 @@ section#conteudo{
 }
 
 img#image-article{
-    width: 100%;
-    text-align: center;
+    width: 100%;height: auto;
+    /* text-align: center; */
 }
 span.red{
     color:red
@@ -120,10 +125,11 @@ textarea.textarea-reference {
 }
 
 div.div-view-reference{
+    /* width: fit-content; */
     border-radius: 4px;
     padding: 2vw;
     border: solid 0.2vw;
-    width: 92%;
+    /* width: 92%; */
     height: auto;
     color: black;
 }
@@ -215,6 +221,7 @@ div#buttons> span#btnProx{
     position: absolute;
     right:18vw;
 }
+
 @media (max-width: 700px) {
 
     /* body{
@@ -222,4 +229,79 @@ div#buttons> span#btnProx{
 
     } */
 
+    /* header#cabecalhoqwerty831809{
+        display: none; 
+        position: static;
+        display: flex;
+    } */
+    span#icon_menu{
+        display:block;
+        position:fixed;
+        top:0;
+        right: 5px;
+    }
+    h1{
+        font-size: 1em;
+    }
+
+    address{
+        font-size: 0.7em;
+    }
+    section#menu_interno{
+        background-color: white;
+        display:none;
+        width: 98vw;
+        z-index: 999;
+    }
+
+    section#conteudo{
+        /* position: relative; */
+        /* background-color: aqua; */
+        /* top:40px;*/
+        left:0;
+       /*  margin: 0 2vw; */
+        width: auto;
+        /* padding-bottom: 50px; */
+    }
+
+    span#ref{
+        display:none;
+        font-size: 0.8em;
+        height: auto;
+    }
+
+    img#logo, span#tituloqwerty831809{
+        display: inline-block;
+        height: 5vh;
+        line-height: 5vh;
+        vertical-align: middle;
+        border: none;
+    }
+
+    .div-view-reference{
+        padding: 0;
+        /* background-color: blue; */
+        /* width: 600px; */
+        height: auto;
+        overflow: scroll;
+    }
+/*     
+    .div-view-reference>img{
+        width: 100%;
+        height: auto; 
+    }
+    */
+    /* div#buttons{
+
+        position: fixed;
+        top: 0;
+    } */
+    div#buttons> span#btnAnt{
+        position: absolute;
+        left:5px;
+    }
+    div#buttons> span#btnProx{
+        position: absolute;
+        right:5px;
+    }
 }
