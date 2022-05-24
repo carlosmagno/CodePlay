@@ -159,8 +159,15 @@ function isProjectRename(value) {
 };
 
 function updateArray(){
-    arrayProjetos = []
-    arrayProjetos= JSON.parse(localStorage.getItem("Projetos"))
+    //arrayProjetos = []
+
+    if(localStorage.getItem("Projetos")){
+        arrayProjetos = []
+        arrayProjetos= JSON.parse(localStorage.getItem("Projetos"))
+    }else{
+
+    }
+    
 
     if (arrayProjetos.length>1){
         var filtered = arrayProjetos.filter(isProjectRename);
@@ -382,6 +389,7 @@ function selecionarSite(){
 
     areaCSS.value=""
     areaHTML.value=""
+    areaJS.value=""
     projetoSelecionado = ListaProjetos.value
     NomeProjeto.value = projetoSelecionado
     localStorage.setItem("Projeto Atual", NomeProjeto.value)
@@ -453,7 +461,15 @@ function BtnProjetos(){
 };
 
 function getSite(){
-    var projetoAtual = localStorage.getItem("Projeto Atual")
+    var projetoAtual;
+
+    if(localStorage.getItem("Projeto Atual")){
+        projetoAtual = localStorage.getItem("Projeto Atual")
+    }else{
+        projetoAtual="Projeto Demo"
+        localStorage.setItem("Projeto Atual", projetoAtual)
+    }
+    
 
     if(localStorage.getItem(projetoAtual)){
         siteObj = JSON.parse(localStorage.getItem(projetoAtual)) ;
@@ -589,13 +605,13 @@ function chamadaProjetoDemo(){
         //gravarProjetoDemo()
     }else{
         gravarProjetoDemo()
-        if(NovoProjeto.value==""){
+    //     if(NovoProjeto.value==""){
 
-        }else{
-        NovoProjeto.style.display="none"
-        btOKnewProject.style.display="none"
-        box.style.height="80px"
-        }
+    //     }else{
+    //     NovoProjeto.style.display="none"
+    //     btOKnewProject.style.display="none"
+    //     box.style.height="80px"
+    //     }
     }
     
 
@@ -657,6 +673,22 @@ function gravarProjetoDemo(){
         }
 
     } else {
+        
+
+        if( ListaProjetos){
+            ListaProjetos.innerHTML=""
+        }
+        
+        
+        arrayProjetos.push(nomeProjeto)
+        //console.log(arrayProjetos + " ddd")
+        updateArray()
+        localStorage.setItem('Projetos', JSON.stringify(arrayProjetos))
+        //arrayProjetos.forEach(listarProjetos)
+        setSiteDemo()
+        //console.log("tudo ok")
+        listarProjetosAoAbrir()
+
         //Se o nome do projeto não está vazio
         // if(nomeProjeto!=""){
         //     arrayProjetos.push(nomeProjeto) //adiciona elemento no array
@@ -677,14 +709,19 @@ function gravarProjetoDemo(){
     
 };
 
-const areaHTMLdemo = document.getElementById("areaHTMLdemo")
-const areaCSSdemo = document.getElementById("areaCSSdemo")
-const areaJSdemo = document.getElementById("areaJSdemo")
+
 
 function setSiteDemo(){
+
+
+var areaHTMLdemo = document.getElementById("areaHTMLdemo")
+var areaCSSdemo = document.getElementById("areaCSSdemo")
+var areaJSdemo = document.getElementById("areaJSdemo")
     nomeProjeto = "Projeto Demo"
-    if (areaHTMLdemo && areaCSSdemo && areaJSdemo){
-        
+    //console.log(areaHTMLdemo)
+    if (areaHTMLdemo){
+        //console.log(areaHTMLdemo.innerHTML)
+       // console.log("setar site")
         site={
             html:areaHTMLdemo.innerHTML,
             css: areaCSSdemo.innerHTML,
@@ -692,16 +729,43 @@ function setSiteDemo(){
         }
         // Transformar o objeto em string e salvar em localStorage
         localStorage.setItem(nomeProjeto, JSON.stringify(site));
-        getSite();
+        if(NomeProjeto){
+            NomeProjeto.value = localStorage.getItem("Projeto Atual")
+            getSite()
+        }
+        //getSite();
         codexist.src += '';
     }
 
     
   
 };
-window.onload = function (){
 
-    chamadaProjetoDemo();
+ //vai executar quando o doom estiver pronto para ser manipulado
+ document.addEventListener('DOMContentLoaded', function(){
+    if(localStorage.getItem("Projeto Demo")){
+        console.log("Há demo")
+    } else{
+        setTimeout(function(){
+            //aqui é o codigo que vai ser executado depois do tempo determinado no segundo parametro
+            chamadaProjetoDemo();
+    
+        }, 3000);// <-- o tempo que vai levar ate a funcao ser executada, em milisegundos
+    }
+
+});
+
+window.onload = function (){
+    //console.log("setar site")
+
+    // var delayInMilliseconds = 3000; //2 seconds
+
+    // setTimeout(function() {
+    //   //your code to be executed after 2 seconds
+    //   chamadaProjetoDemo();
+    // }, delayInMilliseconds);
+
+    
     // arrayProjetos = []
     // ListaProjetos.innerHTML=""
     if(inputRename){
