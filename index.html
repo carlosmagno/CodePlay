@@ -30,6 +30,19 @@
     <title> &lt;devPlay/&gt;</title>
     <meta name="description" content="Crie sua biblioteca de snippets de código HTML, CSS e JS!">
     <style id="estilo2qwerty831809"></style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- <style>
+        .material-symbols-rounded {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 48;
+          font-size: 35px;
+          line-height: 35px;
+        }
+    </style> -->
+    
     <link rel="stylesheet" href="estilo.css" type="text/css">
     
     <script type="module">
@@ -69,21 +82,29 @@ console.log("[PWA Builder] Service worker has been registered for scope: " + reg
         <input type="text" name="NomeProjeto1" id="NomeProjeto"  value="" readonly>
 
         <section id="buttons">
-            <span id="learn" class="btsUp"><a href="referencia/css/seletores/" target="_blank" rel="noopener noreferrer">Referência CSS</a></span>
+            <span id="learn" class="btsUp" title="Referência"><a href="referencia/css/seletores/" target="_blank" rel="noopener noreferrer"><span class="material-symbols-rounded">
+                school
+                </span></a></span>
             
             <!-- <span id="downloadPage" class="btsUp" ><a href="#AreaViewqwerty831809" download="Meu Projeto devPlay">Baixar</a></span> -->
             <!-- <select name="Language" id="Language">
                 <option value="PT-BR">PT-BR</option>
                 <option value="EN">EN</option>
             </select> -->
-            <span id="newPage" class="btsUp"><a href="page-view" target="_blank" rel="noopener noreferrer">Full</a></span>
-            <span id="fechaView" class="btsUp" onclick="preView()">Preview</span>
-            <span id="fechaCode" class="btsUp" onclick="BtnProjetos()">Projetos</span>
+            <span id="newPage" class="btsUp"><a href="page-view" target="_blank" rel="noopener noreferrer" title="Abrir em nova aba"><span class="material-symbols-rounded">open_in_new</span></a></span>
+            <span id="fechaView" class="btsUp" onclick="preView()" title="Preview"><span class="material-symbols-rounded">
+                preview
+                </span></span>
+            <span id="fechaCode" class="btsUp" onclick="BtnProjetos()" title="Projetos"><span class="material-symbols-rounded">
+                    files
+                    </span></span>
 
             <span id="codeselectHTML" onclick="viewHTML()">HTML</span>
             <span id="codeselectCSS" onclick="viewCSS()">CSS</span>
             <span id="codeselectJS" onclick="viewJS();setSite()" title="Clique para salvar o código">JS</span>
-            <span id="icon_menu" class="btsUp2">☰</span>
+            <span id="icon_menu" class="btsUp2">☰ </span><span class="material-symbols-rounded">
+                settings
+                </span>
             
         </section>
 
