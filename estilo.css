@@ -203,8 +203,8 @@ span#codeselectHTML, span#codeselectCSS, span#codeselectJS{
     cursor: pointer;
 }
 section#buttons{
-   margin-top: 1vh;
-   margin-right: 0.5vh; 
+   margin-top: 6px;
+   margin-right: 0.5vw; 
    position: absolute;
    right: 0.5vh;
     display: inline-flex;
@@ -218,17 +218,18 @@ section#buttons{
 
 }
 .btsUp{
-    font-size: 30px;
+    /* font-size: 30px; */
     margin-left:8px;
     text-align: center;
-    width: 48px;
-    color: rgb(255, 255, 255);
+    width: 30px;
+    /* color: rgb(255, 255, 255); */
+    
     background-color:rgb(139, 73, 201);
-    padding-left: 8px;
-    padding-right: 8px;
+    /* fill:rgb(49, 32, 32); */
+    padding: 0 4px;
     border-radius:2px;
-    height: 48px;
-    line-height: 48px;
+    height: 30px;
+    line-height: 30px;
 
        /*Código para não permitir seleção nos conteúdos do span*/
        -webkit-touch-callout: none;
@@ -242,10 +243,18 @@ section#buttons{
 
 .btsUp:hover{
     cursor: pointer;
-    opacity: 0.8;
+    /* opacity: 1.5; */
+    background-color:rgb(178, 113, 238);
 
 }
-
+svg {
+    fill:rgb(255, 255, 255);
+    width: 100%;
+    
+  }
+  img{
+    width: 100%;
+  }
 .grid1 {
     position:relative;
     height: 90vh;
