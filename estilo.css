@@ -565,11 +565,26 @@ div#boxCookies{
         border-radius: 2px;
     }
     .btsUp{
-        max-height: 40px;
+     
+        min-height: 40px;
         min-width: 25px;
-        
+        line-height: 50px;
+        border-radius: 2px;
         
     }
+
+    svg {
+        /* fill:rgb(255, 255, 255); */
+        margin: 4px 4px 0 0;
+        width: 110%;
+        height: 130%;
+        vertical-align: middle;
+        /* background-color: blue; */
+        
+      }
+      img{
+        width: 10%;
+      }
     .material-symbols-rounded {
         font-size: 25px;
         /* background-color: blanchedalmond; */
@@ -607,9 +622,9 @@ div#boxCookies{
         display: block;    
     }
 
-    #learn{
+    /* #learn{
         display: none;
-    }
+    } */
 
     iframe#AreaViewqwerty831809 {
         height:50vh;

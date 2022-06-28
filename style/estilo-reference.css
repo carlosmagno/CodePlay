@@ -42,7 +42,45 @@ img#logo, span#tituloqwerty831809, span#ref{
     vertical-align: middle;
     border: none;
 }
+div.divlanguage{
+    margin-top: 20px;
+    height: 290px;
+    border: 5px solid rgb(139, 73, 201);
+    padding: 10px;
+    border-radius: 5px;
+    /* background-color: aqua; */
+}
+img.imglanguage{
+    display: inline-block;
+    width: 200px;
+    height: auto;
+    margin-right:30px;
+    /* border: 5px solid rgb(139, 73, 201); */
+    /* padding: 10px; */
+    border-radius: 5px;
 
+}
+div.divinterno{
+    display: inline-block;
+    /* background-color: blue; */
+    vertical-align: top;
+    
+}
+p.paragrafolanguage {
+    /* display: inline-block; */
+    /* border: 5px solid rgb(139, 73, 201); */
+    vertical-align: top;
+    padding: 10px;
+    height: max-content;
+    /* background-color: aqua; */
+    font-size: x-small;
+  
+  
+}
+
+div#sugeridos>h2{
+    text-align: center;
+}
 span#tituloqwerty831809{
     width: 16vw;
 }
@@ -222,7 +260,44 @@ div#buttons> span#btnProx{
     right:18vw;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1400px) {
+    div.divlanguage {
+        display: flexbox;
+        text-align: center;
+        margin: 0 auto;
+        /* border: 5px solid rgb(139, 73, 201); */
+        vertical-align: top;
+        padding: 10px;
+        height: max-content;
+        /* background-color: aqua; */
+        font-size: x-small;
+      
+      
+    }
+    
+    /* div#sugeridos>h2{
+        text-align: center;
+    } */
+    div.divlanguage li{
+        /* display: flex; */
+        text-align: left;
+        /* border: 5px solid rgb(139, 73, 201); */
+        vertical-align: top;
+        padding: 10px;
+        height: max-content;
+        /* background-color: aqua; */
+        font-size: x-small;
+      
+      
+    }
+    
+    div.divlanguage h2{
+        font-size: 2em;
+        text-align: center;
+    
+    }
+}    
+@media (max-width: 800px) {
 
     /* body{
         width: 90%;
@@ -303,5 +378,41 @@ div#buttons> span#btnProx{
     div#buttons> span#btnProx{
         position: absolute;
         right:5px;
+    }
+
+    div.divlanguage {
+        display: flexbox;
+        text-align: center;
+        margin: 0 auto;
+        /* border: 5px solid rgb(139, 73, 201); */
+        vertical-align: top;
+        padding: 10px;
+        height: max-content;
+        /* background-color: aqua; */
+        font-size: x-small;
+      
+      
+    }
+    
+    /* div#sugeridos>h2{
+        text-align: center;
+    } */
+    div.divlanguage li{
+        /* display: flex; */
+        text-align: left;
+        /* border: 5px solid rgb(139, 73, 201); */
+        vertical-align: top;
+        padding: 10px;
+        height: max-content;
+        /* background-color: aqua; */
+        font-size: x-small;
+      
+      
+    }
+    
+    div.divlanguage h2{
+        font-size: 2em;
+        text-align: center;
+    
     }
 }
