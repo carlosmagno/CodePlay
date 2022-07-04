@@ -327,9 +327,10 @@ div#buttons> span#btnProx{
         background-color: white;
         display:none;
         width: 98vw;
+        max-width: 98vw;
         z-index: 999;
     }
-
+ 
     section#conteudo{
         /* position: relative; */
         /* background-color: aqua; */
