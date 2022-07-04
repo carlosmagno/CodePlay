@@ -482,6 +482,9 @@ function getSite(){
 var textPT = document.getElementById('textPT')
 var textEN = document.getElementById('textEN')
 var fechaCode = document.getElementById('fechaCode')
+var newPage = document.getElementById('newPage')
+var Reference = document.getElementById('learn')
+
 var Privacy = document.getElementById('Privacy')
 var Support = document.getElementById('Support')
 var Contact = document.getElementById('Contact')
@@ -503,7 +506,11 @@ function setLanguage(){
         btOKnewProject.innerText="Save"
         btOKrenameProject.innerText="Save"
         btRename.innerText="Rename"
-        fechaCode .innerText="Projects"
+        newPage.title="Open in new tab"
+        fechaCode.title="Projects"
+        Reference.title="Reference"
+        
+
         areaCSS.setAttribute("placeholder", "Write your CSS code here")
         areaHTML.setAttribute("placeholder", "Write your HTML code here")
         areaJS.setAttribute("placeholder", "Write your JavaScript code here")
@@ -602,9 +609,13 @@ function setCookie(){
 function chamadaProjetoDemo(){
     arrayProjetos = []
     if(localStorage.getItem("Projetos")){
+           //Capturar se esse trecho foi executado
+           console.log("Já há projetos do usuário. Demo não será gravado!")
         //gravarProjetoDemo()
     }else{
         gravarProjetoDemo()
+           //Capturar se esse trecho foi executado
+           console.log("testando esse techo gravarProjetoDemo ")
     //     if(NovoProjeto.value==""){
 
     //     }else{
@@ -628,7 +639,8 @@ function gravarProjetoDemo(){
 
     //Se já existe o array com os nomes dos projetos, 
     if(localStorage.getItem("Projetos")){
-
+        //Capturar se esse trecho foi executado
+        console.log("testando esse techo 1")
         if(nomeProjeto!=""){
             arrayProjetos= JSON.parse(localStorage.getItem("Projetos"))
 
@@ -673,7 +685,8 @@ function gravarProjetoDemo(){
         }
 
     } else {
-        
+           //Capturar se esse trecho foi executado
+           console.log("testando esse techo 2")
 
         if( ListaProjetos){
             ListaProjetos.innerHTML=""
