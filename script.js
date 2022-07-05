@@ -763,7 +763,7 @@ var areaJSdemo = document.getElementById("areaJSdemo")
             //aqui é o codigo que vai ser executado depois do tempo determinado no segundo parametro
             chamadaProjetoDemo();
     
-        }, 3000);// <-- o tempo que vai levar ate a funcao ser executada, em milisegundos
+        }, 5000);// <-- o tempo que vai levar ate a funcao ser executada, em milisegundos
     }
 
 });
