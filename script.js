@@ -439,7 +439,6 @@ function setSite(){
         getSite();
         codexist.src += '';
     }
-  
 };
 
 function BtnProjetos(){
@@ -573,6 +572,8 @@ function preView(){
         fechaView.style.backgroundColor="rgb(139, 73, 201)";
         fechaView.style.textDecoration = "none";
         }
+
+        // getProject()
 };
 
 function viewHTML() {
@@ -743,6 +744,7 @@ var areaJSdemo = document.getElementById("areaJSdemo")
         // Transformar o objeto em string e salvar em localStorage
         localStorage.setItem(nomeProjeto, JSON.stringify(site));
         if(NomeProjeto){
+            console.log("há NomeProjeto")
             NomeProjeto.value = localStorage.getItem("Projeto Atual")
             getSite()
         }
@@ -753,34 +755,145 @@ var areaJSdemo = document.getElementById("areaJSdemo")
     
   
 };
+var Facilitador=true
+
+if(areaHTML){
+    areaHTML.addEventListener('keyup', (e) => {
+        console.log("keyup: " + e.key)
+        if(e.key=="p" && Facilitador==true){
+            console.log("Tecla pressionada" + e.key)
+            //divEdit.textContent="amor"
+            let a = (areaHTML.value.slice(0,-1))
+            //let a = (areaHTML.value)
+            //let n =Number(areaHTML.innerText.length)
+            console.log(areaHTML.value.length)
+            //areaHTML.value = a + " <p>  </p> "
+            setSite()
+            
+           //divEdit.focus()
+           //divEdit.setSelectionRange(1,2)
+        // lista.style.display='block'
+        // lista.style.position='absolute'
+        // lista.style.left= '0px'
+        // lista.style.top= '0px'
+        }
+    });
+
+    areaHTML.addEventListener('keypress', (e) => {
+        console.log("keypress: " + e.key)
+        if(e.key=="p"){}
+    });
+
+    areaHTML.addEventListener('input', (e) => {
+        console.log(e)
+        var str = areaHTML.value
+        areaHTML.value =  str.replace("<span ", " <span>  </span> " )
+        areaHTML.value =  str.replace("<span1 ", " <span>  </span> " )
+        areaHTML.value =  str.replace("<ah ", " <a href=' '>  </a> " )
+        areaHTML.value =  str.replace("<h1 ", " <h1>  </h1> " )
+        //console.log("keydown: " + e.key)
+       console.log("string subsituida")
+        /*if(e.key=="p"){
+
+            
+            console.log("Posição :" + str.indexOf('<p '))
+            console.log("OPA!!! "+ str.replace("<p ", " <p>  </p>" ))
+            
+            //e.target.dataset.defaultValue=" <p>  </p> "
+            //areaHTML.value = e.target.dataset.defaultValue
+        }*/
+    });
+}
 
  //vai executar quando o doom estiver pronto para ser manipulado
- document.addEventListener('DOMContentLoaded', function(){
-    if(localStorage.getItem("Projeto Demo")){
-        console.log("Há demo")
-    } else{
-        setTimeout(function(){
-            //aqui é o codigo que vai ser executado depois do tempo determinado no segundo parametro
-            chamadaProjetoDemo();
+ //document.addEventListener('DOMContentLoaded', function(){
+    //chamadaProjetoDemo();
+    // setTimeout(function(){
+    //         //aqui é o codigo que vai ser executado depois do tempo determinado no segundo parametro
+    //         if(localStorage.getItem("Projeto Demo")){
+    //             console.log("Há demo")
+    //         } else{
+    //            // chamadaProjetoDemo();
+                
+    //             console.log("Else foi executado")
+    //         } 
     
-        }, 5000);// <-- o tempo que vai levar ate a funcao ser executada, em milisegundos
-    }
+    // }, 5000);// <-- o tempo que vai levar ate a funcao ser executada, em milisegundos
 
-});
+
+//     if(inputRename){
+//         ListaProjetos.addEventListener('change', (event) => {
+//             getNameProject()
+//         });
+//     }
+
+//     if(languageList){
+
+//         if(localStorage.getItem("lang")){
+//             languageList.value = localStorage.getItem("lang")
+//             setLanguage()
+//         }
+//         languageList.addEventListener('change',(event) => {
+//             setLanguage()
+//             if(localStorage.getItem("lang")=="PT-BR"){
+//                 window.location=""+ window.location    
+//             }
+         
+//         });
+//     }
+
+//     listarProjetosAoAbrir()
+//     if(window.location.href.endsWith("page-view")||window.location.href.endsWith("page-view/")){
+//         var projetoAtual = localStorage.getItem("Projeto Atual")
+//         siteObj = JSON.parse(localStorage.getItem(projetoAtual)) ;
+//         corpopage = document.getElementById("corpopage")
+//         estilo = document.getElementById("estilo")
+//         codeJS = document.getElementById('codejs')
+        
+//         if(siteObj){
+//             corpopage.innerHTML = siteObj.html;
+//             estilo.innerHTML = siteObj.css; 
+//             var scrp = document.createElement('script')
+//             scrp.text = siteObj.js
+//             document.body.appendChild(scrp)
+//         }
+//     }
+
+//     if(!window.location.href.endsWith("page-view")||(!window.location.href.endsWith("page-view/"))){
+//         if(localStorage.getItem("Projeto Atual")&&localStorage.getItem("Projeto Atual")!="[]"){
+            
+//         }
+
+//         if(areaHTML){
+//             areaHTML.addEventListener("input",setSite);
+//         }
+//         if(areaCSS){
+//             areaCSS.addEventListener("input",setSite);
+//         }
+//         if(NomeProjeto){
+//             NomeProjeto.value = localStorage.getItem("Projeto Atual")
+//             getSite()
+//         }
+   
+//     }
+
+//   if(!localStorage.getItem("cookie")){
+//   var boxCookies = document.getElementById("boxCookies");
+//     if(boxCookies){
+//         boxCookies.style.display="block";
+//     }
+//   }else{
+
+//   }
+
+
+//   });
+
+
+
 
 window.onload = function (){
-    //console.log("setar site")
 
-    // var delayInMilliseconds = 3000; //2 seconds
-
-    // setTimeout(function() {
-    //   //your code to be executed after 2 seconds
-    //   chamadaProjetoDemo();
-    // }, delayInMilliseconds);
-
-    
-    // arrayProjetos = []
-    // ListaProjetos.innerHTML=""
     if(inputRename){
         ListaProjetos.addEventListener('change', (event) => {
             getNameProject()
@@ -836,7 +949,6 @@ window.onload = function (){
         }
    
     }
-/************** */
 
   if(!localStorage.getItem("cookie")){
   var boxCookies = document.getElementById("boxCookies");
