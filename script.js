@@ -1,7 +1,7 @@
 /**
  * Código desenvolvido e de propriedade de devPlay.app. Cópia não permitida. Todos os direitos reservados
  */
-
+/** Definição de variáveis e constantes globais*/
 const areaHTML = document.getElementById('areaHTMLqwerty831809');
 var codexist = document.getElementById('AreaViewqwerty831809');
 const areaCSS = document.getElementById('areaCSSqwerty831809');
@@ -408,6 +408,7 @@ function excluirSite(){
     localStorage.removeItem(projetoSelecionado)
 
 };
+
 function listarProjetosAoAbrir(){
     var arrayProjetos1 = [];
     if(localStorage.getItem("Projetos")){
@@ -487,6 +488,7 @@ var Reference = document.getElementById('learn')
 var Privacy = document.getElementById('Privacy')
 var Support = document.getElementById('Support')
 var Contact = document.getElementById('Contact')
+
 function setLanguage(){
     var language=""
     var language = languageList.value; 
@@ -519,10 +521,7 @@ function setLanguage(){
       
     }   
  
-}
-
-
-
+};
 function preView(){
 
     var largura = window. screen.width
@@ -723,8 +722,6 @@ function gravarProjetoDemo(){
     
 };
 
-
-
 function setSiteDemo(){
 
 
@@ -755,12 +752,34 @@ var areaJSdemo = document.getElementById("areaJSdemo")
     
   
 };
-var Facilitador=true
 
+var Facilitador=true
+/**
+ * Implementação de autofechamento de tags
+ */
 if(areaHTML){
-    areaHTML.addEventListener('keyup', (e) => {
-        console.log("keyup: " + e.key)
+    areaHTML.addEventListener('keypress', (e) => {
+        console.log("keypress: " + e.key)
         if(e.key=="p" && Facilitador==true){
+            
+            var divDatalist = document.createElement("div")
+            divDatalist.setAttribute("class", "divDatalist")
+
+            var inputTagsHtml = document.createElement("input")
+            inputTagsHtml.setAttribute("id", "inputTags")
+            inputTagsHtml.setAttribute("list", "tags")
+
+            var datalistTagsHtml = document.createElement('datalist')
+            datalistTagsHtml.setAttribute("id", "tags")
+
+            datalistTagsHtml.innerHTML=
+            `<option value="a">\n
+            <option value="address">\n
+            `
+            divDatalist.appendChild(inputTagsHtml)
+            divDatalist.appendChild(datalistTagsHtml)
+            document.body.appendChild(divDatalist)
+
             console.log("Tecla pressionada" + e.key)
             //divEdit.textContent="amor"
             let a = (areaHTML.value.slice(0,-1))
@@ -779,18 +798,19 @@ if(areaHTML){
         }
     });
 
-    areaHTML.addEventListener('keypress', (e) => {
-        console.log("keypress: " + e.key)
-        if(e.key=="p"){}
-    });
+    // areaHTML.addEventListener('keypress', (e) => {
+    //     console.log("keypress: " + e.key)
+    //     if(e.key=="p"){}
+    // });
 
     areaHTML.addEventListener('input', (e) => {
         console.log(e)
         var str = areaHTML.value
         areaHTML.value =  str.replace("<span ", " <span>  </span> " )
         areaHTML.value =  str.replace("<span1 ", " <span>  </span> " )
-        areaHTML.value =  str.replace("<ah ", " <a href=' '>  </a> " )
-        areaHTML.value =  str.replace("<h1 ", " <h1>  </h1> " )
+        
+        //areaHTML.value =  str.replace("<h1 ", " <h1>  </h1> " );
+        areaHTML.value =  str.replace("<ah ", " <a href=' '>  </a> ");
         //console.log("keydown: " + e.key)
        console.log("string subsituida")
         /*if(e.key=="p"){
@@ -804,7 +824,7 @@ if(areaHTML){
         }*/
     });
 }
-
+/*********************/
  //vai executar quando o doom estiver pronto para ser manipulado
  //document.addEventListener('DOMContentLoaded', function(){
     //chamadaProjetoDemo();
@@ -888,9 +908,6 @@ if(areaHTML){
 
 
 //   });
-
-
-
 
 window.onload = function (){
 

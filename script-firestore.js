@@ -18,12 +18,23 @@ const db = getFirestore(app);
 console.log("db: ", db)
 
 
+function validUSer(){
+
+    if(user.uid==="carlos"){
+        
+    }
+
+};
 //Adicionar um novo documento especificando um ID usamos o método set()
-    // await setDoc(doc(db, "Cidades", "Goiana"), {
-    //   nome: "Goiana",
-    //   estado: "PE",
-    //   Região: "Brasil"
-    // });
+
+    async function setarDoc(){
+        await setDoc(doc(db, "Cidades", "Goiana"), {
+        nome: "Goiana",
+        estado: "PE",
+        Região: "Brasil"
+        });
+    }
+
 
 //Adicionar um novo documento sem especificar um ID, deixando o Cloud Firestore gerar um automaticamente, usamos método add()
     async function addProject(){
@@ -58,10 +69,14 @@ console.log("db: ", db)
         }
 
         if(areaHTML){
-            areaHTML.addEventListener("input",updateProject);
+            //areaHTML.addEventListener("input",updateProject);
         }
         if(areaCSS){
-            areaCSS.addEventListener("input",updateProject);
+            //areaCSS.addEventListener("input",updateProject);
+        }
+
+        if(areJS){
+            //areaJS.addEventListener("input",updateProject);
         }
    
    
