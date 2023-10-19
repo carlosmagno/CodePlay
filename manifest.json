@@ -1,11 +1,11 @@
 {
-  "name": "devPlay.app",
+  "name": "devPlay",
   "short_name": "devPlay",
-  "theme_color": "rgb(139, 73, 201)",
-  "background_color": "black",
-  "display": "standalone",
+  "theme_color": "#7d49c9",
+  "background_color": "#050505",
+  "display": "fullscreen",
   "Scope": "/index.html",
-  "start_url": "/",
+  "start_url": "https://devplay.app/",
   "icons": [
     {
       "src": "images/72x72.png",
@@ -47,7 +47,52 @@
       "src": "images/512x512.png",
       "sizes": "512x512",
       "type": "image/png"
+    },
+    {
+      "src": "images/550x550.png",
+      "sizes": "550x550",
+      "type": "image/png"
     }
   ],
-  "splash_pages": "null"
+  "splash_pages": "null",
+  "description": "É o app para o Dev criar e executar ao vivo sua biblioteca de snippets de código HTML, CSS e JavaScript, usando apenas o próprio navegador de internet. Use devPlay direto no navegador ou instale a aplicação para ter a experiência similar a de um app nativo em seu dispostivo Windows, Android ou IOS. A instalação é leve pois devPlay usa apenas recursos de seu navegador. O app foi desenvolvido principalmente para ajudar quem está iniciando nos estudos do desenvolvimento web front-end, com foco nas três tecnologias fundamentais para o desenvolvimento de sites e aplicações web, que são HTML, CSS e JavaScript.\n\nCrie agora mesmo a sua biblioteca e organize seus snippets de códigos com o objetivo de servir como referência ou mesmo para reutilização em projetos maiores, ganhando assim muito mais tempo para empreender nas personalizações do seu projeto.",
+  "screenshots": [
+    {
+      "src": "screenshots/screenshot(1).png",
+      "sizes": "1280x800",
+      "type": "image/png"
+    },
+    {
+      "src": "screenshots/screenshot(2).png",
+      "sizes": "1280x800",
+      "type": "image/png"
+    },
+    {
+      "src": "screenshots/screenshot(3).png",
+      "sizes": "1280x800",
+      "type": "image/png"
+    },
+    {
+      "src": "screenshots/screenshot(4).png",
+      "sizes": "1280x800",
+      "type": "image/png"
+    }
+  ],
+  "categories": [
+    "education",
+    "productivity"
+  ],
+  "dir": "auto",
+  "scope": "https://devplay.app/",
+  "lang": "pt",
+  "orientation": "any",
+  "display_override": [
+    "fullscreen",
+    "browser",
+    "minimal-ui",
+    "standalone",
+    "window-controls-overlay"
+  ],
+  "id": "devPlay",
+  "prefer_related_applications": false
 }
