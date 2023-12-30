@@ -757,6 +757,8 @@ var Facilitador=true
 /**
  * Implementação de autofechamento de tags
  */
+
+/*
 if(areaHTML){
     areaHTML.addEventListener('keypress', (e) => {
         console.log("keypress: " + e.key)
@@ -821,9 +823,11 @@ if(areaHTML){
             
             //e.target.dataset.defaultValue=" <p>  </p> "
             //areaHTML.value = e.target.dataset.defaultValue
-        }*/
+        }
     });
 }
+
+*/
 /*********************/
  //vai executar quando o doom estiver pronto para ser manipulado
  //document.addEventListener('DOMContentLoaded', function(){

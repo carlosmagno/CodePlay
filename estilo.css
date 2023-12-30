@@ -329,7 +329,7 @@ img.imgbtns2{
 div#containerfatherHTML {
     background-color: rgb(5, 5, 5);
     position:absolute;
-    top:0;
+    top:6vh;
     left:0;
     width: 50%;
     height: 45vh;
@@ -339,7 +339,7 @@ div#containerfatherHTML {
 div#containerfatherCSS {
     background-color: rgb(0, 0, 0);
     position:absolute;
-    top:0;
+    top:6vh;
     right:0;
     width: 50%;
     height: 45vh;  
@@ -349,7 +349,7 @@ div#containerfatherCSS {
 div#containerfatherJS{
     background-color: rgb(7, 7, 7);
     position:absolute;
-    top:45vh;
+    top:51vh;
    left:0;
     width: 50%;
     height:45vh;
@@ -359,7 +359,7 @@ div#sonHTML, div#sonCSS, div#sonJS{
     position: absolute;
     text-align: center;
     top:0;
-    right:23px;
+    right:10px;
     width:60px;
     height:20px;
     line-height: 20px;
@@ -395,32 +395,34 @@ textarea.textCodeqwerty831809 {
     align-self: center;
     background-color: rgb(54, 54, 56);
     color: rgb(253, 253, 253);
-    padding: 1%;
+    padding: 2%;
     resize: none;
-    width: 97.5%;
-    height: 95%;
+    width: 95.5%;
+    height: 90%;
     font-size: large;
     font-family: 'Courier New', Courier, monospace;
-    overflow: scroll;
+    overflow: auto;
     white-space : nowrap;
 }
 
 
 iframe#AreaViewqwerty831809 {
     position: absolute;
-    top: 45vh;
+    top: 51vh;
     right:0;
     margin:0;
     padding: 0;
     overflow:scroll;
     width: 50%;
-    height:45vh;
-    /* border-bottom: solid black 1px; */
+    height:44.7vh;
+    border: solid black 1px;
+    /* background-color: aqua; */
    /*  border-right: solid black 1px; */
 }
 
 section#principal{
-    border-top:solid black 1px;
+    margin-top: 44px;
+    /* border-top:solid black 1px; */
 }
 
 main {
