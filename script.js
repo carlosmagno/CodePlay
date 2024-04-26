@@ -516,7 +516,7 @@ function setLanguage(){
         areaHTML.setAttribute("placeholder", "Write your HTML code here")
         areaJS.setAttribute("placeholder", "Write your JavaScript code here")
         Privacy.innerText="Privacy Policy"
-        Support.innerText="Share and support!"
+        Support.innerText="Share!"
         Contact.innerText="Contact"
       
     }   

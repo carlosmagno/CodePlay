@@ -30,6 +30,7 @@ var Support = document.getElementById('Support')
 var formTitle =  document.getElementById("formTitle")
 var formPT =  document.getElementById("formPT")
 var formEN =  document.getElementById("formEN")
+var Home =  document.getElementById("Home")
     //var language2=""
    //var language2 = localStorage.getItem("lang")
     if(localStorage.getItem("lang")){
@@ -42,8 +43,9 @@ var formEN =  document.getElementById("formEN")
             formPT.style.display="none"
             formEN.style.display="block"
             Privacy.innerText="Privacy Policy"
-            Support.innerText="Share and support!"
+            Support.innerText="Share!"
             formTitle.innerText="Contact Form"
+            Home.innerText="Home"
         
          
             //Privacy.innerText="Privacy Policy"
