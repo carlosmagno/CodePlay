@@ -533,17 +533,17 @@ function preView(){
 
         //Se for no celular
         if(largura<=500){
-            divHTML.style.height="95vh";
-            areaHTML.style.height="100%";
-            divCSS.style.height="92.5vh";
-            areaCSS.style.height="100%";
-            divJS.style.height="92.5vh";
-            areaJS.style.height="100%";
+            divHTML.style.height="100vh";
+            areaHTML.style.height="93vh";
+            divCSS.style.height="100vh";
+            areaCSS.style.height="93vh";
+            divJS.style.height="100h";
+            areaJS.style.height="93vh";
             
         //Se for no desktop  
         }else if (largura>500){
-            divCSS.style.height="90vh";
-            areaCSS.style.height="97.5%";
+            divCSS.style.height="100%";
+            areaCSS.style.height="95%";
 
         }
     
@@ -558,15 +558,15 @@ function preView(){
             divHTML.style.height="45vh";
             divCSS.style.height="45vh";
             divJS.style.height="45vh";
-            areaCSS.style.height="95%";
+            areaCSS.style.height="90%";
         //Se for no celular
         }else if(largura<=500){
             divCSS.style.height="49vh";
             divHTML.style.height="49vh";
             divJS.style.height="49vh";
-            areaHTML.style.height="95%";
-            areaCSS.style.height="95%";
-            areaJS.style.height="95%";
+            areaHTML.style.height="85%";
+            areaCSS.style.height="85%";
+            areaJS.style.height="85%";
         }
         fechaView.style.backgroundColor="rgb(139, 73, 201)";
         fechaView.style.textDecoration = "none";

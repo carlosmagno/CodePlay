@@ -599,7 +599,7 @@ div#boxCookies{
         color: rgb(7, 7, 7);
         /* margin-right: 8px; */
         margin-left: 8px;
-        min-height: 40px;
+        min-height: 38px;
         min-width: 25px;
         line-height: 40px;
         border-radius: 2px;
@@ -614,7 +614,7 @@ div#boxCookies{
         background-color: rgb(6, 132, 250);
         color: rgb(7, 7, 7);
         margin-left: 8px;
-        min-height: 40px;
+        min-height: 38px;
         min-width: 25px;
         line-height: 40px;
         border-radius: 2px;
@@ -624,14 +624,14 @@ div#boxCookies{
         background-color: rgb(250, 213, 6);
         color: rgb(7, 7, 7);
         margin-left: 8px;
-        min-height: 40px;
+        min-height: 38px;
         min-width: 25px;
         line-height: 40px;
         border-radius: 2px;
     }
     .btsUp{
      
-        min-height: 40px;
+        min-height: 38px;
         min-width: 25px;
         line-height: 50px;
         border-radius: 2px;
@@ -721,10 +721,11 @@ div#boxCookies{
 
 
     textarea.textCodeqwerty831809{
-        margin-top: -3vh;
+        /* margin-top: 4vh; */
         display: block;
         position:absolute;
-        top:4vh;
+        top:5vh;
+        height:85%;
         /* padding:1%;
         width: 98%; */
         border:none;
